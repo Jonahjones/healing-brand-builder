@@ -29,12 +29,7 @@ const TrustSignalsSection = () => {
     }
   ];
 
-  const certifications = [
-    "Cognitive Behavioral Therapy (CBT)",
-    "Mindfulness-Based Stress Reduction", 
-    "Solution-Focused Therapy",
-    "HIPAA-compliant practice ensuring confidentiality"
-  ];
+
 
   return (
     <section id="credentials" className="py-20 bg-gradient-to-br from-cozy-brown/5 via-warm-cream to-soft-sage/10 relative overflow-hidden">
@@ -92,24 +87,7 @@ const TrustSignalsSection = () => {
           })}
         </div>
         
-        {/* Enhanced Certifications */}
-        <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 lg:p-12 border border-soft-sage/20 shadow-xl mb-12">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-cozy-brown mb-3">Therapeutic Approaches & Certifications</h3>
-            <div className="w-20 h-1 bg-gradient-to-r from-gentle-terracotta to-earth-clay rounded-full mx-auto"></div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {certifications.map((cert, index) => (
-              <div key={index} className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-cozy-brown/5 to-gentle-terracotta/5 border border-soft-sage/20">
-                <div className="w-8 h-8 bg-gentle-terracotta/20 rounded-full flex items-center justify-center flex-shrink-0">
-                  <CheckCircle className="w-5 h-5 text-gentle-terracotta" />
-                </div>
-                <span className="text-cozy-brown font-medium">{cert}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+
         
         {/* Enhanced Bottom Trust Statement */}
         <div className="text-center">

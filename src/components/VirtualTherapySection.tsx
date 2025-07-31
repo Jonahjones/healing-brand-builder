@@ -1,4 +1,4 @@
-import { Brain, Heart, Target, Shield, Clock, Home, TrendingUp, CheckCircle, Lock } from "lucide-react";
+import { Brain, Heart, Target, CheckCircle, Lock, Shield } from "lucide-react";
 
 const VirtualTherapySection = () => {
   const therapeuticMethods = [
@@ -28,32 +28,7 @@ const VirtualTherapySection = () => {
     }
   ];
 
-  const virtualBenefits = [
-    {
-      title: "Complete Privacy",
-      description: "Your space, your rules. No waiting rooms or awkward encounters.",
-      icon: Shield,
-      color: "trust-blue"
-    },
-    {
-      title: "Ultimate Flexibility",
-      description: "Sessions that fit your life - early mornings to late evenings.",
-      icon: Clock,
-      color: "energy-coral"
-    },
-    {
-      title: "Maximum Comfort",
-      description: "Your favorite chair, your pet, your cozy space.",
-      icon: Home,
-      color: "success-green"
-    },
-    {
-      title: "Proven Results",
-      description: "Research shows virtual therapy equals in-person effectiveness.",
-      icon: TrendingUp,
-      color: "optimism-yellow"
-    }
-  ];
+
 
   return (
     <section id="virtual-therapy" className="py-6 sm:py-8 lg:py-12 bg-gradient-to-br from-white via-warm-cream/30 to-soft-sage/20 relative overflow-hidden">
@@ -98,9 +73,9 @@ const VirtualTherapySection = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
             {therapeuticMethods.map((method, index) => {
               const Icon = method.icon;
-              return (
+            return (
                 <div
-                  key={index} 
+                key={index} 
                   className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-5 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:scale-102 border border-white/50 overflow-hidden"
                 >
                   {/* Simplified decorative elements */}
@@ -138,7 +113,7 @@ const VirtualTherapySection = () => {
 
                     <div
                       className="text-xs font-bold px-2.5 py-1.5 rounded-full shadow-md"
-                      style={{
+                style={{
                         backgroundColor: `hsl(var(--${method.color}))`,
                         color: 'white'
                       }}
@@ -152,47 +127,8 @@ const VirtualTherapySection = () => {
           </div>
         </div>
 
-        {/* More compact virtual benefits */}
-        <div className="mb-10 sm:mb-12">
-          <div className="text-center mb-6 sm:mb-8">
-            <h3 className="text-lg sm:text-xl font-heading font-bold text-cozy-brown mb-2">
-              Why Virtual Works Better
-            </h3>
-            <p className="text-sm text-cozy-brown/70">The future of therapy is here - and it's more effective</p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {virtualBenefits.map((benefit, index) => {
-              const Icon = benefit.icon;
-              return (
-                <div key={index} className="group text-center">
-                  <div className="relative mb-4">
-                    {/* Simplified icon container */}
-                    <div
-                      className="w-16 h-16 sm:w-18 sm:h-18 rounded-xl flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 group-hover:-translate-y-1"
-                      style={{
-                        background: `linear-gradient(135deg, hsl(var(--${benefit.color}) / 0.1), hsl(var(--${benefit.color}) / 0.25))`
-                      }}
-                    >
-                      <Icon
-                        className="w-8 h-8 sm:w-9 sm:h-9"
-                        style={{ color: `hsl(var(--${benefit.color}))` }}
-                      />
-                    </div>
-                  </div>
-
-                  <h4 className="text-base sm:text-lg font-heading font-bold text-cozy-brown mb-2">
-                    {benefit.title}
-                  </h4>
-                  <p className="text-cozy-brown/70 leading-relaxed text-xs sm:text-sm">
-                    {benefit.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
+        
         {/* More compact bottom call-to-action cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="relative bg-gradient-to-br from-gentle-terracotta/10 via-white/80 to-earth-clay/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gentle-terracotta/20 shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-300">
@@ -226,7 +162,7 @@ const VirtualTherapySection = () => {
                   <Lock className="w-5 h-5 text-white" />
                 </div>
                 <h4 className="text-lg sm:text-xl font-heading font-bold text-cozy-brown">
-                  Secure & Professional
+              Secure & Professional
                 </h4>
               </div>
               <p className="text-cozy-brown/80 leading-relaxed mb-3 text-sm">

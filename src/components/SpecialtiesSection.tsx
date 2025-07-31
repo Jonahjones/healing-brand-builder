@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const SpecialtiesSection = () => {
   const specialties = [
@@ -8,11 +8,7 @@ const SpecialtiesSection = () => {
       icon: "🧠",
       title: "Anxiety",
       subtitle: "Take control of anxiety with proven skills that calm your mind and restore balance.",
-      outcomes: [
-        "Reduce panic attacks by 80%",
-        "Improve sleep quality within 2 weeks",
-        "Build confidence in social situations"
-      ],
+
       expectation: "Identify your anxiety triggers, learn calming techniques, and gain confidence step by step.",
       color: "cozy-brown",
       bgGradient: "from-warm-cream to-natural-beige"
@@ -22,11 +18,7 @@ const SpecialtiesSection = () => {
       icon: "❤️",
       title: "Depression",
       subtitle: "Regain motivation and reconnect with what matters most.",
-      outcomes: [
-        "Increase daily motivation",
-        "Strengthen meaningful relationships",
-        "Develop healthy coping strategies"
-      ],
+
       expectation: "Work together to overcome symptoms, rebuild connections, and create sustainable wellness habits.",
       color: "gentle-terracotta",
       bgGradient: "from-warm-cream to-natural-beige"
@@ -36,11 +28,7 @@ const SpecialtiesSection = () => {
       icon: "🛡️",
       title: "Addiction",
       subtitle: "Break the cycle of addiction and build a life you are proud of.",
-      outcomes: [
-        "Develop effective coping mechanisms",
-        "Restore trust with loved ones",
-        "Establish lasting recovery habits"
-      ],
+
       expectation: "Address underlying causes, build a strong support system, and create a personalized recovery plan.",
       color: "earth-clay",
       bgGradient: "from-warm-cream to-natural-beige"
@@ -50,11 +38,7 @@ const SpecialtiesSection = () => {
       icon: "👥",
       title: "Relationships",
       subtitle: "Enhance communication, set healthy boundaries, and deepen intimacy.",
-      outcomes: [
-        "Improve communication skills",
-        "Resolve conflicts constructively",
-        "Strengthen emotional intimacy"
-      ],
+
       expectation: "Learn healthy communication patterns, address challenges, and build stronger bonds.",
       color: "cozy-brown",
       bgGradient: "from-warm-cream to-natural-beige"
@@ -64,11 +48,7 @@ const SpecialtiesSection = () => {
       icon: "🌱",
       title: "Life Transitions",
       subtitle: "Navigate change with confidence and find new purpose.",
-      outcomes: [
-        "Adapt to major life changes",
-        "Rebuild your sense of identity",
-        "Define a clear vision for your future"
-      ],
+
       expectation: "Process change together, explore new opportunities, and move forward with intention.",
       color: "cozy-brown",
       bgGradient: "from-warm-cream to-natural-beige"
@@ -141,26 +121,7 @@ const SpecialtiesSection = () => {
                   {specialty.subtitle}
                 </p>
 
-                {/* Simplified outcomes - just show count */}
-                <div className="mb-2.5 sm:mb-3">
-                  <div className="flex items-center gap-2 mb-1.5">
-                    <CheckCircle className="w-3 h-3" style={{ color: `hsl(var(--${specialty.color}))` }} />
-                    <h4 className="text-xs font-bold text-cozy-brown uppercase tracking-wider">
-                      Top Outcomes
-                    </h4>
-                  </div>
-                  <ul className="space-y-1">
-                    {specialty.outcomes.slice(0, 2).map((outcome, outcomeIndex) => (
-                      <li key={outcomeIndex} className="text-xs text-cozy-brown/80 flex items-start gap-1.5">
-                        <div
-                          className="w-1 h-1 rounded-full mt-1.5 flex-shrink-0"
-                          style={{ backgroundColor: `hsl(var(--${specialty.color}))` }}
-                        ></div>
-                        {outcome}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+
 
                 {/* Simplified expectation box */}
                 <div className="relative">
