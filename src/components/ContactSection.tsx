@@ -137,7 +137,7 @@ const ContactSection = () => {
                         Sending...
                       </div>
                     ) : (
-                      <>📱 Send Message & Book Free Consult</>
+                      <>📅 Send Message & Book Your Free Consultation</>
                     )}
                   </Button>
                   <p id="submit-description" className="text-xs text-center text-cozy-brown/60">
@@ -160,6 +160,13 @@ const ContactSection = () => {
                 </div>
               </CardHeader>
               <CardContent className="pt-0 space-y-3">
+                <div className="flex items-center gap-3 p-2 bg-cozy-brown/5 rounded-lg">
+                  <Mail className="w-4 h-4 text-cozy-brown/70" />
+                  <div>
+                    <p className="font-medium text-cozy-brown text-sm">Email</p>
+                    <p className="text-xs text-cozy-brown/70">zach@resilientmindcounseling.info</p>
+                  </div>
+                </div>
                 <div className="flex items-center gap-3 p-2 bg-cozy-brown/5 rounded-lg">
                   <Phone className="w-4 h-4 text-cozy-brown/70" />
                   <div>

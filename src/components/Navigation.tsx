@@ -99,7 +99,7 @@ const Navigation = () => {
                 }
               }}
             >
-              📱 Book Free Consult Today
+              📅 Book Your Free Consultation
             </Button>
           </div>
         </div>
@@ -137,7 +137,7 @@ const Navigation = () => {
                     }
                   }}
                 >
-                  📱 Book Free Consult Today
+                  📅 Book Your Free Consultation
                 </Button>
               </div>
             </div>
@@ -161,8 +161,8 @@ const Navigation = () => {
             }
           }}
         >
-          <span className="hidden sm:inline">📱 Schedule Consultation</span>
-          <span className="sm:hidden">📱 Book Now</span>
+                        <span className="hidden sm:inline">📅 Book Your Free Consultation</span>
+                        <span className="sm:hidden">📅 Book Now</span>
         </Button>
       </div>
     </>

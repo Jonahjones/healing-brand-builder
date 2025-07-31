@@ -9,7 +9,7 @@ interface CTASectionProps {
 const CTASection = ({ variant = "primary", className = "" }: CTASectionProps) => {
 const ctaConfig = {
     primary: {
-      title: "📱 Book Your Free Consult Today",
+      title: "📅 Book Your Free Consultation",
       subtitle: "15 minutes to see if Zach's approach clicks with you. Zero pressure, total clarity.",
       buttonText: "Secure Your Free 15-Min Call",
       buttonIcon: Calendar,
