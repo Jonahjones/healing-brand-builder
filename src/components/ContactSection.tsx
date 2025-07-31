@@ -4,13 +4,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Toast } from "@/components/ui/toast";
+import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Clock, Send, Calendar } from "lucide-react";
 
 const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showSuccessToast, setShowSuccessToast] = useState(false);
   const [submitError, setSubmitError] = useState('');
+  const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -28,7 +28,11 @@ const ContactSection = () => {
       });
       
       if (response.ok) {
-        setShowSuccessToast(true);
+        toast({
+          title: "Message sent successfully!",
+          description: "I'll respond within 24 hours to schedule your free consultation.",
+          variant: "success",
+        });
         form.reset();
       } else {
         throw new Error('Form submission failed');
@@ -41,16 +45,7 @@ const ContactSection = () => {
   };
 
   return (
-    <>
-      {/* Success Toast */}
-      <Toast
-        message="Message sent successfully! I'll respond within 24 hours to schedule your free consultation."
-        type="success"
-        isVisible={showSuccessToast}
-        onClose={() => setShowSuccessToast(false)}
-      />
-      
-      <section id="contact" className="py-8 sm:py-12 bg-gradient-to-br from-cozy-brown/5 via-warm-cream to-gentle-terracotta/10 relative overflow-hidden">
+    <section id="contact" className="py-8 sm:py-12 bg-gradient-to-br from-cozy-brown/5 via-warm-cream to-gentle-terracotta/10 relative overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-gentle-terracotta/8 to-earth-clay/8 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-tl from-soft-sage/8 to-cozy-brown/8 rounded-full blur-3xl"></div>
@@ -81,10 +76,10 @@ const ContactSection = () => {
                     <CardTitle className="text-lg sm:text-xl font-heading font-bold text-cozy-brown">Send a Confidential Message</CardTitle>
                     <CardDescription className="text-cozy-brown/70 text-sm sm:text-base">
                       I'll respond within 24 hours. All communications are confidential.
-                    </CardDescription>
+              </CardDescription>
                   </div>
                 </div>
-              </CardHeader>
+            </CardHeader>
               <CardContent className="space-y-3 sm:space-y-4 p-3 sm:p-4">
                 <form 
                   name="contact" 
@@ -105,68 +100,68 @@ const ContactSection = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                     <div className="space-y-1 sm:space-y-2">
                       <Label htmlFor="firstName" className="font-semibold text-cozy-brown text-xs uppercase tracking-wider">First Name *</Label>
-                      <Input 
-                        id="firstName" 
-                        name="firstName"
-                        placeholder="Your first name" 
+                  <Input 
+                    id="firstName" 
+                    name="firstName"
+                    placeholder="Your first name" 
                         className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/80 backdrop-blur-sm rounded-lg py-1.5 text-sm h-9"
-                        required
-                        aria-required="true"
-                      />
-                    </div>
+                    required
+                    aria-required="true"
+                  />
+                </div>
                     <div className="space-y-1 sm:space-y-2">
                       <Label htmlFor="lastName" className="font-semibold text-cozy-brown text-xs uppercase tracking-wider">Last Name *</Label>
-                      <Input 
-                        id="lastName" 
-                        name="lastName"
-                        placeholder="Your last name" 
+                  <Input 
+                    id="lastName" 
+                    name="lastName"
+                    placeholder="Your last name" 
                         className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/80 backdrop-blur-sm rounded-lg py-1.5 text-sm h-9"
-                        required
-                        aria-required="true"
-                      />
-                    </div>
-                  </div>
+                    required
+                    aria-required="true"
+                  />
+                </div>
+              </div>
                   
                   <div className="space-y-1 sm:space-y-2">
                     <Label htmlFor="email" className="font-semibold text-cozy-brown text-xs uppercase tracking-wider">Email Address *</Label>
-                    <Input 
-                      id="email" 
-                      name="email"
-                      type="email"
-                      placeholder="your.email@example.com" 
+                <Input 
+                  id="email" 
+                  name="email"
+                  type="email" 
+                  placeholder="your.email@example.com" 
                       className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/80 backdrop-blur-sm rounded-lg py-2 text-sm"
-                      required
-                      aria-required="true"
-                      aria-describedby="email-description"
-                    />
+                  required
+                  aria-required="true"
+                  aria-describedby="email-description"
+                />
                     <p id="email-description" className="text-xs text-cozy-brown/60">We'll use this to send you appointment confirmations and secure messages</p>
-                  </div>
+              </div>
                   
                   <div className="space-y-1 sm:space-y-2">
                     <Label htmlFor="phone" className="font-semibold text-cozy-brown text-xs uppercase tracking-wider">Phone Number (Optional)</Label>
-                    <Input 
-                      id="phone" 
-                      name="phone"
-                      type="tel"
-                      placeholder="(555) 123-4567" 
+                <Input 
+                  id="phone" 
+                  name="phone"
+                  type="tel" 
+                  placeholder="(555) 123-4567" 
                       className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/80 backdrop-blur-sm rounded-lg py-2 text-sm"
-                      aria-describedby="phone-description"
-                    />
+                  aria-describedby="phone-description"
+                />
                     <p id="phone-description" className="text-xs text-cozy-brown/60">Optional - for appointment reminders only</p>
-                  </div>
+              </div>
                   
                   <div className="space-y-1 sm:space-y-2">
                     <Label htmlFor="message" className="font-semibold text-cozy-brown text-xs uppercase tracking-wider">What brings you to online therapy? *</Label>
-                    <Textarea 
-                      id="message" 
-                      name="message"
-                      placeholder="Share what you're comfortable with... anxiety, depression, life transitions, relationships, etc. This helps me understand how I can best support you."
+                <Textarea 
+                  id="message" 
+                  name="message"
+                  placeholder="Share what you're comfortable with... anxiety, depression, life transitions, relationships, etc. This helps me understand how I can best support you."
                       rows={2}
                       className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/80 backdrop-blur-sm rounded-lg resize-none text-sm py-1.5"
-                      required
-                      aria-required="true"
-                      aria-describedby="message-description"
-                    />
+                  required
+                  aria-required="true"
+                  aria-describedby="message-description"
+                />
                     <p id="message-description" className="text-xs text-cozy-brown/60">Your information is completely confidential and HIPAA-protected</p>
                   </div>
                   
@@ -180,12 +175,12 @@ const ContactSection = () => {
                       </div>
                       <h4 className="font-bold text-red-600 mb-1">Submission Error</h4>
                       <p className="text-sm text-red-700">{submitError}</p>
-                    </div>
+              </div>
                   )}
 
                   {/* Submit Button */}
-                  <Button 
-                    type="submit" 
+              <Button 
+                type="submit"
                     disabled={isSubmitting}
                     className="w-full bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold py-2.5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
@@ -197,13 +192,13 @@ const ContactSection = () => {
                     ) : (
                       <>📅 Send Message & Book Your Free Consultation</>
                     )}
-                  </Button>
+              </Button>
                   <p id="submit-description" className="text-xs text-center text-cozy-brown/60">
                     By submitting this form, you agree to receive email communications about your consultation. No spam, ever.
-                  </p>
+              </p>
                 </form>
-              </CardContent>
-            </Card>
+            </CardContent>
+          </Card>
           </div>
 
           {/* More compact contact info */}
@@ -248,7 +243,7 @@ const ContactSection = () => {
                 </div>
               </CardContent>
             </Card>
-
+            
             <Card className="bg-gradient-to-br from-gentle-terracotta/10 to-earth-clay/10 border border-gentle-terracotta/20 shadow-lg">
               <CardContent className="p-4 sm:p-6">
                 <h4 className="text-base font-heading font-bold text-cozy-brown mb-2">Free Consultation</h4>
@@ -268,8 +263,7 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
-      </section>
-    </>
+    </section>
   );
 };
 
