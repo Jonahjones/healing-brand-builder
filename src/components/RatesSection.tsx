@@ -24,12 +24,12 @@ const RatesSection = () => {
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-success-green/10 rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3">
               </div>
               <CardTitle className="text-lg sm:text-xl font-heading font-bold text-foreground">Session Pricing</CardTitle>
-              <CardDescription className="text-sm sm:text-base text-muted-foreground">50-minute therapy sessions</CardDescription>
+              <CardDescription className="text-sm sm:text-base text-muted-foreground">45-minute therapy sessions</CardDescription>
             </CardHeader>
             <CardContent className="pt-3 sm:pt-4 pb-4 sm:pb-6">
               <div className="text-center mb-4 sm:mb-6">
                 <div className="flex items-center justify-center gap-2 mb-1">
-                  <span className="text-3xl sm:text-4xl font-bold text-foreground">$150</span>
+                  <span className="text-3xl sm:text-4xl font-bold text-foreground">$100</span>
                   <span className="text-base sm:text-lg text-muted-foreground">/ session</span>
                 </div>
                 <p className="text-muted-foreground text-sm">Private pay rate</p>
