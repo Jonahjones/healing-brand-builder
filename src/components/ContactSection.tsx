@@ -213,20 +213,30 @@ const ContactSection = () => {
                 </div>
               </CardHeader>
               <CardContent className="pt-0 space-y-3">
-                <div className="flex items-center gap-3 p-2 bg-cozy-brown/5 rounded-lg">
-                  <Mail className="w-4 h-4 text-cozy-brown/70" />
+                <a 
+                  href="mailto:zach@resilientmindcounseling.info" 
+                  className="flex items-center gap-3 p-2 bg-cozy-brown/5 rounded-lg hover:bg-cozy-brown/10 transition-colors duration-200 cursor-pointer group"
+                >
+                  <Mail className="w-4 h-4 text-cozy-brown/70 group-hover:text-cozy-brown transition-colors duration-200" />
                   <div>
-                    <p className="font-medium text-cozy-brown text-sm">Email</p>
-                    <p className="text-xs text-cozy-brown/70">zach@resilientmindcounseling.info</p>
+                    <p className="font-medium text-cozy-brown text-sm group-hover:text-cozy-brown/90">Email</p>
+                    <p className="text-xs text-cozy-brown/70 group-hover:text-cozy-brown">
+                      zach@resilientmindcounseling.info
+                    </p>
                   </div>
-                </div>
-                <div className="flex items-center gap-3 p-2 bg-cozy-brown/5 rounded-lg">
-                  <Phone className="w-4 h-4 text-cozy-brown/70" />
+                </a>
+                <a 
+                  href="tel:+14143480996" 
+                  className="flex items-center gap-3 p-2 bg-cozy-brown/5 rounded-lg hover:bg-cozy-brown/10 transition-colors duration-200 cursor-pointer group"
+                >
+                  <Phone className="w-4 h-4 text-cozy-brown/70 group-hover:text-cozy-brown transition-colors duration-200" />
                   <div>
-                    <p className="font-medium text-cozy-brown text-sm">Phone</p>
-                    <p className="text-xs text-cozy-brown/70">Available during consultation</p>
+                    <p className="font-medium text-cozy-brown text-sm group-hover:text-cozy-brown/90">Phone</p>
+                    <p className="text-xs text-cozy-brown/70 group-hover:text-cozy-brown">
+                      (414) 348-0996
+                    </p>
                   </div>
-                </div>
+                </a>
                 <div className="flex items-center gap-3 p-2 bg-gentle-terracotta/5 rounded-lg">
                   <MapPin className="w-4 h-4 text-gentle-terracotta/70" />
                   <div>
