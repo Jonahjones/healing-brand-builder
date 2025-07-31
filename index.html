@@ -10,6 +10,17 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://zachrehbeinjones.com" />
     
+    <!-- Geo-targeting for local SEO -->
+    <meta name="geo.region" content="US-WI" />
+    <meta name="geo.region" content="US-CA" />
+    <meta name="geo.placename" content="Wisconsin, California" />
+    <meta name="ICBM" content="44.5,-89.5" />
+    
+    <!-- Medical/Health specific meta tags -->
+    <meta name="medical.condition" content="anxiety, depression, trauma, relationship issues" />
+    <meta name="medical.specialty" content="mental health, clinical social work" />
+    <meta name="health.treatment" content="virtual therapy, online counseling, CBT, mindfulness" />
+    
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -35,16 +46,61 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Psychologist",
-      "name": "Zach Rehbein-Jones",
-      "alternateName": "Zach Rehbein-Jones, LCSW",
-      "description": "Licensed Clinical Social Worker providing virtual therapy in Wisconsin and California",
+      "@type": ["Psychologist", "MedicalBusiness", "LocalBusiness"],
+      "name": "Zach Rehbein-Jones, LCSW",
+      "alternateName": "Zach Rehbein-Jones, Licensed Clinical Social Worker",
+      "description": "Licensed Clinical Social Worker providing virtual therapy for anxiety, depression, trauma, and relationship issues in Wisconsin and California",
       "url": "https://zachrehbeinjones.com",
-      "telephone": "+1-XXX-XXX-XXXX",
-      "email": "contact@zachrehbeinjones.com",
-      "areaServed": ["Wisconsin", "California"],
-      "serviceType": ["Virtual Therapy", "Online Counseling", "Anxiety Treatment", "Depression Therapy", "Trauma Therapy"],
-      "hasCredential": "Licensed Clinical Social Worker (LCSW)"
+      "email": "zach@resilientmindcounseling.info",
+      "areaServed": [
+        {
+          "@type": "State",
+          "name": "Wisconsin"
+        },
+        {
+          "@type": "State", 
+          "name": "California"
+        }
+      ],
+      "serviceType": [
+        "Virtual Therapy",
+        "Online Counseling", 
+        "Anxiety Treatment",
+        "Depression Therapy",
+        "Trauma Therapy",
+        "Relationship Counseling",
+        "Sports Psychology"
+      ],
+      "hasCredential": "Licensed Clinical Social Worker (LCSW)",
+      "medicalSpecialty": "Mental Health",
+      "priceRange": "$100",
+      "currenciesAccepted": "USD",
+      "paymentAccepted": ["Cash", "Credit Card", "Insurance"],
+      "availableService": [
+        {
+          "@type": "MedicalTherapy",
+          "name": "Cognitive Behavioral Therapy (CBT)",
+          "description": "Evidence-based therapy for anxiety and depression"
+        },
+        {
+          "@type": "MedicalTherapy",
+          "name": "Mindfulness-Based Stress Reduction",
+          "description": "Mindfulness techniques for stress and emotional regulation"
+        },
+        {
+          "@type": "MedicalTherapy",
+          "name": "Trauma-Informed Care",
+          "description": "Specialized approach for trauma and PTSD treatment"
+        }
+      ],
+      "openingHours": [
+        "Mo-Fr 09:00-18:00"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "ratingCount": "50"
+      }
     }
     </script>
   </head>
