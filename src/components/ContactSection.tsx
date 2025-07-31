@@ -4,11 +4,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Toast } from "@/components/ui/toast";
 import { Mail, Phone, MapPin, Clock, Send, Calendar } from "lucide-react";
 
 const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showSuccessToast, setShowSuccessToast] = useState(false);
   const [submitError, setSubmitError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -27,7 +28,7 @@ const ContactSection = () => {
       });
       
       if (response.ok) {
-        setIsSubmitted(true);
+        setShowSuccessToast(true);
         form.reset();
       } else {
         throw new Error('Form submission failed');
@@ -40,7 +41,16 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-8 sm:py-12 bg-gradient-to-br from-cozy-brown/5 via-warm-cream to-gentle-terracotta/10 relative overflow-hidden">
+    <>
+      {/* Success Toast */}
+      <Toast
+        message="Message sent successfully! I'll respond within 24 hours to schedule your free consultation."
+        type="success"
+        isVisible={showSuccessToast}
+        onClose={() => setShowSuccessToast(false)}
+      />
+      
+      <section id="contact" className="py-8 sm:py-12 bg-gradient-to-br from-cozy-brown/5 via-warm-cream to-gentle-terracotta/10 relative overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-gentle-terracotta/8 to-earth-clay/8 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-tl from-soft-sage/8 to-cozy-brown/8 rounded-full blur-3xl"></div>
@@ -160,21 +170,6 @@ const ContactSection = () => {
                     <p id="message-description" className="text-xs text-cozy-brown/60">Your information is completely confidential and HIPAA-protected</p>
                   </div>
                   
-                  {/* Success Message */}
-                  {isSubmitted && (
-                    <div className="bg-success-green/10 border border-success-green/30 rounded-lg p-4 text-center">
-                      <div className="flex items-center justify-center mb-2">
-                        <div className="w-8 h-8 bg-success-green/20 rounded-full flex items-center justify-center">
-                          <span className="text-success-green">✓</span>
-                        </div>
-                      </div>
-                      <h4 className="font-bold text-success-green mb-1">Message Sent Successfully!</h4>
-                      <p className="text-sm text-cozy-brown/80">
-                        Thank you for reaching out. I'll respond within 24 hours to schedule your free consultation.
-                      </p>
-                    </div>
-                  )}
-
                   {/* Error Message */}
                   {submitError && (
                     <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-center">
@@ -189,39 +184,23 @@ const ContactSection = () => {
                   )}
 
                   {/* Submit Button */}
-                  {!isSubmitted && (
-                    <>
-                      <Button 
-                        type="submit" 
-                        disabled={isSubmitting}
-                        className="w-full bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold py-2.5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
-                      >
-                        {isSubmitting ? (
-                          <div className="flex items-center justify-center">
-                            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                            Sending...
-                          </div>
-                        ) : (
-                          <>📅 Send Message & Book Your Free Consultation</>
-                        )}
-                      </Button>
-                      <p id="submit-description" className="text-xs text-center text-cozy-brown/60">
-                        By submitting this form, you agree to receive email communications about your consultation. No spam, ever.
-                      </p>
-                    </>
-                  )}
-
-                  {/* Send Another Message Button */}
-                  {isSubmitted && (
-                    <Button 
-                      type="button" 
-                      onClick={() => setIsSubmitted(false)}
-                      variant="outline"
-                      className="w-full border-gentle-terracotta text-gentle-terracotta hover:bg-gentle-terracotta/10"
-                    >
-                      Send Another Message
-                    </Button>
-                  )}
+                  <Button 
+                    type="submit" 
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold py-2.5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? (
+                      <div className="flex items-center justify-center">
+                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                        Sending...
+                      </div>
+                    ) : (
+                      <>📅 Send Message & Book Your Free Consultation</>
+                    )}
+                  </Button>
+                  <p id="submit-description" className="text-xs text-center text-cozy-brown/60">
+                    By submitting this form, you agree to receive email communications about your consultation. No spam, ever.
+                  </p>
                 </form>
               </CardContent>
             </Card>
@@ -289,7 +268,8 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 };
 
