@@ -29,8 +29,8 @@ const ContactSection = () => {
       
       if (response.ok) {
         toast({
-          title: "Message sent successfully!",
-          description: "I'll respond within 24 hours to schedule your free consultation.",
+          title: "🎉 Your message is on its way!",
+          description: "Thanks for reaching out! I'll get back to you within 24 hours to schedule your free consultation.",
           variant: "success",
         });
         form.reset();
