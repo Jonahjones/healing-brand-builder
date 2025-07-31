@@ -28,7 +28,7 @@ const ContactSection = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* More compact header */}
-        <div className="text-center mb-8 sm:mb-12">          
+        <div className="text-center mb-6 sm:mb-8">          
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-cozy-brown mb-3 sm:mb-4">
             Ready to Make Real Progress? 
             <span className="block text-gentle-terracotta">Let's Connect.</span>
@@ -43,7 +43,7 @@ const ContactSection = () => {
           <div className="lg:col-span-2">
             <Card className="bg-white/70 backdrop-blur-sm border-2 border-soft-sage/20 shadow-xl overflow-hidden">
               <div className="h-1 bg-gradient-to-r from-gentle-terracotta to-earth-clay"></div>
-              <CardHeader className="bg-gradient-to-br from-gentle-terracotta/5 to-earth-clay/5 pb-4 sm:pb-6">
+              <CardHeader className="bg-gradient-to-br from-gentle-terracotta/5 to-earth-clay/5 pb-2 sm:pb-3">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-3">
                   <div className="w-10 h-10 bg-gentle-terracotta/20 rounded-xl flex items-center justify-center">
                     <Send className="w-5 h-5 text-gentle-terracotta" />
@@ -56,16 +56,16 @@ const ContactSection = () => {
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-4 sm:space-y-6 p-4 sm:p-6">
-                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              <CardContent className="space-y-3 sm:space-y-4 p-3 sm:p-4">
+                <form onSubmit={handleSubmit} className="space-y-2.5 sm:space-y-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                     <div className="space-y-1 sm:space-y-2">
                       <Label htmlFor="firstName" className="font-semibold text-cozy-brown text-xs uppercase tracking-wider">First Name *</Label>
                       <Input 
                         id="firstName" 
                         name="firstName"
                         placeholder="Your first name" 
-                        className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/80 backdrop-blur-sm rounded-lg py-2 text-sm"
+                        className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/80 backdrop-blur-sm rounded-lg py-1.5 text-sm h-9"
                         required
                         aria-required="true"
                       />
@@ -76,7 +76,7 @@ const ContactSection = () => {
                         id="lastName" 
                         name="lastName"
                         placeholder="Your last name" 
-                        className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/80 backdrop-blur-sm rounded-lg py-2 text-sm"
+                        className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/80 backdrop-blur-sm rounded-lg py-1.5 text-sm h-9"
                         required
                         aria-required="true"
                       />
@@ -117,8 +117,8 @@ const ContactSection = () => {
                       id="message" 
                       name="message"
                       placeholder="Share what you're comfortable with... anxiety, depression, life transitions, relationships, etc. This helps me understand how I can best support you."
-                      rows={3}
-                      className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/80 backdrop-blur-sm rounded-lg resize-none text-sm"
+                      rows={2}
+                      className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/80 backdrop-blur-sm rounded-lg resize-none text-sm py-1.5"
                       required
                       aria-required="true"
                       aria-describedby="message-description"
@@ -129,7 +129,7 @@ const ContactSection = () => {
                   <Button 
                     type="submit" 
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold py-2.5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
                       <div className="flex items-center justify-center">
