@@ -28,17 +28,17 @@ const ContactSection = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* More compact header */}
-        <div className="text-center mb-6 sm:mb-8">          
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-cozy-brown mb-3 sm:mb-4">
+        <div className="text-center mb-4 sm:mb-6">          
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-cozy-brown mb-2 sm:mb-3">
             Ready to Make Real Progress? 
             <span className="block text-gentle-terracotta">Let's Connect.</span>
           </h2>
-          <p className="text-base sm:text-lg text-cozy-brown/80 max-w-3xl mx-auto leading-relaxed">
-            Book your free 15-minute consultation to see if Zach's clear, honest coaching is the breakthrough you need. Limited spots available.
+          <p className="text-base sm:text-lg text-cozy-brown/80 max-w-4xl mx-auto">
+            Book your free 15-minute consultation to discover how Zach's clear, honest coaching can guide you toward meaningful progress.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
           {/* More compact contact form */}
           <div className="lg:col-span-2">
             <Card className="bg-white/70 backdrop-blur-sm border-2 border-soft-sage/20 shadow-xl overflow-hidden">
