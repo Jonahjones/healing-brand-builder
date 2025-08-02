@@ -34,7 +34,7 @@ const HeroSection = () => {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-3 sm:mb-4 leading-tight">
             <span className="text-cozy-brown block mb-1">Mental Health</span>
             <span className="text-transparent bg-gradient-to-r from-gentle-terracotta via-earth-clay to-cozy-brown bg-clip-text block">
-              Coaching That Gets
+              Therapy That Gets
             </span>
             <span className="text-gentle-terracotta block">Results</span>
           </h1>

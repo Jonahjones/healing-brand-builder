@@ -58,7 +58,7 @@ const Navigation = () => {
             className="text-lg sm:text-xl lg:text-2xl font-heading font-bold text-primary truncate hover:text-primary/80 transition-colors duration-300"
           >
             <span className="hidden sm:inline">Zach Rehbein-Jones, LCSW</span>
-            <span className="sm:hidden">Zach R-J, LCSW</span>
+            <span className="sm:hidden">Zach Rehbein-Jones, LCSW</span>
           </button>
           
           {/* Mobile menu button */}

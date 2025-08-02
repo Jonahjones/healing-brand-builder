@@ -58,7 +58,7 @@ const ContactSection = () => {
             <span className="block text-gentle-terracotta">Let's Connect.</span>
           </h2>
           <p className="text-base sm:text-lg text-cozy-brown/80 max-w-4xl mx-auto">
-            Book your free 15-minute consultation to discover how Zach's clear, honest coaching can guide you toward meaningful progress.
+            Book your free 15-minute consultation to discover how Zach's clear, honest therapy can guide you toward meaningful progress.
           </p>
         </div>
         
