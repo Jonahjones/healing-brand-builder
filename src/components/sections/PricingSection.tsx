@@ -4,9 +4,10 @@ import s from "./PricingSection.module.css";
 
 export default function PricingSection({ withId = true }: { withId?: boolean }) {
   return (
-    <section id={withId ? "rates" : undefined} className={`py-8 sm:py-12 bg-gradient-to-br from-soft-cream via-background to-soft-cream ${s.pricing}`}>
+    <section id={withId ? "rates" : undefined} data-pricing-root className={`py-8 sm:py-12 bg-gradient-to-br from-soft-cream via-background to-soft-cream ${s.pricing}`}>
       <div className={`max-w-6xl mx-auto px-4 sm:px-6 ${s.container}`}>
-        <header data-lead="pricing" className="text-center mb-8 sm:mb-10">
+        <div data-pricing-layout>
+        <header data-pricing-lead data-lead="pricing" className="text-center mb-8 sm:mb-10">
           {withId ? (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-foreground mb-3 sm:mb-4">
               Investment in Your <span className="text-success-green font-bold">Wellbeing</span>
@@ -22,7 +23,7 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
         </header>
 
         {/* More compact main pricing card */}
-        <div className="max-w-md mx-auto mb-8 sm:mb-10">
+        <div data-pricing-card className="max-w-md mx-auto mb-8 sm:mb-10">
           <Card className="bg-white border-2 border-success-green/20 shadow-xl hover:shadow-2xl transition-all duration-300 relative overflow-hidden price-card">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-success-green to-warm-sage"></div>
             <CardHeader className="text-center pt-4 sm:pt-6 pb-3 sm:pb-4 bg-gradient-to-br from-success-green/5 to-warm-sage/5">
@@ -59,7 +60,7 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
         </div>
 
         {/* Simplified payment options */}
-        <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8 ${s.pills}`}>
+        <div data-pricing-tiles className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8 ${s.pills}`}>
           <div className={`bg-white/60 backdrop-blur-sm rounded-lg p-3 sm:p-4 text-center border border-success-green/10 hover:border-success-green/30 transition-colors ${s.pill}`}>
             <DollarSign className="w-6 h-6 text-success-green mx-auto mb-2" />
             <h3 className="font-semibold text-sm text-foreground mb-1">Private Pay</h3>
@@ -84,7 +85,9 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
             <p className="text-xs text-muted-foreground">Based on financial need</p>
           </div>
         </div>
+        </div>
 
+        <section data-pricing-details>
         {/* Insurance information */}
         <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-success-green/20 max-w-4xl mx-auto">
           <h3 className="text-lg sm:text-xl font-bold text-foreground mb-3 sm:mb-4 text-center">Insurance & Payment Details</h3>
@@ -111,6 +114,7 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
             </div>
           </div>
         </div>
+        </section>
       </div>
     </section>
   );

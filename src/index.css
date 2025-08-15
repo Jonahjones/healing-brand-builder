@@ -31,9 +31,9 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Fallback; SetHeaderVar updates this dynamically */
-    --header-h: 72px;
-    --page-top-gap: clamp(4px, 1.2vw, 12px);
+  /* Fallback; SetHeaderVar updates this dynamically */
+  --header-h: 72px;
+  --page-top-gap: clamp(4px, 1.2vw, 12px);
     
     /* WCAG AA Compliant navy, teal, beige, sky blue, and white palette */
     --background: 0 0% 100%; /* #FFFFFF - Pure white background */
@@ -376,12 +376,82 @@ section[id] {
   overflow: visible !important;
 }
 
-/* Micro-tuning proportions (zero restyle, just spacing) */
 
-/* Pricing: keep price card snug beneath the lead */
-.page--pricing main > *:first-child + * {
-  margin-top: clamp(8px, 1.2vw, 14px);
+
+/* === Above-the-fold pricing layout === */
+
+/* Safe container width */
+:root { --mxw: min(1100px, calc(100vw - 2rem)); }
+
+/* Normalize top offset so header never clips; very small breathing room */
+.page--pricing main::before {
+  content: ""; 
+  display: block;
+  height: calc(var(--header-h) + 6px);
 }
+
+/* Above-the-fold grid */
+.page--pricing [data-pricing-layout] {
+  width: var(--mxw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;        /* lead+tiles | card */
+  grid-template-areas:
+    "lead card"
+    "tiles card";
+  align-items: start;
+  gap: 16px;
+}
+
+/* Map areas (no style change to inner elements) */
+.page--pricing [data-pricing-lead]  { grid-area: lead;  margin: 0; }
+.page--pricing [data-pricing-card]  { grid-area: card; }
+.page--pricing [data-pricing-tiles] { grid-area: tiles; }
+
+/* Make the four tiles a compact grid (inherits existing tile styles) */
+.page--pricing [data-pricing-tiles] {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 12px;
+}
+
+/* Keep the card visually snug to the lead */
+.page--pricing [data-pricing-card] > * {
+  margin-top: 0 !important;   /* avoid stacked gaps from inner wrappers */
+}
+
+/* Details live right under the above-the-fold grid */
+.page--pricing [data-pricing-details] {
+  width: var(--mxw);
+  margin: 18px auto 0;
+}
+
+/* Laptop & up fit test: prevent accidental oversized top margins */
+@media (min-width: 1024px) {
+  .page--pricing [data-pricing-lead] + * { margin-top: 8px !important; }
+}
+
+/* Tablet & mobile: revert to single-column stacking (unchanged style) */
+@media (max-width: 1023.98px) {
+  .page--pricing [data-pricing-layout] {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "lead"
+      "card"
+      "tiles";
+    gap: 14px;
+  }
+}
+
+/* Compact mode for really short screens */
+@media (max-height: 700px) and (min-width: 1024px) {
+  .page--pricing [data-pricing-layout] { gap: 12px; }
+  .page--pricing [data-pricing-tiles] { gap: 10px; }
+  /* Avoid giant top margins inside the card/lead */
+  .page--pricing [data-pricing-root] h2 { margin-bottom: .5rem; }
+}
+
+/* Micro-tuning proportions (zero restyle, just spacing) */
 
 /* Approach: reduce gap before the first row of cards and align block */
 .page--approach main > *:first-child + * {
