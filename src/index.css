@@ -31,9 +31,8 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-  /* Fallback; SetHeaderVar updates this dynamically */
+  /* Fallback; your SetHeaderVar updates this on load/resize */
   --header-h: 72px;
-  --page-top-extra: 14px;           /* "a bit more" space */
     
     /* WCAG AA Compliant navy, teal, beige, sky blue, and white palette */
     --background: 0 0% 100%; /* #FFFFFF - Pure white background */
@@ -351,23 +350,48 @@ All colors MUST be HSL.
   padding-top: 0 !important; 
 }
 
-/* Global bullet-proof header offset for Contact, Pricing, Approach pages */
+/* Contact page: reliable main padding approach */
 
-/* Apply offset directly to the section root so the header never clips it */
-.page--contact  section#contact,
-.page--pricing  section#rates,
-.page--approach section#approach,
-.page--contact  [data-contact-root],
-.page--pricing  [data-pricing-root],
-.page--approach [data-approach-root] {
-  padding-top: calc(var(--header-h) + var(--page-top-extra)) !important;
+/* 1) Contact: add the offset to the page's main so nothing clips */
+.page--contact main {
+  padding-top: calc(var(--header-h) + 16px) !important; /* tweak +/- as needed */
 }
 
-/* Make in-page anchor jumps land below the sticky header */
-section#contact,
+/* 2) Prevent double-padding if a section already had it */
+.page--contact section#contact,
+.page--contact [data-contact-root] {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* 3) Anchor jumps: land below the sticky header */
+.page--contact section#contact,
+.page--contact [data-contact-root],
+.page--contact h1,
+.page--contact h2,
+.page--contact [data-page-hero] {
+  scroll-margin-top: calc(var(--header-h) + 12px);
+}
+
+/* Pricing and Approach: same safety net */
+.page--pricing  main,
+.page--approach main { 
+  padding-top: calc(var(--header-h) + 16px) !important; 
+}
+
+/* Prevent double-padding on Pricing and Approach sections */
+.page--pricing section#rates,
+.page--pricing [data-pricing-root],
+.page--approach section#approach,
+.page--approach [data-approach-root] {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Anchor jumps for Pricing and Approach */
 section#rates,
 section#approach {
-  scroll-margin-top: calc(var(--header-h) + var(--page-top-extra));
+  scroll-margin-top: calc(var(--header-h) + 12px);
 }
 
 /* Guarantees those lead blocks render and aren't clipped */
