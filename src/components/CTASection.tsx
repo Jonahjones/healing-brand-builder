@@ -39,7 +39,16 @@ const ctaConfig = {
 
   const handleClick = () => {
     const contactElement = document.getElementById('contact');
-    contactElement?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (contactElement) {
+      const headerOffset = 80;
+      const elementPosition = contactElement.offsetTop;
+      const offsetPosition = elementPosition - headerOffset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
 
   return (

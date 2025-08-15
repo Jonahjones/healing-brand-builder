@@ -3,9 +3,7 @@ import { Check, DollarSign, Shield, CreditCard, Users } from "lucide-react";
 
 const RatesSection = () => {
   return (
-    <section className="py-8 sm:py-12 bg-gradient-to-br from-soft-cream via-background to-soft-cream">
-      {/* Scroll target positioned at the color break */}
-      <div id="rates" className="absolute -mt-12"></div>
+    <section id="rates" className="py-8 sm:py-12 bg-gradient-to-br from-soft-cream via-background to-soft-cream">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-8 sm:mb-10">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-foreground mb-3 sm:mb-4">
