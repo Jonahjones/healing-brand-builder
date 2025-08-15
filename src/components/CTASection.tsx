@@ -79,3 +79,12 @@ const ctaConfig = {
 };
 
 export default CTASection;
+            {config.buttonText}
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default CTASection;

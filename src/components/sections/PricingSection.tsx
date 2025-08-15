@@ -4,7 +4,7 @@ import s from "./PricingSection.module.css";
 
 export default function PricingSection({ withId = true }: { withId?: boolean }) {
   return (
-    <section id={withId ? "rates" : undefined} data-pricing-root className={`py-8 sm:py-12 bg-gradient-to-br from-soft-cream via-background to-soft-cream ${s.pricing}`}>
+    <section id={withId ? "rates" : undefined} data-page-hero data-pricing-root className={`py-8 sm:py-12 bg-gradient-to-br from-soft-cream via-background to-soft-cream ${s.pricing}`}>
       <div className={`max-w-6xl mx-auto px-4 sm:px-6 ${s.container}`}>
         <div data-pricing-layout>
         <header data-pricing-lead data-lead="pricing" className="text-center mb-8 sm:mb-10">

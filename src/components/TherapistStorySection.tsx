@@ -99,3 +99,12 @@ const TherapistStorySection = () => {
 };
 
 export default TherapistStorySection;
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default TherapistStorySection;

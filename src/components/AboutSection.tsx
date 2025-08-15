@@ -78,3 +78,27 @@ const AboutSection = () => {
 };
 
 export default AboutSection;
+                  const approachSection = document.getElementById('virtual-therapy');
+                  if (approachSection) {
+                    const headerOffset = 80;
+                    const elementPosition = approachSection.offsetTop;
+                    const offsetPosition = elementPosition - headerOffset;
+                    
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: 'smooth'
+                    });
+                  }
+                }}
+              >
+                📖 Read About My Approach
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutSection;

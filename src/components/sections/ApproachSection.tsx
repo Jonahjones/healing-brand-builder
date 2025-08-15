@@ -34,7 +34,7 @@ export default function ApproachSection({ withId = true }: { withId?: boolean })
   ];
 
   return (
-    <section id={withId ? "approach" : undefined} className="py-20 bg-soft-gray">
+    <section id={withId ? "approach" : undefined} data-page-hero className="py-20 bg-soft-gray">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header data-lead="approach" className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
