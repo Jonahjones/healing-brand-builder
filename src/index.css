@@ -33,7 +33,7 @@ All colors MUST be HSL.
   :root {
   /* Fallback; SetHeaderVar updates this dynamically */
   --header-h: 72px;
-  --page-top-gap: clamp(4px, 1.2vw, 12px);
+  --page-top-extra: 14px;           /* "a bit more" space */
     
     /* WCAG AA Compliant navy, teal, beige, sky blue, and white palette */
     --background: 0 0% 100%; /* #FFFFFF - Pure white background */
@@ -351,20 +351,23 @@ All colors MUST be HSL.
   padding-top: 0 !important; 
 }
 
-/* Insert a single spacer BEFORE content on routed pages */
-.page--pricing main::before,
-.page--approach main::before,
-.page--contact main::before,
-.page--about main::before,
-.page--specialties main::before {
-  content: "";
-  display: block;
-  height: calc(var(--header-h) + var(--page-top-gap));
+/* Global bullet-proof header offset for Contact, Pricing, Approach pages */
+
+/* Apply offset directly to the section root so the header never clips it */
+.page--contact  section#contact,
+.page--pricing  section#rates,
+.page--approach section#approach,
+.page--contact  [data-contact-root],
+.page--pricing  [data-pricing-root],
+.page--approach [data-approach-root] {
+  padding-top: calc(var(--header-h) + var(--page-top-extra)) !important;
 }
 
-/* Anchors across the site scroll to visible positions under sticky header */
-section[id] { 
-  scroll-margin-top: calc(var(--header-h) + 8px); 
+/* Make in-page anchor jumps land below the sticky header */
+section#contact,
+section#rates,
+section#approach {
+  scroll-margin-top: calc(var(--header-h) + var(--page-top-extra));
 }
 
 /* Guarantees those lead blocks render and aren't clipped */
@@ -383,17 +386,9 @@ section[id] {
 /* Safe container width */
 :root { --mxw: min(1100px, calc(100vw - 2rem)); }
 
-/* REMOVE old spacer to avoid double gaps */
-.page--pricing main::before { content: none !important; height: 0 !important; }
+/* OLD pricing spacer removed */
 
-/* Add offset at the real root of the Pricing content */
-.page--pricing section#rates,
-.page--pricing [data-pricing-root] {
-  padding-top: calc(var(--header-h, 72px) + 8px);  /* clears sticky header */
-}
-
-/* When jumping to #rates via anchor, stop under the header too */
-section#rates { scroll-margin-top: calc(var(--header-h, 72px) + 8px); }
+/* OLD pricing offset removed - will be replaced with global solution */
 
 /* Above-the-fold grid */
 .page--pricing [data-pricing-layout] {
@@ -457,6 +452,13 @@ section#rates { scroll-margin-top: calc(var(--header-h, 72px) + 8px); }
 }
 
 /* Micro-tuning proportions (zero restyle, just spacing) */
+
+/* Keep the first content block tucked under the lead on each page */
+.page--pricing  section#rates   > *:first-child + *,
+.page--approach section#approach > *:first-child + *,
+.page--contact  section#contact  > *:first-child + * {
+  margin-top: clamp(8px, 1.2vw, 16px);
+}
 
 /* Approach: reduce gap before the first row of cards and align block */
 .page--approach main > *:first-child + * {
