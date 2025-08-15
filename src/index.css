@@ -383,12 +383,17 @@ section[id] {
 /* Safe container width */
 :root { --mxw: min(1100px, calc(100vw - 2rem)); }
 
-/* Normalize top offset so header never clips; generous breathing room */
-.page--pricing main::before {
-  content: ""; 
-  display: block;
-  height: calc(var(--header-h) + 40px);
+/* REMOVE old spacer to avoid double gaps */
+.page--pricing main::before { content: none !important; height: 0 !important; }
+
+/* Add offset at the real root of the Pricing content */
+.page--pricing section#rates,
+.page--pricing [data-pricing-root] {
+  padding-top: calc(var(--header-h, 72px) + 8px);  /* clears sticky header */
 }
+
+/* When jumping to #rates via anchor, stop under the header too */
+section#rates { scroll-margin-top: calc(var(--header-h, 72px) + 8px); }
 
 /* Above-the-fold grid */
 .page--pricing [data-pricing-layout] {
