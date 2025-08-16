@@ -5,19 +5,17 @@
 
 /* Header spacer guard (moved above) */
 
-/* Our header spacer should never intercept clicks */
+/* Spacer on other pages continues to use ::before and stays non-interactive */
 .page--approach   main::before,
 .page--contact    main::before,
 .page--about      main::before,
-.page--specialties main::before {
-  content: "";
-  display: block;
+.page--specialties main::before{
+  content:""; display:block;
   height: calc(var(--header-h) + var(--page-top-gap, 10px));
-  pointer-events: none;                 /* critical */
+  pointer-events: none;
 }
 
-/* If anything left a global user-select: none, undo it for content areas */
-main, .page { user-select: text; }
+/* User selection guard moved below with other safety rules */
 
 /* Keep first-child stacking guard so spacing stays correct */
 .page main > *:first-child { margin-top: 0 !important; padding-top: 0 !important; }
@@ -30,53 +28,54 @@ main, .page { user-select: text; }
 .page--specialties main > *:first-child + *,
 .page--about       main > *:first-child + * { margin-top: clamp(10px, 1.4vw, 18px); }
 
-/* --- PRICING DESKTOP GRID, ATTR-BASED --- */
+/* Mobile/Tablet unchanged: stacked with our existing spacing guards */
+
+/* Desktop ≥992px: real two-column grid with explicit areas */
 @media (min-width: 992px){
-  .page--pricing main {
+  .page--pricing main{
     display: grid;
     grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+    grid-template-areas:
+      "hero hero"
+      "tiles session"
+      "details details";
     column-gap: clamp(16px, 2.4vw, 24px);
     row-gap: clamp(16px, 2.4vw, 24px);
-    align-items: start;
-    grid-auto-rows: min-content;
-  }
-  /* Hero always full width */
-  .page--pricing main > *:first-child {
-    grid-column: 1 / -1;
-    margin-bottom: clamp(8px, 1.2vw, 14px) !important;
+
+    /* IMPORTANT: use padding for header offset on grid pages */
+    padding-top: calc(var(--header-h) + var(--page-top-gap, 10px));
   }
 
-  /* Lock positions by role (works regardless of DOM order) */
-  .page--pricing [data-role="pricing-tiles"]   { grid-column: 1; align-self: start; }
-  .page--pricing [data-role="session-pricing"] { grid-column: 2; align-self: start; }
-  .page--pricing [data-role="details"]         { grid-column: 1 / -1; }
+  /* Kill the phantom first grid row created by ::before on grid pages */
+  .page--pricing main::before{ content:none; }
+
+  /* Area assignments (DOM order doesn't matter) */
+  .page--pricing [data-role="hero"]            { grid-area: hero; }
+  .page--pricing [data-role="pricing-tiles"]   { grid-area: tiles; }
+  .page--pricing [data-role="session-pricing"] { grid-area: session; }
+  .page--pricing [data-role="details"]         { grid-area: details; }
+
+  /* Nuke harmful top margins inside these blocks */
+  .page--pricing [data-role="pricing-tiles"],
+  .page--pricing [data-role="session-pricing"],
+  .page--pricing [data-role="details"]{
+    margin-top: 0 !important;
+    align-self: start;
+  }
+
+  /* Keep a modest gap after the hero */
+  .page--pricing [data-role="hero"]{ margin-bottom: clamp(8px, 1.2vw, 14px) !important; }
 }
 
-/* --- KILL THE BLANK SPACE: margins that shove tiles down --- */
-.page--pricing [data-role="pricing-tiles"],
-.page--pricing [data-role="session-pricing"],
-.page--pricing [data-role="details"]{
-  margin-top: 0 !important;
-}
-
-/* Keep the compact rhythm after hero on all viewports */
-.page--pricing main > *:first-child + * {
-  margin-top: clamp(8px, 1.2vw, 14px) !important;
-}
-
-/* Preserve header-safe offset from earlier work */
-.page--pricing main::before{
-  content:""; display:block;
-  height: calc(var(--header-h) + var(--page-top-gap, 10px));
-  pointer-events: none;
-}
-
-/* Keep anchors visible under sticky header */
+/* Global anchors still account for sticky header */
 section[id]{ scroll-margin-top: calc(var(--header-h) + 8px); }
 
-/* Guard against any overlay blocking clicks (consolidated above) */
-#react-hot-toast { pointer-events: none; } /* library already sets this; ensure it on container */
-#react-hot-toast * { pointer-events: auto; } /* interactive toast content still clickable */
+/* Safety: if something set user-select: none, undo it */
+main, .page { user-select: text; }
+
+/* Toast container should not block the page; content remains clickable */
+#react-hot-toast{ pointer-events: none; }
+#react-hot-toast *{ pointer-events: auto; }
 
 /* Toast guard against translucency from old styles */
 #react-hot-toast [role="status"] {

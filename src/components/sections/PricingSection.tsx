@@ -7,7 +7,7 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
     <section id={withId ? "rates" : undefined} data-page-hero data-pricing-root className={`py-8 sm:py-12 bg-gradient-to-br from-soft-cream via-background to-soft-cream ${s.pricing}`}>
       <div className={`max-w-6xl mx-auto px-4 sm:px-6 ${s.container}`}>
         <div data-pricing-layout>
-        <header data-pricing-lead data-lead="pricing" className="text-center mb-8 sm:mb-10">
+        <header data-pricing-lead data-lead="pricing" data-role="hero" className="text-center mb-8 sm:mb-10">
           {withId ? (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-foreground mb-3 sm:mb-4">
               Investment in Your <span className="text-success-green font-bold">Wellbeing</span>
