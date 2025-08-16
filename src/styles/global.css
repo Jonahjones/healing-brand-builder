@@ -3,10 +3,9 @@
 :root { --header-h: 72px; }
 :root { --page-top-gap: clamp(4px, 1.2vw, 12px); }
 
-/* Stop first child from stacking margins with our spacer */
-.page main > *:first-child { margin-top: 0 !important; padding-top: 0 !important; }
+/* Header spacer guard (moved above) */
 
-/* Insert a single spacer before content on routed pages */
+/* Our header spacer should never intercept clicks */
 .page--pricing    main::before,
 .page--approach   main::before,
 .page--contact    main::before,
@@ -14,8 +13,15 @@
 .page--specialties main::before {
   content: "";
   display: block;
-  height: calc(var(--header-h) + var(--page-top-gap));
+  height: calc(var(--header-h) + var(--page-top-gap, 10px));
+  pointer-events: none;                 /* critical */
 }
+
+/* If anything left a global user-select: none, undo it for content areas */
+main, .page { user-select: text; }
+
+/* Keep first-child stacking guard so spacing stays correct */
+.page main > *:first-child { margin-top: 0 !important; padding-top: 0 !important; }
 
 /* Anchor visibility under sticky header */
 section[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
@@ -27,11 +33,16 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
 .page--specialties main > *:first-child + *,
 .page--about       main > *:first-child + * { margin-top: clamp(10px, 1.4vw, 18px); }
 
-/* Optional desktop two column on Pricing, attribute based and safe */
+/* Safe pricing grid - only activates when explicit roles exist */
 @media (min-width: 992px){
-  .page--pricing [data-role="pricing-tiles"] { grid-column: 1; }
-  .page--pricing [data-role="session-pricing"] { grid-column: 2; }
-  .page--pricing main { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(16px, 2.4vw, 24px); align-items: start; }
+  .page--pricing main:has([data-role="pricing-tiles"]):has([data-role="session-pricing"]) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(16px, 2.4vw, 24px);
+    align-items: start;
+  }
+  .page--pricing main [data-role="pricing-tiles"]   { grid-column: 1; }
+  .page--pricing main [data-role="session-pricing"] { grid-column: 2; }
 }
 
 /* Toast guard against translucency from old styles */
