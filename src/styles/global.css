@@ -1,13 +1,12 @@
 /* Global CSS - Imported once before CSS modules */
 
 :root { --header-h: 72px; }
-:root { --page-top-gap: clamp(4px, 1.2vw, 12px); }
+:root { --page-top-gap: clamp(8px, 1.4vw, 16px); }
 
 /* Header spacer guard (moved above) */
 
 /* Spacer on other pages continues to use ::before and stays non-interactive */
 .page--approach   main::before,
-.page--contact    main::before,
 .page--about      main::before,
 .page--specialties main::before{
   content:""; display:block;
@@ -17,65 +16,65 @@
 
 /* User selection guard moved below with other safety rules */
 
-/* Keep first-child stacking guard so spacing stays correct */
-.page main > *:first-child { margin-top: 0 !important; padding-top: 0 !important; }
+/* First-child guard moved below with baseline reset */
 
 /* Anchor visibility under sticky header (moved below) */
 
-/* Micro rhythm only (pricing moved below with grid) */
+/* Micro rhythm only (pricing and contact moved below) */
 .page--approach   main > *:first-child + * { margin-top: clamp(10px, 1.4vw, 18px); }
-.page--contact    main > *:first-child + * { margin-top: clamp(8px, 1.2vw, 14px); }
 .page--specialties main > *:first-child + *,
 .page--about       main > *:first-child + * { margin-top: clamp(10px, 1.4vw, 18px); }
 
-/* Mobile/Tablet unchanged: stacked with our existing spacing guards */
+/* ====== SQUARE-ONE RESET: SAFE BASELINE ====== */
 
-/* Desktop ≥992px: real two-column grid with explicit areas */
-@media (min-width: 992px){
-  .page--pricing main{
-    display: grid;
-    grid-template-columns: minmax(0,1fr) minmax(0,1fr);
-    grid-template-areas:
-      "hero hero"
-      "tiles session"
-      "details details";
-    column-gap: clamp(16px, 2.4vw, 24px);
-    row-gap: clamp(16px, 2.4vw, 24px);
-
-    /* IMPORTANT: use padding for header offset on grid pages */
-    padding-top: calc(var(--header-h) + var(--page-top-gap, 10px));
-  }
-
-  /* Kill the phantom first grid row created by ::before on grid pages */
-  .page--pricing main::before{ content:none; }
-
-  /* Area assignments (DOM order doesn't matter) */
-  .page--pricing [data-role="hero"]            { grid-area: hero; }
-  .page--pricing [data-role="pricing-tiles"]   { grid-area: tiles; }
-  .page--pricing [data-role="session-pricing"] { grid-area: session; }
-  .page--pricing [data-role="details"]         { grid-area: details; }
-
-  /* Nuke harmful top margins inside these blocks */
-  .page--pricing [data-role="pricing-tiles"],
-  .page--pricing [data-role="session-pricing"],
-  .page--pricing [data-role="details"]{
-    margin-top: 0 !important;
-    align-self: start;
-  }
-
-  /* Keep a modest gap after the hero */
-  .page--pricing [data-role="hero"]{ margin-bottom: clamp(8px, 1.2vw, 14px) !important; }
+/* Contact & Pricing: give real padding instead of ghost pseudo-elements */
+.page--contact main,
+.page--pricing main {
+  padding-top: calc(var(--header-h) + var(--page-top-gap));
+}
+.page--contact main::before,
+.page--pricing main::before {
+  content: none !important;   /* kill ghost grid items */
 }
 
-/* Global anchors still account for sticky header */
-section[id]{ scroll-margin-top: calc(var(--header-h) + 8px); }
+/* Global first-child guard so heroes never double-pad */
+.page main > *:first-child { margin-top: 0 !important; padding-top: 0 !important; }
 
-/* Safety: if something set user-select: none, undo it */
+/* Sitewide hash anchors land below sticky header */
+section[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
+
+/* Ensure nothing blocks interaction */
 main, .page { user-select: text; }
+#react-hot-toast { pointer-events: none; }      /* container non-interactive */
+#react-hot-toast * { pointer-events: auto; }    /* toast buttons still clickable */
 
-/* Toast container should not block the page; content remains clickable */
-#react-hot-toast{ pointer-events: none; }
-#react-hot-toast *{ pointer-events: auto; }
+/* ====== PRICING: SINGLE-COLUMN, CENTERED, TIDY RHYTHM ====== */
+
+/* Hard cap so content never "floats off" wide screens */
+.page--pricing main > * { width: min(100%, 1120px); margin-inline: auto; }
+
+/* Ensure the 3 known blocks don't carry random top margins */
+.page--pricing [data-role="pricing-tiles"],
+.page--pricing [data-role="session-pricing"],
+.page--pricing [data-role="details"] {
+  margin-top: 0 !important;
+}
+
+/* Simple rhythm after hero (applies no matter the block order) */
+.page--pricing main > *:first-child + * { margin-top: clamp(16px, 2.4vw, 24px) !important; }
+.page--pricing main > * + *             { margin-top: clamp(16px, 2.4vw, 24px); }
+
+/* Small guard: if tiles have internal negative margins, neutralize */
+.page--pricing [data-role="pricing-tiles"] > * { margin-top: 0; }
+
+/* OPTIONAL: when you're ready later, we can add a two-column that's bulletproof.
+   For now, keep everything stacked so it never breaks. */
+
+/* ====== CONTACT: CLEAN STACK ====== */
+
+.page--contact main > * { width: min(100%, 1120px); margin-inline: auto; }
+.page--contact main > *:first-child + * { margin-top: clamp(16px, 2.4vw, 24px) !important; }
+.page--contact main > * + *             { margin-top: clamp(16px, 2.4vw, 24px); }
 
 /* Toast guard against translucency from old styles */
 #react-hot-toast [role="status"] {
