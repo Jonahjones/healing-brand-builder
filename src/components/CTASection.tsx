@@ -39,7 +39,16 @@ const ctaConfig = {
 
   const handleClick = () => {
     const contactElement = document.getElementById('contact');
-    contactElement?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (contactElement) {
+      const headerOffset = 80;
+      const elementPosition = contactElement.offsetTop;
+      const offsetPosition = elementPosition - headerOffset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
 
   return (
@@ -61,6 +70,15 @@ const ctaConfig = {
             className="font-bold text-xl px-12 py-6 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-1 min-w-[280px]"
           >
             <ButtonIcon className="w-6 h-6 mr-3" />
+            {config.buttonText}
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default CTASection;
             {config.buttonText}
           </Button>
         </div>

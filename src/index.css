@@ -5,7 +5,6 @@
 /* Enhanced smooth scrolling behavior */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 4.5rem; /* Account for fixed navigation height */
 }
 
 /* Additional smooth scroll enhancement for better performance */
@@ -13,10 +12,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Smooth transitions for section changes */
-section {
-  scroll-margin-top: 4.5rem;
-}
+
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
@@ -24,6 +20,22 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* Fallback; JS (below) will set the true value */
+    --header-h: 72px;           /* typical sticky header height */
+    --page-top-extra: 12px;     /* breathing room: tweak to taste */
+    
+    /* Ambient, matches Specialties "soft beige/cream" look */
+    --ambient-bg:
+      radial-gradient(900px 600px at 85% -10%, rgba(119,114,101,.08) 0%, rgba(119,114,101,0) 60%),
+      radial-gradient(600px 400px at 10% 15%, rgba(82,136,155,.08) 0%, rgba(82,136,155,0) 60%),
+      #F7F4EF;
+
+    /* Card surface + borders/shadow to match Specialties */
+    --card-surface: #FCFBF8;
+    --card-border: rgba(20, 23, 28, 0.08);
+    --card-shadow: 0 12px 24px rgba(18, 20, 23, 0.08);
+    --card-radius: 16px;
+    
     /* WCAG AA Compliant navy, teal, beige, sky blue, and white palette */
     --background: 0 0% 100%; /* #FFFFFF - Pure white background */
     --foreground: 218 30% 26%; /* #2F4156 - Navy for body text, high contrast */
@@ -330,4 +342,172 @@ All colors MUST be HSL.
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
+}
+
+/* ====== ROBUST HEADER-SAFE OFFSET SYSTEM ====== */
+
+/* Always make anchor jumps stop below the sticky header */
+html { 
+  scroll-padding-top: calc(var(--header-h) + var(--page-top-extra)); 
+}
+
+/* Insert a single spacer BEFORE page content. This is bullet-proof because it
+   targets the route wrapper itself, not inner sections that may change. */
+.page--pricing::before,
+.page--contact::before,
+.page--approach::before {
+  content: "";
+  display: block;
+  height: calc(var(--header-h) + var(--page-top-extra));
+}
+
+/* Give the entire page the same ambient background */
+.page--specialties,
+.page--approach,
+.page--pricing,
+.page--contact {
+  background: var(--ambient-bg);
+}
+
+/* Make cards on Approach/Pricing match Specialties cards */
+.page--approach .card,
+.page--pricing .card {
+  background: var(--card-surface);
+  border: 1px solid var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+}
+
+/* If your card component uses a different class, keep this too */
+.page--approach .surface,
+.page--pricing .surface {
+  background: var(--card-surface);
+  border: 1px solid var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+}
+
+/* Remove any pseudo-spacers that paint white */
+.page--contact::before,
+.page--pricing::before,
+.page--approach::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* Put the header offset INSIDE the first hero block on each page */
+.page--contact   [data-page-hero],
+.page--pricing   [data-page-hero],
+.page--approach  [data-page-hero] {
+  padding-top: calc(var(--header-h) + var(--page-top-extra));
+  scroll-margin-top: calc(var(--header-h) + var(--page-top-extra));
+  /* Ensure the hero paints the ambient background (so no white band shows) */
+  background: transparent; /* keep transparent so the page ambient shows through */
+}
+
+/* Ensure there's no extra white margin at the very top */
+.page--contact  > *:first-child,
+.page--pricing  > *:first-child,
+.page--approach > *:first-child {
+  margin-top: 0 !important;
+}
+
+/* Consistent vertical rhythm */
+.page--approach [data-page-hero],
+.page--pricing  [data-page-hero],
+.page--contact  [data-page-hero] {
+  padding-bottom: 24px;
+}
+
+/* Standardize section gaps below the hero */
+.page--approach section + section,
+.page--pricing  section + section,
+.page--contact  section + section {
+  margin-top: 48px;
+}
+
+/* ====== PAGE-SPECIFIC LAYOUTS ====== */
+
+/* === Above-the-fold pricing layout === */
+
+/* Safe container width */
+:root { --mxw: min(1100px, calc(100vw - 2rem)); }
+
+/* Above-the-fold grid */
+.page--pricing [data-pricing-layout] {
+  width: var(--mxw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;        /* lead+tiles | card */
+  grid-template-areas:
+    "lead card"
+    "tiles card";
+  align-items: start;
+  gap: 16px;
+}
+
+/* Map areas (no style change to inner elements) */
+.page--pricing [data-pricing-lead]  { grid-area: lead;  margin: 0; }
+.page--pricing [data-pricing-card]  { grid-area: card; }
+.page--pricing [data-pricing-tiles] { grid-area: tiles; }
+
+/* Make the four tiles a compact grid (inherits existing tile styles) */
+.page--pricing [data-pricing-tiles] {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 12px;
+}
+
+/* Keep the card visually snug to the lead */
+.page--pricing [data-pricing-card] > * {
+  margin-top: 0 !important;   /* avoid stacked gaps from inner wrappers */
+}
+
+/* Details live right under the above-the-fold grid */
+.page--pricing [data-pricing-details] {
+  width: var(--mxw);
+  margin: 18px auto 0;
+}
+
+/* Laptop & up fit test: prevent accidental oversized top margins */
+@media (min-width: 1024px) {
+  .page--pricing [data-pricing-lead] + * { margin-top: 8px !important; }
+}
+
+/* Tablet & mobile: revert to single-column stacking (unchanged style) */
+@media (max-width: 1023.98px) {
+  .page--pricing [data-pricing-layout] {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "lead"
+      "card"
+      "tiles";
+    gap: 14px;
+  }
+}
+
+/* Compact mode for really short screens */
+@media (max-height: 700px) and (min-width: 1024px) {
+  .page--pricing [data-pricing-layout] { gap: 12px; }
+  .page--pricing [data-pricing-tiles] { gap: 10px; }
+  /* Avoid giant top margins inside the card/lead */
+  .page--pricing [data-pricing-root] h2 { margin-bottom: .5rem; }
+}
+
+/* ====== OPTIONAL MICRO RHYTHM TWEAKS ====== */
+
+/* Slight nudge from lead → first content block */
+.page--pricing  > *:first-child + * ,
+.page--contact  > *:first-child + * ,
+.page--approach > *:first-child + * {
+  margin-top: clamp(8px, 1.2vw, 16px);
+}
+
+/* Additional micro-tuning for specific pages */
+.page--specialties > *:first-child + * {
+  margin-top: clamp(10px, 1.4vw, 18px);
+}
+
+.page--about > *:first-child + * {
+  margin-top: clamp(10px, 1.4vw, 18px);
 }

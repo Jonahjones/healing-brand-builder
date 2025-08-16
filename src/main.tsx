@@ -1,5 +1,21 @@
+import React from "react";
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
+import { HelmetProvider } from "react-helmet-async";
+import { DevErrorBoundary } from "./DevErrorBoundary";
 
-createRoot(document.getElementById("root")!).render(<App />);
+// OPTIONAL: kill any old SW that might be serving stale JS
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.getRegistrations().then(rs => rs.forEach(r => r.unregister()));
+}
+
+createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <HelmetProvider>
+      <DevErrorBoundary>
+        <App />
+      </DevErrorBoundary>
+    </HelmetProvider>
+  </React.StrictMode>
+);

@@ -34,14 +34,62 @@ const AboutSection = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 className="bg-action-primary hover:bg-action-primary-hover text-action-primary-foreground px-8 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    const headerOffset = 80;
+                    const elementPosition = contactSection.offsetTop;
+                    const offsetPosition = elementPosition - headerOffset;
+                    
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: 'smooth'
+                    });
+                  }
+                }}
               >
                 🤝 See If We're a Good Fit
               </Button>
               <Button 
                 variant="outline" 
                 className="border-action-primary text-action-primary hover:bg-action-primary/10 px-8 py-3 rounded-lg transition-all duration-300"
-                onClick={() => document.getElementById('approach')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => {
+                  const approachSection = document.getElementById('virtual-therapy');
+                  if (approachSection) {
+                    const headerOffset = 80;
+                    const elementPosition = approachSection.offsetTop;
+                    const offsetPosition = elementPosition - headerOffset;
+                    
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: 'smooth'
+                    });
+                  }
+                }}
+              >
+                📖 Read About My Approach
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutSection;
+                  const approachSection = document.getElementById('virtual-therapy');
+                  if (approachSection) {
+                    const headerOffset = 80;
+                    const elementPosition = approachSection.offsetTop;
+                    const offsetPosition = elementPosition - headerOffset;
+                    
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: 'smooth'
+                    });
+                  }
+                }}
               >
                 📖 Read About My Approach
               </Button>

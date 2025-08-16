@@ -75,7 +75,16 @@ const HeroSection = () => {
                 className="group relative overflow-hidden bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white border-0 font-bold text-sm sm:text-base px-8 sm:px-10 py-3 sm:py-4 rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-1 hover:scale-105"
                 onClick={() => {
                   const contactSection = document.getElementById('contact');
-                  contactSection?.scrollIntoView({ behavior: 'smooth' });
+                  if (contactSection) {
+                    const headerOffset = 80;
+                    const elementPosition = contactSection.offsetTop;
+                    const offsetPosition = elementPosition - headerOffset;
+                    
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: 'smooth'
+                    });
+                  }
                 }}
               >
                 <span className="relative z-10 flex items-center">
@@ -89,7 +98,16 @@ const HeroSection = () => {
                 className="border-2 border-cozy-brown/30 bg-white/90 backdrop-blur-sm text-cozy-brown hover:bg-cozy-brown hover:text-white font-bold text-sm sm:text-base px-6 py-3 sm:py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                 onClick={() => {
                   const contactSection = document.getElementById('contact');
-                  contactSection?.scrollIntoView({ behavior: 'smooth' });
+                  if (contactSection) {
+                    const headerOffset = 80;
+                    const elementPosition = contactSection.offsetTop;
+                    const offsetPosition = elementPosition - headerOffset;
+                    
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: 'smooth'
+                    });
+                  }
                 }}
               >
                 🤝 See If We're a Good Fit
