@@ -1,49 +1,28 @@
-// src/components/SmoothAnchorOffset.tsx
 "use client";
 import { useEffect } from "react";
 
-/**
- * Smoothly scrolls to in-page anchors while accounting for the sticky header.
- * If you already use CSS `scroll-padding-top`, you can delete this component
- * and its usage entirely.
- */
 export default function SmoothAnchorOffset() {
   useEffect(() => {
-    const header = document.querySelector("header") as HTMLElement | null;
+    const header = document.querySelector("header");
+    const headerH = () => (header ? (header as HTMLElement).offsetHeight : 0);
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    const headerH = () => {
-      const cssVar = getComputedStyle(document.documentElement)
-        .getPropertyValue("--header-h")
-        .trim();
-      const parsed = parseInt(cssVar, 10);
-      if (!Number.isNaN(parsed) && parsed > 0) return parsed;
-      return header?.offsetHeight ?? 0;
-    };
-
-    const onClick = (e: Event) => {
+    const click = (e: Event) => {
       const a = e.currentTarget as HTMLAnchorElement;
       const href = a.getAttribute("href") || "";
       if (!href.startsWith("#")) return;
-
       const id = href.slice(1);
-      if (!id) return;
-
-      const el = document.getElementById(id);
+      const el = id ? document.getElementById(id) : null;
       if (!el) return;
-
       e.preventDefault();
-      const y = window.scrollY + el.getBoundingClientRect().top - headerH() - 8;
-      window.scrollTo({ top: y, behavior: "smooth" });
+      const y = el.getBoundingClientRect().top + window.scrollY - headerH() - 8;
+      window.scrollTo({ top: y, behavior: prefersReduced ? "auto" : "smooth" });
       history.pushState(null, "", `#${id}`);
     };
 
-    const links = Array.from(
-      document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]:not([href="#"])')
-    );
-    links.forEach((l) => l.addEventListener("click", onClick));
-
-    return () => links.forEach((l) => l.removeEventListener("click", onClick));
+    const anchors = Array.from(document.querySelectorAll('a[href^="#"]')) as HTMLAnchorElement[];
+    anchors.forEach(a => a.addEventListener("click", click));
+    return () => anchors.forEach(a => a.removeEventListener("click", click));
   }, []);
-
   return null;
 }

@@ -1,5 +1,4 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
+// Using ToastProvider instead of individual toasters
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -13,28 +12,30 @@ import NotFound from "./pages/NotFound";
 import Navigation from "./components/Navigation";
 import SetHeaderVar from "./components/SetHeaderVar";
 import { ToastProvider } from "./components/ToastProvider";
+import SkipLink from "./components/SkipLink";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
       <BrowserRouter>
         <div className="min-h-screen">
           <SetHeaderVar />
-          <ToastProvider />
+          <SkipLink />
           <Navigation />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/specialties" element={<Specialties />} />
-            <Route path="/approach" element={<Approach />} />
-            <Route path="/pricing" element={<Pricing />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <main id="main">
+            <ToastProvider />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/specialties" element={<Specialties />} />
+              <Route path="/approach" element={<Approach />} />
+              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
         </div>
       </BrowserRouter>
     </TooltipProvider>

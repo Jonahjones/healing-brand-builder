@@ -6,10 +6,12 @@ import SpecialtiesSection from "@/components/sections/SpecialtiesSection";
 import PricingSection from "@/components/sections/PricingSection";
 import ContactSection from "@/components/sections/ContactSection";
 import SmoothAnchorOffset from "@/components/SmoothAnchorOffset";
+import StructuredData from "@/seo/StructuredData";
 
 const Home = () => {
   return (
     <main>
+      <StructuredData url="https://resilientmindcounseling.info/" name="Home" isHome={true} />
       <SmoothAnchorOffset />
       <HeroSection />
       <AboutSection />

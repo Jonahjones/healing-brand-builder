@@ -1,6 +1,7 @@
 import React from "react";
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
+import './styles/global.css'
 import './index.css'
 import { HelmetProvider } from "react-helmet-async";
 import { DevErrorBoundary } from "./DevErrorBoundary";

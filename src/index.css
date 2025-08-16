@@ -345,32 +345,7 @@ All colors MUST be HSL.
 }
 
 /* ====== HEADER SAFE OFFSET SYSTEM ====== */
-
-/* Remove any leftover top spacing on the first block so gaps do not stack */
-.page main > *:first-child { margin-top: 0 !important; padding-top: 0 !important; }
-
-/* Insert a single spacer before content on routed pages */
-.page--pricing main::before,
-.page--approach main::before,
-.page--contact main::before,
-.page--about main::before,
-.page--specialties main::before {
-  content: "";
-  display: block;
-  height: calc(var(--header-h) + var(--page-top-gap));
-}
-
-/* Anchors across the site scroll to visible positions under the sticky header */
-section[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
-
-/* Lead blocks must render and not be clipped */
-.page--pricing  [data-lead="pricing"],
-.page--approach [data-lead="approach"],
-.page--contact  [data-lead="contact"] {
-  display: block !important;
-  visibility: visible !important;
-  overflow: visible !important;
-}
+/* Moved to src/styles/global.css for proper import order */
 
 /* ====== PAGE-SPECIFIC LAYOUTS ====== */
 
@@ -441,16 +416,4 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
 }
 
 /* ====== MICRO TUNING PROPORTIONS ====== */
-
-/* Pricing: keep price card snug beneath the lead */
-.page--pricing main > *:first-child + * { margin-top: clamp(8px, 1.2vw, 14px); }
-
-/* Approach: reduce the gap before the first content block */
-.page--approach main > *:first-child + * { margin-top: clamp(10px, 1.4vw, 18px); }
-
-/* Contact: small nudge so form and cards feel connected to the lead */
-.page--contact main > *:first-child + * { margin-top: clamp(8px, 1.2vw, 14px); }
-
-/* Specialties and About: tiny rhythm tighten, same look */
-.page--specialties main > *:first-child + *,
-.page--about       main > *:first-child + * { margin-top: clamp(10px, 1.4vw, 18px); }
+/* Moved to src/styles/global.css for proper import order */

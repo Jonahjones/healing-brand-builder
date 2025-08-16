@@ -9,10 +9,10 @@ export default function SetHeaderVar() {
     };
     set();
     addEventListener("resize", set);
-    const ro = new ResizeObserver(set);
     const header = document.querySelector("header");
-    if (header) ro.observe(header);
-    return () => { removeEventListener("resize", set); ro.disconnect(); };
+    const ro = header ? new ResizeObserver(set) : null;
+    if (header) ro?.observe(header);
+    return () => { removeEventListener("resize", set); ro?.disconnect(); };
   }, []);
   return null;
 }

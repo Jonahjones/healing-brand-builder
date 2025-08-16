@@ -1,6 +1,7 @@
 // src/pages/Approach.tsx
 import { Helmet } from "react-helmet-async";
 import ApproachSection from "@/components/sections/ApproachSection";
+import StructuredData from "@/seo/StructuredData";
 
 export default function Approach() {
   return (
@@ -14,6 +15,7 @@ export default function Approach() {
         <link rel="canonical" href="https://resilientmindcounseling.info/approach/" />
       </Helmet>
 
+      <StructuredData url="https://resilientmindcounseling.info/approach/" name="Approach" />
       <div className="page page--approach">
         <ApproachSection withId={false} />
       </div>

@@ -1,0 +1,53 @@
+/* Global CSS - Imported once before CSS modules */
+
+:root { --header-h: 72px; }
+:root { --page-top-gap: clamp(4px, 1.2vw, 12px); }
+
+/* Stop first child from stacking margins with our spacer */
+.page main > *:first-child { margin-top: 0 !important; padding-top: 0 !important; }
+
+/* Insert a single spacer before content on routed pages */
+.page--pricing    main::before,
+.page--approach   main::before,
+.page--contact    main::before,
+.page--about      main::before,
+.page--specialties main::before {
+  content: "";
+  display: block;
+  height: calc(var(--header-h) + var(--page-top-gap));
+}
+
+/* Anchor visibility under sticky header */
+section[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
+
+/* Micro rhythm only */
+.page--pricing    main > *:first-child + * { margin-top: clamp(8px, 1.2vw, 14px); }
+.page--approach   main > *:first-child + * { margin-top: clamp(10px, 1.4vw, 18px); }
+.page--contact    main > *:first-child + * { margin-top: clamp(8px, 1.2vw, 14px); }
+.page--specialties main > *:first-child + *,
+.page--about       main > *:first-child + * { margin-top: clamp(10px, 1.4vw, 18px); }
+
+/* Optional desktop two column on Pricing, attribute based and safe */
+@media (min-width: 992px){
+  .page--pricing [data-role="pricing-tiles"] { grid-column: 1; }
+  .page--pricing [data-role="session-pricing"] { grid-column: 2; }
+  .page--pricing main { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(16px, 2.4vw, 24px); align-items: start; }
+}
+
+/* Toast guard against translucency from old styles */
+#react-hot-toast [role="status"] {
+  background: #fff !important;
+  backdrop-filter: none !important;
+  border-radius: 16px;
+  border: 1px solid rgba(16,24,40,.08);
+  box-shadow: 0 10px 30px rgba(16,24,40,.12);
+}
+
+/* Skip link accessibility */
+.skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+.skip-link:focus {
+  position: fixed; left: 12px; top: calc(var(--header-h,72px) + 12px);
+  width: auto; height: auto; background: #fff; color: #111; padding: 8px 12px; border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.15); z-index: 10000;
+}
+:focus-visible { outline: 2px solid #111; outline-offset: 2px; }
