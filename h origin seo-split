@@ -1,0 +1,5 @@
+[33m8df4c18[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mseo-split[m[33m, [m[1;31morigin/seo-split[m[33m)[m Implement robust header spacing system and unified page styling
+[33m79a2527[m fix: implement main padding approach for reliable header clearance
+[33m3245f26[m feat: comprehensive header offset solution for Contact, Pricing, Approach
+[33m923b249[m fix(pricing): use direct section offset instead of main::before spacer
+[33md8da362[m fix(pricing): increase header clearance to prevent title cutoff

@@ -6,8 +6,8 @@ import { HelmetProvider } from "react-helmet-async";
 import { DevErrorBoundary } from "./DevErrorBoundary";
 
 // OPTIONAL: kill any old SW that might be serving stale JS
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.getRegistrations().then(rs => rs.forEach(r => r.unregister()));
+if (typeof window !== "undefined" && "serviceWorker" in navigator) {
+  navigator.serviceWorker.getRegistrations().then(rs => rs.forEach(r => r.unregister())).catch(() => {});
 }
 
 createRoot(document.getElementById("root")!).render(
