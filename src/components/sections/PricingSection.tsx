@@ -87,7 +87,7 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
 
         <section data-pricing-details>
         {/* Insurance information */}
-        <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-success-green/20 max-w-4xl mx-auto">
+        <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-success-green/20 max-w-4xl mx-auto" data-role="details">
           <h3 className="text-lg sm:text-xl font-bold text-foreground mb-3 sm:mb-4 text-center">Insurance & Payment Details</h3>
           
           <div className={`grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 ${s.panels}`}>
