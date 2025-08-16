@@ -12,6 +12,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Navigation from "./components/Navigation";
 import SetHeaderVar from "./components/SetHeaderVar";
+import { ToastProvider } from "./components/ToastProvider";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
       <BrowserRouter>
         <div className="min-h-screen">
           <SetHeaderVar />
+          <ToastProvider />
           <Navigation />
           <Routes>
             <Route path="/" element={<Home />} />

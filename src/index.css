@@ -20,9 +20,9 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Fallback; JS (below) will set the true value */
-    --header-h: 72px;           /* typical sticky header height */
-    --page-top-extra: 12px;     /* breathing room: tweak to taste */
+    /* Fallback; JS updates this */
+    --header-h: 72px;
+    --page-top-gap: clamp(4px, 1.2vw, 12px);
     
     /* Ambient, matches Specialties "soft beige/cream" look */
     --ambient-bg:
@@ -344,86 +344,32 @@ All colors MUST be HSL.
   }
 }
 
-/* ====== ROBUST HEADER-SAFE OFFSET SYSTEM ====== */
+/* ====== HEADER SAFE OFFSET SYSTEM ====== */
 
-/* Always make anchor jumps stop below the sticky header */
-html { 
-  scroll-padding-top: calc(var(--header-h) + var(--page-top-extra)); 
-}
+/* Remove any leftover top spacing on the first block so gaps do not stack */
+.page main > *:first-child { margin-top: 0 !important; padding-top: 0 !important; }
 
-/* Insert a single spacer BEFORE page content. This is bullet-proof because it
-   targets the route wrapper itself, not inner sections that may change. */
-.page--pricing::before,
-.page--contact::before,
-.page--approach::before {
+/* Insert a single spacer before content on routed pages */
+.page--pricing main::before,
+.page--approach main::before,
+.page--contact main::before,
+.page--about main::before,
+.page--specialties main::before {
   content: "";
   display: block;
-  height: calc(var(--header-h) + var(--page-top-extra));
+  height: calc(var(--header-h) + var(--page-top-gap));
 }
 
-/* Give the entire page the same ambient background */
-.page--specialties,
-.page--approach,
-.page--pricing,
-.page--contact {
-  background: var(--ambient-bg);
-}
+/* Anchors across the site scroll to visible positions under the sticky header */
+section[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
 
-/* Make cards on Approach/Pricing match Specialties cards */
-.page--approach .card,
-.page--pricing .card {
-  background: var(--card-surface);
-  border: 1px solid var(--card-border);
-  border-radius: var(--card-radius);
-  box-shadow: var(--card-shadow);
-}
-
-/* If your card component uses a different class, keep this too */
-.page--approach .surface,
-.page--pricing .surface {
-  background: var(--card-surface);
-  border: 1px solid var(--card-border);
-  border-radius: var(--card-radius);
-  box-shadow: var(--card-shadow);
-}
-
-/* Remove any pseudo-spacers that paint white */
-.page--contact::before,
-.page--pricing::before,
-.page--approach::before {
-  content: none !important;
-  display: none !important;
-}
-
-/* Put the header offset INSIDE the first hero block on each page */
-.page--contact   [data-page-hero],
-.page--pricing   [data-page-hero],
-.page--approach  [data-page-hero] {
-  padding-top: calc(var(--header-h) + var(--page-top-extra));
-  scroll-margin-top: calc(var(--header-h) + var(--page-top-extra));
-  /* Ensure the hero paints the ambient background (so no white band shows) */
-  background: transparent; /* keep transparent so the page ambient shows through */
-}
-
-/* Ensure there's no extra white margin at the very top */
-.page--contact  > *:first-child,
-.page--pricing  > *:first-child,
-.page--approach > *:first-child {
-  margin-top: 0 !important;
-}
-
-/* Consistent vertical rhythm */
-.page--approach [data-page-hero],
-.page--pricing  [data-page-hero],
-.page--contact  [data-page-hero] {
-  padding-bottom: 24px;
-}
-
-/* Standardize section gaps below the hero */
-.page--approach section + section,
-.page--pricing  section + section,
-.page--contact  section + section {
-  margin-top: 48px;
+/* Lead blocks must render and not be clipped */
+.page--pricing  [data-lead="pricing"],
+.page--approach [data-lead="approach"],
+.page--contact  [data-lead="contact"] {
+  display: block !important;
+  visibility: visible !important;
+  overflow: visible !important;
 }
 
 /* ====== PAGE-SPECIFIC LAYOUTS ====== */
@@ -494,20 +440,17 @@ html {
   .page--pricing [data-pricing-root] h2 { margin-bottom: .5rem; }
 }
 
-/* ====== OPTIONAL MICRO RHYTHM TWEAKS ====== */
+/* ====== MICRO TUNING PROPORTIONS ====== */
 
-/* Slight nudge from lead → first content block */
-.page--pricing  > *:first-child + * ,
-.page--contact  > *:first-child + * ,
-.page--approach > *:first-child + * {
-  margin-top: clamp(8px, 1.2vw, 16px);
-}
+/* Pricing: keep price card snug beneath the lead */
+.page--pricing main > *:first-child + * { margin-top: clamp(8px, 1.2vw, 14px); }
 
-/* Additional micro-tuning for specific pages */
-.page--specialties > *:first-child + * {
-  margin-top: clamp(10px, 1.4vw, 18px);
-}
+/* Approach: reduce the gap before the first content block */
+.page--approach main > *:first-child + * { margin-top: clamp(10px, 1.4vw, 18px); }
 
-.page--about > *:first-child + * {
-  margin-top: clamp(10px, 1.4vw, 18px);
-}
+/* Contact: small nudge so form and cards feel connected to the lead */
+.page--contact main > *:first-child + * { margin-top: clamp(8px, 1.2vw, 14px); }
+
+/* Specialties and About: tiny rhythm tighten, same look */
+.page--specialties main > *:first-child + *,
+.page--about       main > *:first-child + * { margin-top: clamp(10px, 1.4vw, 18px); }
