@@ -87,12 +87,14 @@ main, .page { user-select: text; }
 .page--pricing [data-role="pricing-tiles"] > * { margin-top: 0; }
 
 /* Two-column layout for desktop: tiles left, session pricing right */
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .page--pricing main {
     display: grid;
-    grid-template-columns: 1fr 400px;
-    gap: clamp(24px, 3vw, 32px);
+    grid-template-columns: minmax(0, 2fr) minmax(320px, 1fr);
+    gap: clamp(20px, 2.5vw, 28px);
     align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
   }
   
   /* Hero spans full width */
@@ -105,12 +107,14 @@ main, .page { user-select: text; }
   .page--pricing [data-role="pricing-tiles"] { 
     grid-column: 1; 
     margin-top: 0 !important; 
+    min-width: 0; /* Prevent overflow */
   }
   
   /* Session pricing card goes in right column */
   .page--pricing [data-role="session-pricing"] { 
     grid-column: 2; 
     margin-top: 0 !important; 
+    min-width: 0; /* Prevent overflow */
   }
   
   /* Details section spans full width at bottom */
@@ -118,6 +122,16 @@ main, .page { user-select: text; }
     grid-column: 1 / -1; 
     margin-top: clamp(24px, 3vw, 32px) !important; 
   }
+}
+
+/* Ensure pricing tiles grid doesn't overflow */
+.page--pricing [data-role="pricing-tiles"] {
+  overflow: hidden;
+}
+
+.page--pricing [data-role="pricing-tiles"] > * {
+  min-width: 0;
+  max-width: 100%;
 }
 
 /* ====== CONTACT: CLEAN STACK ====== */
