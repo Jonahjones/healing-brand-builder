@@ -7,7 +7,7 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
     <section id={withId ? "rates" : undefined} data-page-hero data-pricing-root className={`py-8 sm:py-12 bg-gradient-to-br from-soft-cream via-background to-soft-cream ${s.pricing}`}>
       <div className={`max-w-6xl mx-auto px-4 sm:px-6 ${s.container}`}>
         <div data-pricing-layout>
-        <header data-pricing-lead data-lead="pricing" data-role="hero" className="text-center mb-8 sm:mb-10">
+        <header data-pricing-lead data-lead="pricing" data-role="pricing-hero" className="text-center mb-8 sm:mb-10">
           {withId ? (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-foreground mb-3 sm:mb-4">
               Investment in Your <span className="text-success-green font-bold">Wellbeing</span>
@@ -87,7 +87,7 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
 
         <section data-pricing-details>
         {/* Insurance information */}
-        <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-success-green/20 max-w-4xl mx-auto" data-role="details">
+        <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-success-green/20 max-w-4xl mx-auto" data-role="pricing-details">
           <h3 className="text-lg sm:text-xl font-bold text-foreground mb-3 sm:mb-4 text-center">Insurance & Payment Details</h3>
           
           <div className={`grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 ${s.panels}`}>

@@ -64,7 +64,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
           {/* More compact contact form */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2" data-role="contact-form">
             <Card className="bg-white/70 backdrop-blur-sm border-2 border-soft-sage/20 shadow-xl overflow-hidden">
               <div className="h-1 bg-gradient-to-r from-gentle-terracotta to-earth-clay"></div>
               <CardHeader className="bg-gradient-to-br from-gentle-terracotta/5 to-earth-clay/5 pb-2 sm:pb-3">
@@ -202,7 +202,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
           </div>
 
           {/* More compact contact info */}
-          <div className="space-y-4 sm:space-y-6">
+          <div className="space-y-4 sm:space-y-6" data-role="contact-aside">
             <Card className="bg-white/60 backdrop-blur-sm border border-cozy-brown/20 shadow-lg">
               <CardHeader className="pb-3 sm:pb-4">
                 <div className="flex items-center gap-3 mb-2">
