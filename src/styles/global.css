@@ -86,8 +86,39 @@ main, .page { user-select: text; }
 /* Small guard: if tiles have internal negative margins, neutralize */
 .page--pricing [data-role="pricing-tiles"] > * { margin-top: 0; }
 
-/* OPTIONAL: when you're ready later, we can add a two-column that's bulletproof.
-   For now, keep everything stacked so it never breaks. */
+/* Two-column layout for desktop: tiles left, session pricing right */
+@media (min-width: 1024px) {
+  .page--pricing main {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: clamp(24px, 3vw, 32px);
+    align-items: start;
+  }
+  
+  /* Hero spans full width */
+  .page--pricing main > *:first-child { 
+    grid-column: 1 / -1; 
+    margin-bottom: clamp(16px, 2.4vw, 24px) !important;
+  }
+  
+  /* Pricing tiles go in left column */
+  .page--pricing [data-role="pricing-tiles"] { 
+    grid-column: 1; 
+    margin-top: 0 !important; 
+  }
+  
+  /* Session pricing card goes in right column */
+  .page--pricing [data-role="session-pricing"] { 
+    grid-column: 2; 
+    margin-top: 0 !important; 
+  }
+  
+  /* Details section spans full width at bottom */
+  .page--pricing [data-role="details"] { 
+    grid-column: 1 / -1; 
+    margin-top: clamp(24px, 3vw, 32px) !important; 
+  }
+}
 
 /* ====== CONTACT: CLEAN STACK ====== */
 
