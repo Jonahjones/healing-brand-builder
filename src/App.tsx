@@ -21,11 +21,11 @@ const App = () => (
     <TooltipProvider>
       <BrowserRouter>
         <div className="min-h-screen">
-          <SetHeaderVar />
           <SkipLink />
           <Navigation />
+          <SetHeaderVar />
+          <ToastProvider />
           <main id="main">
-            <ToastProvider />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />

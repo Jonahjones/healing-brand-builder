@@ -45,8 +45,27 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
 
 /* Ensure nothing blocks interaction */
 main, .page { user-select: text; }
-#react-hot-toast { pointer-events: none; }      /* container non-interactive */
-#react-hot-toast * { pointer-events: auto; }    /* toast buttons still clickable */
+
+/* Toaster must never block the page; force solid bg (no blur) */
+#react-hot-toast { pointer-events: none !important; }
+#react-hot-toast > * { pointer-events: auto !important; } /* allow clicking inside the toast */
+#react-hot-toast [role="status"] {
+  background: #fff !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid rgba(16,24,40,.08) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 30px rgba(16,24,40,.12) !important;
+}
+
+/* Prevent any "ghost" spacing elements from intercepting clicks */
+.page--contact main::before,
+.page--pricing main::before,
+.page--approach main::before,
+.page--about main::before,
+.page--specialties main::before {
+  pointer-events: none !important;
+}
 
 /* ====== PRICING: SINGLE-COLUMN, CENTERED, TIDY RHYTHM ====== */
 
