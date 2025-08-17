@@ -10,3 +10,11 @@
 [build.environment]
   NODE_VERSION = "18.17.0"
   NPM_FLAGS = "--legacy-peer-deps"
+
+# Form handling configuration
+[[forms]]
+  name = "contact"
+  
+  # Email notifications
+  [forms.settings]
+    recipients = ["zach@resilientmindcounseling.info"]
