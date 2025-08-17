@@ -1,67 +1,84 @@
 /* Global CSS - Imported once before CSS modules */
 
-:root{ --header-h:72px; --page-top-gap:clamp(16px,2.2vw,28px); --gutter:clamp(16px,2vw,24px); --gutter-lg:clamp(20px,3vw,32px); --container-max:1200px; }
+:root{
+  --header-h:72px;
+  --page-top-gap:clamp(16px,2.2vw,28px);
+  --gutter:clamp(16px,2vw,24px);
+  --gutter-lg:clamp(20px,3vw,32px);
+  --container-max:1200px;
+}
 
-/* .page--pricing main{ padding-top: calc(var(--header-h) + 8px); } */
+/* Real padding under sticky header; kill any leftover pseudo-spacer */
+.page--pricing main{ padding-top: calc(var(--header-h) + var(--page-top-gap)); }
 .page--pricing main::before{ content:none !important; }
 
-.page--pricing main > * { width:min(100%, var(--container-max)); margin-inline:auto; }
+/* Keep content centered; cap width */
+.page--pricing main > *{ width:min(100%, var(--container-max)); margin-inline:auto; }
 
-/* absolutely no stacked margins before/after hero */
-.page--pricing main > * { margin-top:0 !important; position:static !important; top:auto !important; }
+/* Hard reset: nothing is allowed to push itself down unexpectedly */
+.page--pricing main > *{ margin-top:0 !important; position:static !important; top:auto !important; }
+.page--pricing main > *:first-child + *{ margin-top: clamp(12px,1.6vw,20px) !important; }
+.page--pricing main > * + * { margin-top: var(--gutter-lg); }
 
-/* but give a small rhythm after the hero */
-.page--pricing main > *:first-child + * { margin-top: clamp(12px,1.6vw,20px) !important; }
-.page--pricing main > * + *             { margin-top: var(--gutter-lg); }
-
+/* =============== GRID LAYOUT (does NOT depend on direct-child roles) =============== */
 @media (min-width:1024px){
   .page--pricing main{
     display:grid;
     grid-template-columns:minmax(0,1fr) minmax(360px,420px);
+    grid-template-areas:
+      "hero    hero"
+      "tiles   session"
+      "details details";
     column-gap:var(--gutter-lg);
     row-gap:var(--gutter-lg);
     align-items:start;
-    grid-auto-flow:row dense;             /* pack tightly, no empty rows */
-    grid-auto-rows:min-content;           /* rows shrink to content */
+    grid-auto-rows:min-content;
   }
 
-  /* HERO: prefer explicit data-role, otherwise just take the first child */
-  .page--pricing [data-role="pricing-hero"]{ grid-column:1 / -1; }
-  .page--pricing main > *:first-child      { grid-column:1 / -1; } /* fallback if no data-role */
+  /* HERO: first child is the hero row, always full-width */
+  .page--pricing main > *:first-child{ grid-area: hero; }
 
-  /* TILES LEFT + SESSION RIGHT: prefer data-roles… */
-  .page--pricing [data-role="pricing-tiles"]   { grid-column:1; align-self:start; }
-  .page--pricing [data-role="session-pricing"] { grid-column:2; align-self:start; }
-
-  /* …fallback if attributes are missing: choose the 4-tile block as "tiles" and the pricing card as "session" */
-  .page--pricing main > .card:has(> ul, > ol, > .tiles, > [class*="tile"]) { grid-column:1; }
-  .page--pricing main > .card:has(> h2, > h3):has(> :where(p,ul,ol))      { grid-column:2; }
-
-  /* DETAILS ALWAYS FULL-WIDTH (explicit > fallback) */
-  .page--pricing [data-role="pricing-details"]{ grid-column:1 / -1; }
-  .page--pricing main > .card:has(> h2:matches(:contains("Insurance"), :contains("Payment"))) { grid-column:1 / -1; }
-}
-
-/* internal 2×2 for the four tiles; harmless if it's already a grid */
-@media (min-width: 900px){
-  .page--pricing [data-role="pricing-tiles"],
-  .page--pricing main > .card:has([class*="tile"]) {
-    display:grid; grid-template-columns:1fr 1fr; gap:var(--gutter);
-  }
-}
-
-/* LAST LINE OF DEFENSE: any direct child that isn't hero/tiles/session/details just spans the row and cannot create a floating empty track */
-@media (min-width:1024px){
-  .page--pricing main > :not([data-role="pricing-hero"]):not([data-role="pricing-tiles"]):not([data-role="session-pricing"]):not([data-role="pricing-details"]) {
-    grid-column:1 / -1 !important;
+  /* TILES LEFT: target the direct child that CONTAINS the 4 tiles */
+  .page--pricing main > *:has([data-role="pricing-tiles"]),
+  .page--pricing main > *:has(.tiles),
+  .page--pricing main > *:has(.tile),
+  .page--pricing main > *:has(> .card:nth-child(2)):has(> .card:nth-child(3)){ /* pragmatic fallback */
+    grid-area: tiles;
     margin-top:0 !important;
+  }
+
+  /* SESSION RIGHT: target the wrapper that CONTAINS the Session Pricing card */
+  .page--pricing main > *:has([data-role="session-pricing"]),
+  .page--pricing main > *:has(h2, h3):has(> :where(p,ul,ol)){ /* typical pricing card structure */
+    grid-area: session;
+    margin-top:0 !important;
+  }
+
+  /* DETAILS FULL-WIDTH */
+  .page--pricing main > *:has([data-role="pricing-details"]),
+  .page--pricing main > *:has(> h2:matches(:contains("Insurance"), :contains("Payment"))),
+  .page--pricing main > *:has(> h3:matches(:contains("Insurance"), :contains("Payment"))) {
+    grid-area: details;
+    margin-top:0 !important;
+  }
+
+  /* LAST RESORT: anything else just spans the row so it can't create a "blank left cell" */
+  .page--pricing main > :not(:first-child):not(:has([data-role]))
+  { grid-column: 1 / -1; }
+}
+
+/* Internal 2×2 grid for the tiles block (safe if it already has layout) */
+@media (min-width:900px){
+  .page--pricing [data-role="pricing-tiles"],
+  .page--pricing main > *:has(.tile){
+    display:grid; grid-template-columns: 1fr 1fr; gap:var(--gutter);
   }
 }
 
 /* Keep anchors visible under the sticky header */
 section[id]{ scroll-margin-top: calc(var(--header-h) + 8px); }
 
-/* Toast must never block the page */
+/* Protect against invisible overlays blocking clicks */
 #react-hot-toast{ pointer-events:none !important; }
 #react-hot-toast>*{ pointer-events:auto !important; }
 #react-hot-toast [role="status"]{
