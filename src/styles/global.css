@@ -1,86 +1,67 @@
 /* Global CSS - Imported once before CSS modules */
 
 :root{
-  --header-h:72px;
-  --page-top-gap:clamp(16px,2.2vw,28px);
-  --gutter:clamp(16px,2vw,24px);
-  --gutter-lg:clamp(20px,3vw,32px);
-  --container-max:1200px;
+  --header-h:72px;                /* SetHeaderVar updates this live */
+  --page-top-gap: clamp(16px,2.2vw,28px);
+  --gutter: clamp(16px,2vw,24px);
+  --gutter-lg: clamp(20px,3vw,32px);
+  --container-max: 1200px;
 }
 
-/* Real padding under sticky header; kill any leftover pseudo-spacer */
-.page--pricing main{ padding-top: calc(var(--header-h) + var(--page-top-gap)); }
+/* 1) Real padding for sticky header, no fake spacers */
+.page--pricing main{
+  padding-top: calc(var(--header-h) + var(--page-top-gap));
+}
 .page--pricing main::before{ content:none !important; }
 
-/* Keep content centered; cap width */
-.page--pricing main > *{ width:min(100%, var(--container-max)); margin-inline:auto; }
-
-/* Hard reset: nothing is allowed to push itself down unexpectedly */
-.page--pricing main > *{ margin-top:0 !important; position:static !important; top:auto !important; }
+/* 2) Center direct children, sane max width, kill stacked margins */
+.page--pricing main > *{
+  width: min(100%, var(--container-max));
+  margin-inline: auto;
+  margin-top: 0 !important;
+  position: static !important;
+  top: auto !important;
+}
+/* Small rhythm after hero; normal rhythm afterwards */
 .page--pricing main > *:first-child + *{ margin-top: clamp(12px,1.6vw,20px) !important; }
-.page--pricing main > * + * { margin-top: var(--gutter-lg); }
+.page--pricing main > * + *{ margin-top: var(--gutter-lg); }
 
-/* =============== GRID LAYOUT (does NOT depend on direct-child roles) =============== */
+/* 3) Desktop layout (maps EXACTLY to your DOM order right now) */
 @media (min-width:1024px){
   .page--pricing main{
-    display:grid;
-    grid-template-columns:minmax(0,1fr) minmax(360px,420px);
+    display: grid;
+    grid-template-columns: minmax(0,1fr) minmax(360px,420px);
     grid-template-areas:
       "hero    hero"
       "tiles   session"
       "details details";
-    column-gap:var(--gutter-lg);
-    row-gap:var(--gutter-lg);
-    align-items:start;
-    grid-auto-rows:min-content;
+    column-gap: var(--gutter-lg);
+    row-gap: var(--gutter-lg);
+    align-items: start;
+    grid-auto-rows: min-content;
   }
-
-  /* HERO: first child is the hero row, always full-width */
-  .page--pricing main > *:first-child{ grid-area: hero; }
-
-  /* TILES LEFT: target the direct child that CONTAINS the 4 tiles */
-  .page--pricing main > *:has([data-role="pricing-tiles"]),
-  .page--pricing main > *:has(.tiles),
-  .page--pricing main > *:has(.tile),
-  .page--pricing main > *:has(> .card:nth-child(2)):has(> .card:nth-child(3)){ /* pragmatic fallback */
-    grid-area: tiles;
-    margin-top:0 !important;
-  }
-
-  /* SESSION RIGHT: target the wrapper that CONTAINS the Session Pricing card */
-  .page--pricing main > *:has([data-role="session-pricing"]),
-  .page--pricing main > *:has(h2, h3):has(> :where(p,ul,ol)){ /* typical pricing card structure */
-    grid-area: session;
-    margin-top:0 !important;
-  }
-
-  /* DETAILS FULL-WIDTH */
-  .page--pricing main > *:has([data-role="pricing-details"]),
-  .page--pricing main > *:has(> h2:matches(:contains("Insurance"), :contains("Payment"))),
-  .page--pricing main > *:has(> h3:matches(:contains("Insurance"), :contains("Payment"))) {
-    grid-area: details;
-    margin-top:0 !important;
-  }
-
-  /* LAST RESORT: anything else just spans the row so it can't create a "blank left cell" */
-  .page--pricing main > :not(:first-child):not(:has([data-role]))
-  { grid-column: 1 / -1; }
+  /* DOM mapping (current order): 1=Hero, 2=Session, 3=Tiles, 4=Details */
+  .page--pricing main > *:nth-child(1){ grid-area: hero; }
+  .page--pricing main > *:nth-child(2){ grid-area: session; }
+  .page--pricing main > *:nth-child(3){ grid-area: tiles; }
+  .page--pricing main > *:nth-child(4){ grid-area: details; }
 }
 
-/* Internal 2×2 grid for the tiles block (safe if it already has layout) */
+/* 4) Tiles block: force 2×2 grid on desktop (harmless if already a grid) */
 @media (min-width:900px){
-  .page--pricing [data-role="pricing-tiles"],
-  .page--pricing main > *:has(.tile){
-    display:grid; grid-template-columns: 1fr 1fr; gap:var(--gutter);
+  .page--pricing main > *:nth-child(3){
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gutter);
   }
 }
 
-/* Keep anchors visible under the sticky header */
+/* 5) Safety: anchors visible under sticky header (sitewide) */
 section[id]{ scroll-margin-top: calc(var(--header-h) + 8px); }
 
-/* Protect against invisible overlays blocking clicks */
+/* 6) Safety: toasts must never block interaction (keep from earlier) */
 #react-hot-toast{ pointer-events:none !important; }
-#react-hot-toast>*{ pointer-events:auto !important; }
+#react-hot-toast > *{ pointer-events:auto !important; }
 #react-hot-toast [role="status"]{
   background:#fff !important; backdrop-filter:none !important; -webkit-backdrop-filter:none !important;
   border:1px solid rgba(16,24,40,.08) !important; border-radius:16px !important;
