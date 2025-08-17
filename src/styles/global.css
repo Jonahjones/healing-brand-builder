@@ -2,7 +2,7 @@
 
 :root{ --header-h:72px; --page-top-gap:clamp(16px,2.2vw,28px); --gutter:clamp(16px,2vw,24px); --gutter-lg:clamp(20px,3vw,32px); --container-max:1200px; }
 
-.page--pricing main{ padding-top: calc(var(--header-h) + 8px); }
+/* .page--pricing main{ padding-top: calc(var(--header-h) + 8px); } */
 .page--pricing main::before{ content:none !important; }
 
 .page--pricing main > * { width:min(100%, var(--container-max)); margin-inline:auto; }
