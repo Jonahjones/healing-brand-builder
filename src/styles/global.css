@@ -2,86 +2,64 @@
 
 :root{ --header-h:72px; --page-top-gap:clamp(16px,2.2vw,28px); --gutter:clamp(16px,2vw,24px); --gutter-lg:clamp(20px,3vw,32px); --container-max:1200px; }
 
-/* Use real padding for header offset; kill any ghost ::before spacers on these routes */
-.page--pricing main,
-.page--contact main,
-.page--approach main { padding-top: calc(var(--header-h) + var(--page-top-gap)); }
-.page--pricing main::before,
-.page--contact main::before,
-.page--approach main::before { content:none !important; pointer-events:none !important; }
+.page--pricing main{ padding-top: calc(var(--header-h) + var(--page-top-gap)); }
+.page--pricing main::before{ content:none !important; }
 
-/* Don't let first block add extra space */
-.page main > *:first-child { margin-top:0 !important; padding-top:0 !important; }
+.page--pricing main > * { width:min(100%, var(--container-max)); margin-inline:auto; }
 
-/* Keep anchors visible under the sticky header */
-section[id]{ scroll-margin-top: calc(var(--header-h) + 8px); }
+/* absolutely no stacked margins before/after hero */
+.page--pricing main > * { margin-top:0 !important; position:static !important; top:auto !important; }
 
-/* Center page content; keep a sane max width */
-.page--pricing  main > * ,
-.page--contact  main > * ,
-.page--approach main > * { width:min(100%, var(--container-max)); margin-inline:auto; }
+/* but give a small rhythm after the hero */
+.page--pricing main > *:first-child + * { margin-top: clamp(12px,1.6vw,20px) !important; }
+.page--pricing main > * + *             { margin-top: var(--gutter-lg); }
 
-/* Base rhythm */
-.page--pricing  main > *:first-child + * ,
-.page--contact  main > *:first-child + * ,
-.page--approach main > *:first-child + * { margin-top: clamp(12px,1.6vw,20px) !important; }
-.page--pricing  main > * + * ,
-.page--contact  main > * + * ,
-.page--approach main > * + * { margin-top: var(--gutter-lg); }
-
-/*--------------- PRICING: lock the exact layout ---------------*/
-@media (min-width: 1024px){
+@media (min-width:1024px){
   .page--pricing main{
     display:grid;
     grid-template-columns:minmax(0,1fr) minmax(360px,420px);
-    grid-template-areas:
-      "hero    hero"
-      "tiles   session"
-      "details details";
     column-gap:var(--gutter-lg);
     row-gap:var(--gutter-lg);
     align-items:start;
+    grid-auto-flow:row dense;             /* pack tightly, no empty rows */
+    grid-auto-rows:min-content;           /* rows shrink to content */
   }
-  /* Map by role (DOM order no longer matters) */
-  .page--pricing [data-role="pricing-hero"]     { grid-area:hero; }
-  .page--pricing [data-role="pricing-tiles"]    { grid-area:tiles; margin-top:0 !important; }
-  .page--pricing [data-role="session-pricing"]  { grid-area:session; margin-top:0 !important; }
-  .page--pricing [data-role="pricing-details"]  { grid-area:details; margin-top:0 !important; }
+
+  /* HERO: prefer explicit data-role, otherwise just take the first child */
+  .page--pricing [data-role="pricing-hero"]{ grid-column:1 / -1; }
+  .page--pricing main > *:first-child      { grid-column:1 / -1; } /* fallback if no data-role */
+
+  /* TILES LEFT + SESSION RIGHT: prefer data-roles… */
+  .page--pricing [data-role="pricing-tiles"]   { grid-column:1; align-self:start; }
+  .page--pricing [data-role="session-pricing"] { grid-column:2; align-self:start; }
+
+  /* …fallback if attributes are missing: choose the 4-tile block as "tiles" and the pricing card as "session" */
+  .page--pricing main > .card:has(> ul, > ol, > .tiles, > [class*="tile"]) { grid-column:1; }
+  .page--pricing main > .card:has(> h2, > h3):has(> :where(p,ul,ol))      { grid-column:2; }
+
+  /* DETAILS ALWAYS FULL-WIDTH (explicit > fallback) */
+  .page--pricing [data-role="pricing-details"]{ grid-column:1 / -1; }
+  .page--pricing main > .card:has(> h2:matches(:contains("Insurance"), :contains("Payment"))) { grid-column:1 / -1; }
 }
 
-/* Tile grid internal layout: 2×2 on desktop, stacked on mobile */
-.page--pricing [data-role="pricing-tiles"] > *{ margin-top:0; } /* kill stray inner margins */
+/* internal 2×2 for the four tiles; harmless if it's already a grid */
 @media (min-width: 900px){
-  .page--pricing [data-role="pricing-tiles"]{
+  .page--pricing [data-role="pricing-tiles"],
+  .page--pricing main > .card:has([class*="tile"]) {
     display:grid; grid-template-columns:1fr 1fr; gap:var(--gutter);
   }
 }
 
-/* Hard reset to kill any old rules still pushing content down */
-.page--pricing [data-role="pricing-tiles"],
-.page--pricing [data-role="session-pricing"],
-.page--pricing [data-role="pricing-details"]{
-  position:static !important;
-  top:auto !important;
-  margin-block-start:0 !important;
-}
-
-/*--------------- CONTACT: left form + right rail ---------------*/
-@media (min-width: 1024px){
-  .page--contact main{
-    display:grid; grid-template-columns:minmax(0,2fr) minmax(320px,1fr);
-    gap:var(--gutter-lg); align-items:start;
-  }
-  .page--contact [data-role="contact-form"]  { grid-column:1; margin-top:0 !important; }
-  .page--contact [data-role="contact-aside"] { grid-column:2; margin-top:0 !important; }
-}
-
-/*--------------- APPROACH: two-column cards under hero ---------------*/
-@media (min-width: 992px){
-  .page--approach main > *:nth-child(2){
-    display:grid; grid-template-columns:1fr 1fr; gap:var(--gutter-lg);
+/* LAST LINE OF DEFENSE: any direct child that isn't hero/tiles/session/details just spans the row and cannot create a floating empty track */
+@media (min-width:1024px){
+  .page--pricing main > :not([data-role="pricing-hero"]):not([data-role="pricing-tiles"]):not([data-role="session-pricing"]):not([data-role="pricing-details"]) {
+    grid-column:1 / -1 !important;
+    margin-top:0 !important;
   }
 }
+
+/* Keep anchors visible under the sticky header */
+section[id]{ scroll-margin-top: calc(var(--header-h) + 8px); }
 
 /* Toast must never block the page */
 #react-hot-toast{ pointer-events:none !important; }
