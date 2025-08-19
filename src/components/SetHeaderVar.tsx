@@ -8,11 +8,11 @@ export default function SetHeaderVar() {
       document.documentElement.style.setProperty("--header-h", `${h}px`);
     };
     set();
-    const ro = new ResizeObserver(set);
     const header = document.querySelector("header");
-    if (header) ro.observe(header);
+    const ro = header ? new ResizeObserver(set) : null;
+    if (header) ro?.observe(header);
     addEventListener("resize", set);
-    return () => { ro.disconnect(); removeEventListener("resize", set); };
+    return () => { ro?.disconnect(); removeEventListener("resize", set); };
   }, []);
   return null;
 }

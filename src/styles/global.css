@@ -1,75 +1,46 @@
 /* Global CSS - Imported once before CSS modules */
 
 :root{
-  --header-h:72px;                /* SetHeaderVar updates this live */
-  --page-top-gap: clamp(16px,2.2vw,28px);
-  --gutter: clamp(16px,2vw,24px);
-  --gutter-lg: clamp(20px,3vw,32px);
+  --header-h: 72px;                 /* live-updated by SetHeaderVar */
+  --page-top-gap: clamp(16px, 2.2vw, 28px);
+  --page-bottom-gap: clamp(56px, 8vw, 96px);
   --container-max: 1200px;
+  --gutter: clamp(16px, 2vw, 24px);
+  --gutter-lg: clamp(20px, 3vw, 32px);
 }
 
-/* 1) Real padding for sticky header, no fake spacers */
-.page--pricing main{
+/* Real padding so heroes never sit under the header */
+.page main{
   padding-top: calc(var(--header-h) + var(--page-top-gap));
+  padding-bottom: var(--page-bottom-gap);
 }
-.page--pricing main::before{ content:none !important; }
 
-/* 2) Center direct children, sane max width, kill stacked margins */
-.page--pricing main > *{
+/* Do not let the first block stack extra top space */
+.page main > *:first-child{
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Center content with a sane max width on routed pages */
+.page main > *{
   width: min(100%, var(--container-max));
   margin-inline: auto;
-  margin-top: 0 !important;
-  position: static !important;
-  top: auto !important;
-}
-/* Small rhythm after hero; normal rhythm afterwards */
-.page--pricing main > *:first-child + *{ margin-top: clamp(12px,1.6vw,20px) !important; }
-.page--pricing main > * + *{ margin-top: var(--gutter-lg); }
-
-/* 3) Desktop layout (maps EXACTLY to your DOM order right now) */
-@media (min-width:1024px){
-  .page--pricing main{
-    display: grid;
-    grid-template-columns: minmax(0,1fr) minmax(360px,420px);
-    grid-template-areas:
-      "hero    hero"
-      "tiles   session"
-      "details details";
-    column-gap: var(--gutter-lg);
-    row-gap: var(--gutter-lg);
-    align-items: start;
-    grid-auto-rows: min-content;
-  }
-  /* DOM mapping (current order): 1=Hero, 2=Session, 3=Tiles, 4=Details */
-  .page--pricing main > *:nth-child(1){ grid-area: hero; }
-  .page--pricing main > *:nth-child(2){ grid-area: session; }
-  .page--pricing main > *:nth-child(3){ grid-area: tiles; }
-  .page--pricing main > *:nth-child(4){ grid-area: details; }
 }
 
-/* 4) Tiles block: force 2×2 grid on desktop (harmless if already a grid) */
-@media (min-width:900px){
-  .page--pricing main > *:nth-child(3){
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--gutter);
-  }
-}
-
-/* 5) Safety: anchors visible under sticky header (sitewide) */
+/* Sitewide anchor offset so #hash links land below the header */
 section[id]{ scroll-margin-top: calc(var(--header-h) + 8px); }
 
-/* 6) Safety: toasts must never block interaction (keep from earlier) */
-#react-hot-toast{ pointer-events:none !important; }
-#react-hot-toast > *{ pointer-events:auto !important; }
+/* Safety: nothing should block interaction or text selection */
+.page, main{ user-select: text; }
+
+/* If any legacy toast styles exist, ensure they don't overlay the page */
+#react-hot-toast{ pointer-events: none !important; }
+#react-hot-toast > *{ pointer-events: auto !important; }
 #react-hot-toast [role="status"]{
   background:#fff !important; backdrop-filter:none !important; -webkit-backdrop-filter:none !important;
   border:1px solid rgba(16,24,40,.08) !important; border-radius:16px !important;
   box-shadow:0 10px 30px rgba(16,24,40,.12) !important;
 }
-
-/* Ensure nothing blocks interaction */
-main, .page { user-select: text; }
 
 /* Skip link accessibility */
 .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
