@@ -8,8 +8,7 @@
   --muted: #6b7280;
   --ink: #122033;
   --accent: #0ea5e9;
-  min-height: 100vh;
-  padding-bottom: clamp(32px, 8vw, 96px);
+  padding-bottom: clamp(24px, 4vw, 48px);
   overflow-x: hidden;
 }
 
@@ -26,13 +25,13 @@
 
 /* Hero price card */
 .pricing :where(.price-card, .pricing-card) {
-  max-width: 620px;
-  margin: clamp(16px, 3vw, 32px) auto;
+  max-width: 480px;
+  margin: clamp(12px, 2vw, 24px) auto;
   background: var(--card-bg);
   border: 1px solid var(--card-br);
   border-radius: var(--card-r);
   box-shadow: var(--shadow);
-  padding: clamp(18px, 3.2vw, 28px);
+  padding: clamp(16px, 2.5vw, 24px);
 }
 
 .pricing :where(.price, .amount, .pricing-amount) {
@@ -70,9 +69,9 @@
 /* The 4 "pill" tiles below the card */
 .pills {
   display: grid;
-  gap: 12px;
+  gap: 10px;
   grid-template-columns: repeat(4, minmax(0,1fr));
-  margin: clamp(16px, 3vw, 32px) auto clamp(8px, 2vw, 16px);
+  margin: clamp(12px, 2vw, 24px) auto clamp(8px, 1.5vw, 12px);
 }
 @media (max-width: 1024px) { .pills { grid-template-columns: repeat(2,1fr); gap: 16px; } }
 @media (max-width: 560px)  { .pills { grid-template-columns: 1fr; gap: 12px; } }
@@ -81,10 +80,10 @@
   background: #fff;
   border: 1px solid var(--card-br);
   border-radius: 14px;
-  padding: 14px 16px;
+  padding: 12px 14px;
   text-align: center;
   box-shadow: 0 8px 16px rgba(0,0,0,.05);
-  min-height: 84px;
+  min-height: 72px;
   display: grid;
   place-items: center;
   transition: transform .12s ease, box-shadow .12s ease;
@@ -97,9 +96,9 @@
 /* Details panels grid */
 .panels {
   display: grid;
-  gap: 20px;
+  gap: 16px;
   grid-template-columns: 1fr 1fr;
-  margin-top: clamp(20px, 4vw, 36px);
+  margin-top: clamp(16px, 3vw, 24px);
 }
 @media (max-width: 960px) { .panels { grid-template-columns: 1fr; } }
 
@@ -107,6 +106,6 @@
   background: #fff;
   border: 1px solid var(--card-br);
   border-radius: 16px;
-  padding: clamp(16px, 3vw, 24px);
+  padding: clamp(14px, 2.5vw, 20px);
   box-shadow: 0 10px 22px rgba(0,0,0,.05);
 }
