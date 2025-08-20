@@ -8,8 +8,10 @@
   --muted: #6b7280;
   --ink: #122033;
   --accent: #0ea5e9;
-  padding: clamp(60px, 10vw, 100px) 0 clamp(40px, 8vw, 80px);
+  padding: clamp(120px, 15vw, 160px) clamp(20px, 4vw, 40px) clamp(60px, 10vw, 100px);
   overflow-x: hidden;
+  min-height: 100vh;
+  background: inherit;
 }
 
 .container { 
@@ -24,84 +26,9 @@
   color: var(--ink); 
 }
 
-/* Main grid layout */
-.mainGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(32px, 6vw, 60px);
-  margin-bottom: clamp(40px, 8vw, 60px);
-}
-
-@media (min-width: 1024px) {
-  .mainGrid {
-    grid-template-columns: 1.2fr 0.8fr;
-    align-items: start;
-  }
-}
-
-/* Payment options section */
-.paymentOptions {
-  order: 2;
-}
-
-@media (min-width: 1024px) {
-  .paymentOptions {
-    order: 1;
-  }
-}
-
-.optionsGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-}
-
-@media (min-width: 640px) {
-  .optionsGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.optionCard {
-  background: var(--card-bg);
-  border: 1px solid var(--card-br);
-  border-radius: var(--card-r);
-  transition: all 0.3s ease;
-}
-
-.optionCard:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
-}
-
-/* Session pricing section */
-.sessionPricing {
-  order: 1;
-}
-
-@media (min-width: 1024px) {
-  .sessionPricing {
-    order: 2;
-  }
-}
-
-/* Payment details */
-.paymentDetails {
-  margin-top: clamp(40px, 6vw, 60px);
-}
-
 /* Responsive adjustments */
 @media (max-width: 640px) {
   .pricing {
-    padding: clamp(20px, 4vw, 40px) 0;
-  }
-  
-  .mainGrid {
-    gap: clamp(24px, 4vw, 32px);
-    margin-bottom: clamp(24px, 4vw, 32px);
-  }
-  
-  .optionsGrid {
-    gap: 16px;
+    padding: clamp(100px, 12vw, 120px) clamp(16px, 3vw, 24px) clamp(40px, 6vw, 60px);
   }
 }

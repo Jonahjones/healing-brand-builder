@@ -53,7 +53,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* More compact header */}
         <div data-lead="contact" className="text-center mb-4 sm:mb-6">          
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-cozy-brown mb-2 sm:mb-3">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-cozy-brown mb-2 sm:mb-3">
             Ready to Make Real Progress? 
             <span className="block text-gentle-terracotta">Let's Connect.</span>
           </h2>

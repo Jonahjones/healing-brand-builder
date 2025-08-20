@@ -5,7 +5,7 @@ import SocialMeta from "@/seo/SocialMeta";
 
 export default function Pricing() {
   return (
-    <main>
+    <main style={{padding: '0', background: 'transparent'}}>
       <Helmet>
         <title>Therapy Pricing | Sliding Scale & Insurance | Virtual Therapy Wisconsin & California</title>
         <meta name="description" content="$100/session with sliding scale available. Insurance superbills provided. Transparent pricing for online therapy in Wisconsin and California." />
@@ -17,9 +17,7 @@ export default function Pricing() {
         description="$100/session with sliding scale available. Insurance superbills provided. Transparent pricing for online therapy in Wisconsin and California."
         url="https://resilientmindcounseling.info/pricing/"
       />
-      <div className="page page--pricing">
-        <PricingSection withId={false} />
-      </div>
+      <PricingSection withId={false} />
     </main>
   );
 }
