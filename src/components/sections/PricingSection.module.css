@@ -79,11 +79,11 @@
 .pill {
   background: #fff;
   border: 1px solid var(--card-br);
-  border-radius: 14px;
-  padding: 12px 14px;
+  border-radius: 12px;
+  padding: 8px 10px;
   text-align: center;
-  box-shadow: 0 8px 16px rgba(0,0,0,.05);
-  min-height: 72px;
+  box-shadow: 0 6px 12px rgba(0,0,0,.05);
+  min-height: 60px;
   display: grid;
   place-items: center;
   transition: transform .12s ease, box-shadow .12s ease;

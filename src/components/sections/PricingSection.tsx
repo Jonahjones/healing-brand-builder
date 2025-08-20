@@ -25,14 +25,14 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
         {/* More compact main pricing card */}
         <Card className="card max-w-md mx-auto mb-6 sm:mb-8 bg-white border-2 border-success-green/20 shadow-xl hover:shadow-2xl transition-all duration-300 relative overflow-hidden price-card" data-role="session-pricing">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-success-green to-warm-sage"></div>
-            <CardHeader className="text-center pt-4 sm:pt-6 pb-3 sm:pb-4 bg-gradient-to-br from-success-green/5 to-warm-sage/5">
+            <CardHeader className="text-center pt-3 sm:pt-4 pb-2 sm:pb-3 bg-gradient-to-br from-success-green/5 to-warm-sage/5">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-success-green/10 rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3">
               </div>
               <CardTitle className="text-lg sm:text-xl font-heading font-bold text-foreground">Session Pricing</CardTitle>
               <CardDescription className="text-sm sm:text-base text-muted-foreground">45-minute therapy sessions</CardDescription>
             </CardHeader>
-            <CardContent className="pt-3 sm:pt-4 pb-4 sm:pb-6">
-              <div className="text-center mb-4 sm:mb-6">
+            <CardContent className="pt-2 sm:pt-3 pb-3 sm:pb-4">
+              <div className="text-center mb-3 sm:mb-4">
                 <div className="flex items-center justify-center gap-2 mb-1">
                   <span className="text-3xl sm:text-4xl font-bold text-foreground price">$100</span>
                   <span className="text-lg text-muted-foreground unit">/session</span>
@@ -40,7 +40,7 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
                 <p className="text-xs sm:text-sm text-muted-foreground">Private pay pricing</p>
               </div>
 
-              <ul className="features space-y-2 sm:space-y-3 mb-4 sm:mb-6" aria-label="features">
+              <ul className="features space-y-1.5 sm:space-y-2" aria-label="features">
                 <li className="flex items-center gap-3 text-sm">
                   <Check className="w-4 h-4 text-success-green flex-shrink-0" />
                   <span className="text-foreground">Sliding scale available</span>
@@ -59,27 +59,27 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
 
         {/* Simplified payment options */}
         <article className={`card grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-4 sm:mb-6 ${s.pills}`} data-role="pricing-tiles">
-          <div className={`bg-white/60 backdrop-blur-sm rounded-lg p-3 sm:p-4 text-center border border-success-green/10 hover:border-success-green/30 transition-colors ${s.pill}`}>
-            <DollarSign className="w-6 h-6 text-success-green mx-auto mb-2" />
-            <h3 className="font-semibold text-sm text-foreground mb-1">Private Pay</h3>
+          <div className={`bg-white/60 backdrop-blur-sm rounded-lg p-2 sm:p-3 text-center border border-success-green/10 hover:border-success-green/30 transition-colors ${s.pill}`}>
+            <DollarSign className="w-5 h-5 text-success-green mx-auto mb-1" />
+            <h3 className="font-semibold text-xs text-foreground mb-0.5">Private Pay</h3>
             <p className="text-xs text-muted-foreground">Direct payment, immediate access</p>
           </div>
 
-          <div className={`bg-white/60 backdrop-blur-sm rounded-lg p-3 sm:p-4 text-center border border-success-green/10 hover:border-success-green/30 transition-colors ${s.pill}`}>
-            <Shield className="w-6 h-6 text-success-green mx-auto mb-2" />
-            <h3 className="font-semibold text-sm text-foreground mb-1">Insurance</h3>
+          <div className={`bg-white/60 backdrop-blur-sm rounded-lg p-2 sm:p-3 text-center border border-success-green/10 hover:border-success-green/30 transition-colors ${s.pill}`}>
+            <Shield className="w-5 h-5 text-success-green mx-auto mb-1" />
+            <h3 className="font-semibold text-xs text-foreground mb-0.5">Insurance</h3>
             <p className="text-xs text-muted-foreground">Superbills for reimbursement</p>
           </div>
 
-          <div className={`bg-white/60 backdrop-blur-sm rounded-lg p-3 sm:p-4 text-center border border-success-green/10 hover:border-success-green/30 transition-colors ${s.pill}`}>
-            <CreditCard className="w-6 h-6 text-success-green mx-auto mb-2" />
-            <h3 className="font-semibold text-sm text-foreground mb-1">Payment Plans</h3>
+          <div className={`bg-white/60 backdrop-blur-sm rounded-lg p-2 sm:p-3 text-center border border-success-green/10 hover:border-success-green/30 transition-colors ${s.pill}`}>
+            <CreditCard className="w-5 h-5 text-success-green mx-auto mb-1" />
+            <h3 className="font-semibold text-xs text-foreground mb-0.5">Payment Plans</h3>
             <p className="text-xs text-muted-foreground">Flexible arrangements available</p>
           </div>
 
-          <div className={`bg-white/60 backdrop-blur-sm rounded-lg p-3 sm:p-4 text-center border border-success-green/10 hover:border-success-green/30 transition-colors ${s.pill}`}>
-            <Users className="w-6 h-6 text-success-green mx-auto mb-2" />
-            <h3 className="font-semibold text-sm text-foreground mb-1">Sliding Scale</h3>
+          <div className={`bg-white/60 backdrop-blur-sm rounded-lg p-2 sm:p-3 text-center border border-success-green/10 hover:border-success-green/30 transition-colors ${s.pill}`}>
+            <Users className="w-5 h-5 text-success-green mx-auto mb-1" />
+            <h3 className="font-semibold text-xs text-foreground mb-0.5">Sliding Scale</h3>
             <p className="text-xs text-muted-foreground">Based on financial need</p>
           </div>
         </article>
