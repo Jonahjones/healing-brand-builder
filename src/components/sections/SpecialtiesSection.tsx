@@ -56,7 +56,7 @@ export default function SpecialtiesSection({ withId = true }: { withId?: boolean
   ];
 
   return (
-    <section id={withId ? "specialties" : undefined} className="py-6 sm:py-8 lg:py-12 bg-gradient-to-br from-warm-cream via-white to-natural-beige relative overflow-hidden">
+    <section id={withId ? "specialties" : undefined} className="py-6 sm:py-8 lg:py-12 bg-gradient-to-br from-warm-cream via-white to-natural-beige relative overflow-hidden min-h-screen">
       {/* Background Decorative Elements */}
       <div className="absolute top-10 left-10 w-96 h-96 bg-gradient-to-br from-gentle-terracotta/10 to-soft-sage/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-tl from-earth-clay/10 to-cozy-brown/10 rounded-full blur-3xl"></div>

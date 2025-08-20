@@ -1,14 +1,14 @@
-/* Layout tokens (scoped to .pricing only) */
+/* Layout tokens */
 .pricing {
-  --mxw: min(1000px, calc(100vw - 2rem));
-  --card-r: 18px;
+  --mxw: min(1200px, calc(100vw - 2rem));
+  --card-r: 16px;
   --card-bg: #ffffff;
   --card-br: #e8ecf1;
-  --shadow: 0 20px 35px rgba(0,0,0,.08);
+  --shadow: 0 10px 25px rgba(0,0,0,.1);
   --muted: #6b7280;
   --ink: #122033;
   --accent: #0ea5e9;
-  padding-bottom: clamp(24px, 4vw, 48px);
+  padding: clamp(60px, 10vw, 100px) 0 clamp(40px, 8vw, 80px);
   overflow-x: hidden;
 }
 
@@ -16,96 +16,92 @@
   width: 100%;
   max-width: var(--mxw); 
   margin-inline: auto;
-  padding-inline: clamp(16px, 4vw, 32px);
+  padding-inline: clamp(20px, 4vw, 40px);
 }
 
-/* Top lead line typography */
-.pricing :where(h1, h2, h3, p) { color: var(--ink); }
-.pricing p { max-width: 68ch; margin-inline: auto; }
+/* Typography */
+.pricing :where(h1, h2, h3, h4, p) { 
+  color: var(--ink); 
+}
 
-/* Hero price card */
-.pricing :where(.price-card, .pricing-card) {
-  max-width: 480px;
-  margin: clamp(12px, 2vw, 24px) auto;
+/* Main grid layout */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(32px, 6vw, 60px);
+  margin-bottom: clamp(40px, 8vw, 60px);
+}
+
+@media (min-width: 1024px) {
+  .mainGrid {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: start;
+  }
+}
+
+/* Payment options section */
+.paymentOptions {
+  order: 2;
+}
+
+@media (min-width: 1024px) {
+  .paymentOptions {
+    order: 1;
+  }
+}
+
+.optionsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 640px) {
+  .optionsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.optionCard {
   background: var(--card-bg);
   border: 1px solid var(--card-br);
   border-radius: var(--card-r);
+  transition: all 0.3s ease;
+}
+
+.optionCard:hover {
+  transform: translateY(-2px);
   box-shadow: var(--shadow);
-  padding: clamp(16px, 2.5vw, 24px);
 }
 
-.pricing :where(.price, .amount, .pricing-amount) {
-  font-weight: 800;
-  font-size: clamp(34px, 6.5vw, 56px);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
+/* Session pricing section */
+.sessionPricing {
+  order: 1;
 }
 
-.pricing :where(.unit, .per, .per-unit) {
-  font-size: clamp(14px, 2.5vw, 16px);
-  color: var(--muted);
-  margin-left: 4px;
+@media (min-width: 1024px) {
+  .sessionPricing {
+    order: 2;
+  }
 }
 
-/* Bullet list inside card */
-.pricing :where(ul.features, .feature-list) {
-  list-style: none;
-  padding: 0;
-  margin: 14px 0 0;
-}
-.pricing :where(ul.features li, .feature-list li) {
-  position: relative;
-  padding-left: 22px;
-  margin: 8px 0;
-}
-.pricing :where(ul.features li, .feature-list li)::before {
-  content: "✓";
-  position: absolute;
-  left: 0; top: 0;
-  color: var(--accent);
-  font-weight: 700;
+/* Payment details */
+.paymentDetails {
+  margin-top: clamp(40px, 6vw, 60px);
 }
 
-/* The 4 "pill" tiles below the card */
-.pills {
-  display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(4, minmax(0,1fr));
-  margin: clamp(12px, 2vw, 24px) auto clamp(8px, 1.5vw, 12px);
-}
-@media (max-width: 1024px) { .pills { grid-template-columns: repeat(2,1fr); gap: 16px; } }
-@media (max-width: 560px)  { .pills { grid-template-columns: 1fr; gap: 12px; } }
-
-.pill {
-  background: #fff;
-  border: 1px solid var(--card-br);
-  border-radius: 12px;
-  padding: 8px 10px;
-  text-align: center;
-  box-shadow: 0 6px 12px rgba(0,0,0,.05);
-  min-height: 60px;
-  display: grid;
-  place-items: center;
-  transition: transform .12s ease, box-shadow .12s ease;
-}
-.pill:hover { 
-  transform: translateY(-2px); 
-  box-shadow: 0 14px 22px rgba(0,0,0,.08); 
-}
-
-/* Details panels grid */
-.panels {
-  display: grid;
-  gap: 16px;
-  grid-template-columns: 1fr 1fr;
-  margin-top: clamp(16px, 3vw, 24px);
-}
-@media (max-width: 960px) { .panels { grid-template-columns: 1fr; } }
-
-.panel {
-  background: #fff;
-  border: 1px solid var(--card-br);
-  border-radius: 16px;
-  padding: clamp(14px, 2.5vw, 20px);
-  box-shadow: 0 10px 22px rgba(0,0,0,.05);
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .pricing {
+    padding: clamp(20px, 4vw, 40px) 0;
+  }
+  
+  .mainGrid {
+    gap: clamp(24px, 4vw, 32px);
+    margin-bottom: clamp(24px, 4vw, 32px);
+  }
+  
+  .optionsGrid {
+    gap: 16px;
+  }
 }

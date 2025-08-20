@@ -5,7 +5,7 @@ const zachProfessionalImage = "/lovable-uploads/62dfc03a-96b9-4f6c-821e-c327b9b4
 
 export default function AboutSection({ withId = true }: { withId?: boolean }) {
   return (
-    <section id={withId ? "about" : undefined} className="pt-6 pb-12 sm:pt-8 sm:pb-16 lg:pt-12 lg:pb-24 bg-gradient-to-br from-warm-cream via-natural-beige to-soft-sage/20 relative overflow-hidden">
+    <section id={withId ? "about" : undefined} className="pt-6 pb-12 sm:pt-8 sm:pb-16 lg:pt-12 lg:pb-24 bg-gradient-to-br from-warm-cream via-natural-beige to-soft-sage/20 relative overflow-hidden min-h-screen">
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 bg-gradient-to-tr from-gentle-terracotta/5 to-transparent"></div>
       <div className="absolute top-20 right-20 w-64 h-64 bg-soft-sage/10 rounded-full blur-3xl"></div>

@@ -34,13 +34,17 @@ export default function ApproachSection({ withId = true }: { withId?: boolean })
   ];
 
   return (
-    <section id={withId ? "approach" : undefined} data-page-hero className="py-20 bg-soft-gray">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id={withId ? "approach" : undefined} data-page-hero className="py-20 bg-gradient-to-br from-warm-cream via-white to-natural-beige relative overflow-hidden min-h-screen">
+      {/* Background Decorative Elements */}
+      <div className="absolute top-10 left-10 w-96 h-96 bg-gradient-to-br from-gentle-terracotta/10 to-soft-sage/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-br from-cozy-brown/8 to-warm-sage/8 rounded-full blur-3xl"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <header data-lead="approach" className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            My <span className="text-success-green">Approach</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown mb-6">
+            My <span className="text-gentle-terracotta">Approach</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-cozy-brown/70 max-w-3xl mx-auto">
             I use evidence-based methods that are proven to work. Here's what to expect from our therapeutic approach.
           </p>
         </header>
