@@ -26,6 +26,7 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
                   src={zachProfessionalImage}
                   alt="Zach Rehbein-Jones, Licensed Clinical Social Worker"
                   className="w-full rounded-xl shadow-lg object-cover aspect-[3/4]"
+                  loading="lazy"
                 />
 
                 {/* Enhanced License Badge */}

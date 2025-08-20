@@ -41,9 +41,9 @@ export default function ApproachSection({ withId = true }: { withId?: boolean })
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <header data-lead="approach" className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown mb-6">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown mb-6">
             My <span className="text-gentle-terracotta">Approach</span>
-          </h2>
+          </h1>
           <p className="text-lg text-cozy-brown/70 max-w-3xl mx-auto">
             I use evidence-based methods that are proven to work. Here's what to expect from our therapeutic approach.
           </p>

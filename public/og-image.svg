@@ -1,0 +1,15 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#f7f3f0"/>
+  <text x="600" y="250" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#3B2F2A">
+    Zach Rehbein-Jones, LCSW
+  </text>
+  <text x="600" y="320" font-family="Arial, sans-serif" font-size="32" text-anchor="middle" fill="#8B6B5C">
+    Virtual Therapy | Wisconsin &amp; California
+  </text>
+  <text x="600" y="420" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="#3B2F2A">
+    Licensed Clinical Social Worker
+  </text>
+  <text x="600" y="480" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#8B6B5C">
+    Online Therapy for Anxiety, Depression, Trauma &amp; Relationships
+  </text>
+</svg>

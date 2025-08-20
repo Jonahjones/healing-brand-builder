@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 
 type Props = { title: string; description: string; url: string; image?: string };
 
-export default function SocialMeta({ title, description, url, image = "/og-default.jpg" }: Props) {
+export default function SocialMeta({ title, description, url, image = "/og-image.svg" }: Props) {
   return (
     <Helmet>
       <meta property="og:type" content="website" />

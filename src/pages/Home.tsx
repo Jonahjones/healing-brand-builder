@@ -13,6 +13,7 @@ import SocialMeta from "@/seo/SocialMeta";
 const Home = () => {
   return (
     <main>
+      <h1 className="sr-only">Virtual therapy in Wisconsin and California with Zach Rehbein Jones LCSW</h1>
       <Helmet>
         <title>Virtual Therapy in Wisconsin & California | Resilient Mind Counseling</title>
         <meta name="description" content="Online therapy with Zach Rehbein-Jones, LCSW. Anxiety, depression, trauma, and couples counseling. Free 15-minute consultation. Serving Wisconsin and California." />

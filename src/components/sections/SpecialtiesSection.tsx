@@ -69,10 +69,10 @@ export default function SpecialtiesSection({ withId = true }: { withId?: boolean
             <span className="text-xs font-semibold text-cozy-brown uppercase tracking-wider">Areas of Expertise</span>
           </div>
 
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-cozy-brown mb-2 sm:mb-3">
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-cozy-brown mb-2 sm:mb-3">
             Specialties That
             <span className="block text-gentle-terracotta">Transform Lives</span>
-          </h2>
+          </h1>
           <p className="text-sm sm:text-base text-cozy-brown/80 max-w-3xl mx-auto leading-relaxed px-4">
             Expert support for life's most challenging moments. Evidence-based approaches tailored to your unique needs and goals.
           </p>
