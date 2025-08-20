@@ -34,7 +34,7 @@ export default function ApproachSection({ withId = true }: { withId?: boolean })
   ];
 
   return (
-    <section id={withId ? "approach" : undefined} data-page-hero className="py-20 bg-gradient-to-br from-warm-cream via-white to-natural-beige relative overflow-hidden min-h-screen">
+    <section id={withId ? "approach" : undefined} data-page-hero className="pt-32 pb-20 bg-gradient-to-br from-warm-cream via-white to-natural-beige relative overflow-hidden min-h-screen">
       {/* Background Decorative Elements */}
       <div className="absolute top-10 left-10 w-96 h-96 bg-gradient-to-br from-gentle-terracotta/10 to-soft-sage/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-br from-cozy-brown/8 to-warm-sage/8 rounded-full blur-3xl"></div>

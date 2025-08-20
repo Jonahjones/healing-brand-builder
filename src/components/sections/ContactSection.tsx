@@ -45,7 +45,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
   };
 
   return (
-    <section id={withId ? "contact" : undefined} data-page-hero className="py-20 bg-gradient-to-br from-warm-cream via-white to-natural-beige relative overflow-hidden min-h-screen">
+    <section id={withId ? "contact" : undefined} data-page-hero className="pt-32 pb-20 bg-gradient-to-br from-warm-cream via-white to-natural-beige relative overflow-hidden min-h-screen">
       {/* Background Decorative Elements */}
       <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-gentle-terracotta/8 to-earth-clay/8 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-tl from-soft-sage/8 to-cozy-brown/8 rounded-full blur-3xl"></div>
