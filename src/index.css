@@ -40,40 +40,40 @@ All colors MUST be HSL.
     --background: 0 0% 100%; /* #FFFFFF - Pure white background */
     --foreground: 218 30% 26%; /* #2F4156 - Navy for body text, high contrast */
 
-    --card: 24 33% 94%; /* #F5EFEB - Beige for cards */
-    --card-foreground: 218 30% 26%; /* #2F4156 - Navy text on beige */
+    --card: 0 0% 100%; /* #FFFFFF - Pure white for cards */
+    --card-foreground: 220 25% 32%; /* Softer navy text */
 
-    --popover: 24 33% 94%;
-    --popover-foreground: 218 30% 26%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 32%;
 
-    --primary: 218 30% 26%; /* #2F4156 - Navy for headings, high contrast */
+    --primary: 220 25% 32%; /* Softer navy for headings */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 24 20% 85%; /* #DDD5CE - Warm beige */
-    --secondary-foreground: 218 30% 26%; /* #2F4156 - Navy text on warm beige */
+    --secondary: 40 20% 96%; /* Very light warm background */
+    --secondary-foreground: 220 25% 32%; /* Softer navy text */
 
-    --muted: 24 20% 85%; /* #DDD5CE - Warm beige for info boxes */
-    --muted-foreground: 218 30% 26%; /* #2F4156 - Navy text for readability */
+    --muted: 220 10% 95%; /* Light neutral for info boxes */
+    --muted-foreground: 220 15% 40%; /* Medium gray text */
 
-    --accent: 202 25% 45%; /* #567C8D - Teal accent, good contrast */
+    --accent: 200 35% 55%; /* Softer blue-teal accent */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 85% 60%;
+    --destructive: 0 70% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 24 20% 85%;
-    --input: 24 33% 94%;
+    --border: 220 10% 92%; /* Very light neutral borders */
+    --input: 0 0% 100%; /* White input backgrounds */
     --ring: 218 30% 26%;
 
-    /* Custom color palette matching the reference image */
-    --warm-cream: 24 33% 94%; /* #F5EFEB - Beige background */
-    --soft-sage: 120 15% 75%; /* #B8C5B8 - True soft sage green */
-    --gentle-terracotta: 202 25% 45%; /* #567C8D - Teal */
-    --cozy-brown: 218 30% 26%; /* #2F4156 - Navy */
-    --forest-green: 202 25% 35%; /* Darker teal for success states */
-    --sunset-peach: 25 40% 80%; /* #D4B5A0 - True sunset peach */
-    --earth-clay: 202 25% 50%; /* #567C8D - Medium teal */
-    --natural-beige: 24 33% 94%; /* #F5EFEB - Beige */
+    /* Refined color palette - lighter, cleaner, more modern */
+    --warm-cream: 40 30% 97%; /* #FEFCFA - Very light warm white */
+    --soft-sage: 140 20% 92%; /* #EDF5ED - Very light sage */
+    --gentle-terracotta: 200 35% 55%; /* #6B9BB5 - Softer blue-teal */
+    --cozy-brown: 220 25% 32%; /* #3E4F5E - Softer navy */
+    --forest-green: 160 30% 60%; /* #7FB3A3 - Lighter sage green */
+    --sunset-peach: 30 25% 92%; /* #F5F2EC - Very light peach */
+    --earth-clay: 200 30% 65%; /* #87B4CC - Lighter blue */
+    --natural-beige: 40 20% 96%; /* #FCFAF8 - Clean off-white */
     
     /* HIGH-CONTRAST ACTION COLORS - WCAG AA Compliant */
     --action-primary: 218 30% 26%; /* #2F4156 - Navy, high contrast */
@@ -94,9 +94,14 @@ All colors MUST be HSL.
     --focus-glow: 195 100% 50%;  /* Bright teal for focus */
     --success-earth: 140 40% 45%;
     
-    /* Legacy color mappings - redirecting to earth tones */
-    --trust-blue: var(--gentle-terracotta); /* Use terracotta instead of blue */
-    --crisis-blue: 217 91% 60%; /* #3B82F6 - True blue for crisis/emotional strength */
+    /* Enhanced sophisticated colors */
+    --warm-sage: 160 20% 85%; /* #D1E7DD - Light sage for accents */
+    --energy-coral: 15 65% 70%; /* #E8A286 - Warm coral for highlights */
+    --success-green: 160 40% 60%; /* #70B5A0 - Modern sage green */
+    
+    /* Legacy color mappings - now cleaner */
+    --trust-blue: var(--gentle-terracotta);
+    --crisis-blue: 200 50% 65%; /* Softer blue for crisis content */
 
     --radius: 0.75rem;
 
