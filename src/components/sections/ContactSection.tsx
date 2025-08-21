@@ -169,15 +169,19 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                   
                   {/* Error Message */}
                   {submitError && (
-                    <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-center">
+                    <div 
+                      className="bg-red-50 border border-red-200 rounded-lg p-4 text-center" 
+                      role="alert"
+                      aria-live="polite"
+                    >
                       <div className="flex items-center justify-center mb-2">
                         <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
-                          <span className="text-red-600">!</span>
+                          <span className="text-red-600" aria-hidden="true">!</span>
                         </div>
                       </div>
                       <h4 className="font-bold text-red-600 mb-1">Submission Error</h4>
                       <p className="text-sm text-red-700">{submitError}</p>
-              </div>
+                    </div>
                   )}
 
                   {/* Submit Button */}

@@ -121,19 +121,24 @@ const FAQ = () => {
                     <button
                       onClick={() => toggleItem(index)}
                       className="relative w-full text-left p-6 focus:outline-none focus:ring-2 focus:ring-gentle-terracotta/20 focus:ring-inset"
+                      aria-expanded={isOpen}
+                      aria-controls={`faq-content-${index}`}
                     >
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-4">
-                          <div className={`w-12 h-12 bg-gradient-to-br from-${item.color}/20 to-${item.color}/10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300`}>
+                          <div className={`w-12 h-12 bg-gradient-to-br from-${item.color}/20 to-${item.color}/10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300`} aria-hidden="true">
                             <IconComponent className={`w-6 h-6 text-${item.color} group-hover:text-gentle-terracotta transition-colors duration-300`} />
                           </div>
                           <div>
                             <div className="text-xs font-medium text-cozy-brown/60 uppercase tracking-wider mb-1">
                               {item.category}
                             </div>
-                            <h3 className="text-lg font-semibold text-cozy-brown leading-tight">
+                            <h2 
+                              id={`faq-question-${index}`}
+                              className="text-lg font-semibold text-cozy-brown leading-tight"
+                            >
                               {item.question}
-                            </h3>
+                            </h2>
                           </div>
                         </div>
                         <ChevronDown 
@@ -145,7 +150,12 @@ const FAQ = () => {
                     </button>
                     
                     {isOpen && (
-                      <div className="px-6 pb-6">
+                      <div 
+                        id={`faq-content-${index}`}
+                        className="px-6 pb-6"
+                        role="region"
+                        aria-labelledby={`faq-question-${index}`}
+                      >
                         <div className="ml-16 pt-4 border-t border-gentle-terracotta/20">
                           <div className="bg-gradient-to-r from-warm-cream/50 to-natural-beige/30 rounded-xl p-4 border border-gentle-terracotta/10">
                             <p className="text-cozy-brown leading-relaxed">
@@ -163,7 +173,7 @@ const FAQ = () => {
 
           {/* Call to Action */}
           <div className="mt-12 text-center">
-            <Card className="bg-gradient-to-r from-gentle-terracotta/10 to-earth-clay/10 border-gentle-terracotta/20">
+            <Card className="bg-white/95 backdrop-blur-sm border-2 border-gentle-terracotta/20 shadow-xl">
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold text-cozy-brown mb-4">
                   Still Have Questions?

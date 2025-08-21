@@ -60,9 +60,11 @@ const Navigation = () => {
           
           {/* Mobile menu button */}
           <button 
-            className="md:hidden text-primary p-2 rounded-lg hover:bg-primary/10 transition-all duration-300 transform hover:scale-105"
+            className="md:hidden text-primary p-2 rounded-lg hover:bg-primary/10 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gentle-terracotta focus:ring-offset-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle navigation menu"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -74,7 +76,7 @@ const Navigation = () => {
                 key={item.name}
                 to={item.href}
                 onClick={handleNavClick}
-                className={`font-medium px-3 py-2 rounded-md transition-all duration-500 nav-link text-sm lg:text-base transform hover:scale-105 hover:-translate-y-0.5 ${
+                className={`font-medium px-3 py-2 rounded-md transition-all duration-500 nav-link text-sm lg:text-base transform hover:scale-105 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-gentle-terracotta focus:ring-offset-2 ${
                   (pathname === item.href || (item.name === "About" && pathname === "/about")) 
                     ? 'text-primary bg-primary/10 shadow-lg' 
                     : 'text-foreground hover:text-primary hover:bg-primary/5'

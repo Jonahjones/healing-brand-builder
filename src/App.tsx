@@ -30,7 +30,14 @@ const App = () => (
           <Navigation />
           <SetHeaderVar />
           <ToastProvider />
-          <main id="main">
+                            {/* Skip to content for accessibility */}
+                  <a 
+                    href="#main" 
+                    className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 bg-gentle-terracotta text-white px-4 py-2 rounded-lg font-bold focus:outline-none focus:ring-2 focus:ring-white"
+                  >
+                    Skip to main content
+                  </a>
+                  <main id="main">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
