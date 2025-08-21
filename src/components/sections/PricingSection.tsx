@@ -47,61 +47,66 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
             </CardHeader>
 
             <CardContent className="p-6">
-              {/* Compact value proposition */}
-              <div className="text-center mb-6">
-                <h3 className="text-lg font-heading font-semibold text-cozy-brown mb-2">
-                  What makes this investment worthwhile?
-                </h3>
-                <p className="text-cozy-brown/70 text-sm">Professional therapy designed to move you forward.</p>
-              </div>
+              {/* Left side: Value proposition, Right side: Benefits */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
+                {/* Left side - Value proposition */}
+                <div className="space-y-4">
+                  <h3 className="text-lg font-heading font-semibold text-cozy-brown">
+                    What makes this investment worthwhile?
+                  </h3>
+                  <p className="text-cozy-brown/70 text-sm leading-relaxed">
+                    Professional therapy designed to move you forward with evidence-based methods and personalized care.
+                  </p>
+                </div>
 
-              {/* Benefits in 2-column layout for better balance */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div className="space-y-3">
-                  <h4 className="font-semibold text-cozy-brown text-sm flex items-center gap-2 border-b border-gentle-terracotta/20 pb-2">
-                    <Check className="w-4 h-4 text-gentle-terracotta" />
-                    Professional Care
-                  </h4>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-gentle-terracotta rounded-full"></div>
-                      <span className="text-cozy-brown/80">Evidence-based methods</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-gentle-terracotta rounded-full"></div>
-                      <span className="text-cozy-brown/80">Personalized approach</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-gentle-terracotta rounded-full"></div>
-                      <span className="text-cozy-brown/80">Between-session support</span>
+                {/* Right side - Benefits */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="space-y-3">
+                    <h4 className="font-semibold text-cozy-brown text-sm flex items-center gap-2">
+                      <Check className="w-4 h-4 text-gentle-terracotta" />
+                      Professional Care
+                    </h4>
+                    <div className="space-y-2 text-sm pl-6">
+                      <div className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-gentle-terracotta rounded-full"></div>
+                        <span className="text-cozy-brown/80">Evidence-based methods</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-gentle-terracotta rounded-full"></div>
+                        <span className="text-cozy-brown/80">Personalized approach</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-gentle-terracotta rounded-full"></div>
+                        <span className="text-cozy-brown/80">Between-session support</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-                
-                <div className="space-y-3">
-                  <h4 className="font-semibold text-cozy-brown text-sm flex items-center gap-2 border-b border-warm-sage/20 pb-2">
-                    <Shield className="w-4 h-4 text-warm-sage" />
-                    Accessible Options
-                  </h4>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-warm-sage rounded-full"></div>
-                      <span className="text-cozy-brown/80">Sliding scale pricing</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-warm-sage rounded-full"></div>
-                      <span className="text-cozy-brown/80">Insurance superbills</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-warm-sage rounded-full"></div>
-                      <span className="text-cozy-brown/80">HSA/FSA eligible</span>
+                  
+                  <div className="space-y-3">
+                    <h4 className="font-semibold text-cozy-brown text-sm flex items-center gap-2">
+                      <Shield className="w-4 h-4 text-warm-sage" />
+                      Accessible Options
+                    </h4>
+                    <div className="space-y-2 text-sm pl-6">
+                      <div className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-warm-sage rounded-full"></div>
+                        <span className="text-cozy-brown/80">Sliding scale pricing</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-warm-sage rounded-full"></div>
+                        <span className="text-cozy-brown/80">Insurance superbills</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-warm-sage rounded-full"></div>
+                        <span className="text-cozy-brown/80">HSA/FSA eligible</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Compact CTA */}
-              <div className="text-center pt-4 border-t border-gentle-terracotta/10">
+              <div className="text-center pt-4">
                 <Button 
                   className="bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
                   onClick={() => {
