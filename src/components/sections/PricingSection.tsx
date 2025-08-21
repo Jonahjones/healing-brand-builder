@@ -42,7 +42,7 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
               </div>
 
             </CardHeader>
-            <CardContent className="pt-6 pb-6">
+            <CardContent className="pt-0 pb-6">
               {/* Enhanced value proposition */}
               <div className="text-center mb-6">
                 <h3 className="text-lg font-heading font-semibold text-cozy-brown mb-3">
