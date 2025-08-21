@@ -58,13 +58,15 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
 
             <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-soft-sage/20 shadow-lg">
               <p className="text-base sm:text-lg lg:text-xl text-cozy-brown/90 leading-relaxed">
-                I am a Licensed Clinical Social Worker licensed in California and Wisconsin who knows seeking therapy takes courage. You want more than credentials. You want a compassionate, judgment-free space where your unique experiences are understood.
+                Licensed Clinical Social Worker providing online counseling in California and Wisconsin. I create a compassionate, judgment-free space where your unique experiences are truly understood.
               </p>
             </div>
 
-            <div className="bg-gradient-to-r from-gentle-terracotta/10 to-earth-clay/10 rounded-2xl p-4 sm:p-6 border border-gentle-terracotta/20">
-              <p className="text-base sm:text-lg text-cozy-brown/80 leading-relaxed">
-                Whether facing <a href="/specialties/" className="text-gentle-terracotta hover:underline font-medium">anxiety, depression, life transitions, or relationship challenges</a>, I combine clinical expertise with genuine care to guide your healing journey. Outside sessions, I am a Bucks fan and runner. Together we will build an authentic connection that supports your growth through my <a href="/approach/" className="text-gentle-terracotta hover:underline font-medium">evidence-based therapeutic approach</a>.
+            <div className="relative bg-gradient-to-r from-gentle-terracotta/10 to-earth-clay/10 rounded-2xl p-4 sm:p-6 border border-gentle-terracotta/20 overflow-hidden shadow-lg">
+              {/* Overlay for better text readability */}
+              <div className="absolute inset-0 bg-white/60 backdrop-blur-sm rounded-2xl"></div>
+              <p className="relative text-base sm:text-lg text-cozy-brown leading-relaxed">
+                I combine clinical expertise with genuine care for <a href="/specialties/" className="text-gentle-terracotta hover:underline font-medium">anxiety, depression, life transitions, and relationships</a>. Together we'll build an authentic connection using my <a href="/approach/" className="text-gentle-terracotta hover:underline font-medium">evidence-based approach</a>.
               </p>
             </div>
 

@@ -55,7 +55,7 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
                   What makes this investment worthwhile?
                 </h3>
                 <p className="text-cozy-brown/70 leading-relaxed max-w-lg mx-auto">
-                  Professional therapy with someone who genuinely cares about your progress. Every session is designed to move you forward.
+                  Professional therapy designed to move you forward.
                 </p>
               </div>
 
@@ -69,15 +69,15 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
                   <div className="space-y-3 pl-7">
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-gentle-terracotta rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-cozy-brown font-medium text-sm">Evidence-based therapy methods that actually work</span>
+                      <span className="text-cozy-brown font-medium text-sm">Evidence-based methods</span>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-gentle-terracotta rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-cozy-brown font-medium text-sm">Personalized approach tailored to your specific needs</span>
+                      <span className="text-cozy-brown font-medium text-sm">Personalized approach</span>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-gentle-terracotta rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-cozy-brown font-medium text-sm">Between-session support and resources</span>
+                      <span className="text-cozy-brown font-medium text-sm">Between-session support</span>
                     </div>
                   </div>
                 </div>
@@ -90,15 +90,15 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
                   <div className="space-y-3 pl-7">
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-warm-sage rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-cozy-brown font-medium text-sm">Sliding scale pricing for qualifying clients</span>
+                      <span className="text-cozy-brown font-medium text-sm">Sliding scale pricing</span>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-warm-sage rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-cozy-brown font-medium text-sm">Insurance superbills for reimbursement</span>
+                      <span className="text-cozy-brown font-medium text-sm">Insurance superbills</span>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-warm-sage rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-cozy-brown font-medium text-sm">HSA/FSA eligible • Payment plans available</span>
+                      <span className="text-cozy-brown font-medium text-sm">HSA/FSA eligible • Payment plans</span>
                     </div>
                   </div>
                 </div>
@@ -142,8 +142,7 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
           {/* Simple closing message */}
           <div className="text-center mt-6">
             <p className="text-cozy-brown/60 text-sm leading-relaxed max-w-2xl mx-auto">
-              Taking the first step toward better mental health takes courage. I'm here to support you with 
-              professional care, clear communication, and genuine compassion for your journey.
+              Professional care with genuine compassion for your journey.
             </p>
           </div>
 

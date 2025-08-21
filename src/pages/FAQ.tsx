@@ -113,17 +113,20 @@ const FAQ = () => {
               const isOpen = openItem === index;
               
               return (
-                <Card key={index} className="border-2 border-transparent hover:border-gentle-terracotta/20 transition-all duration-300">
+                <Card key={index} className="bg-white/95 backdrop-blur-sm border-2 border-gentle-terracotta/20 hover:border-gentle-terracotta/40 hover:shadow-xl transition-all duration-300 shadow-lg overflow-hidden group">
                   <CardContent className="p-0">
+                    {/* Decorative gradient overlay */}
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-gentle-terracotta/5 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
                     <button
                       onClick={() => toggleItem(index)}
-                      className="w-full text-left p-6 focus:outline-none focus:ring-2 focus:ring-gentle-terracotta/20 focus:ring-inset"
+                      className="relative w-full text-left p-6 focus:outline-none focus:ring-2 focus:ring-gentle-terracotta/20 focus:ring-inset"
                     >
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-4">
-                                                  <div className={`w-12 h-12 bg-${item.color}/10 rounded-full flex items-center justify-center`}>
-                          <IconComponent className={`w-6 h-6 text-${item.color}`} />
-                        </div>
+                          <div className={`w-12 h-12 bg-gradient-to-br from-${item.color}/20 to-${item.color}/10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300`}>
+                            <IconComponent className={`w-6 h-6 text-${item.color} group-hover:text-gentle-terracotta transition-colors duration-300`} />
+                          </div>
                           <div>
                             <div className="text-xs font-medium text-cozy-brown/60 uppercase tracking-wider mb-1">
                               {item.category}
@@ -143,10 +146,12 @@ const FAQ = () => {
                     
                     {isOpen && (
                       <div className="px-6 pb-6">
-                        <div className="ml-16 pt-4 border-t border-gentle-terracotta/10">
-                          <p className="text-cozy-brown/80 leading-relaxed">
-                            {item.answer}
-                          </p>
+                        <div className="ml-16 pt-4 border-t border-gentle-terracotta/20">
+                          <div className="bg-gradient-to-r from-warm-cream/50 to-natural-beige/30 rounded-xl p-4 border border-gentle-terracotta/10">
+                            <p className="text-cozy-brown leading-relaxed">
+                              {item.answer}
+                            </p>
+                          </div>
                         </div>
                       </div>
                     )}

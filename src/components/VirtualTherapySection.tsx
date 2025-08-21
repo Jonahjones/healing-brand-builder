@@ -53,11 +53,8 @@ const VirtualTherapySection = () => {
           </h2>
           
           <div className="max-w-4xl mx-auto">
-            <p className="text-sm sm:text-base text-cozy-brown/80 leading-relaxed mb-2">
-              I use proven therapeutic approaches backed by research and deliver them through secure virtual sessions.
-            </p>
             <p className="text-sm sm:text-base text-gentle-terracotta font-semibold">
-              Your breakthrough shouldn't wait for location or schedule.
+              Proven virtual therapy approaches delivered through secure online counseling sessions.
             </p>
           </div>
         </div>
@@ -68,7 +65,7 @@ const VirtualTherapySection = () => {
             <h3 className="text-lg sm:text-xl font-heading font-bold text-cozy-brown mb-2">
               Research-Backed Methods
             </h3>
-            <p className="text-sm text-cozy-brown/70 max-w-2xl mx-auto">Every approach is evidence-based and moves at your pace</p>
+            <p className="text-sm text-cozy-brown/70 max-w-2xl mx-auto">Evidence-based approaches at your pace</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
@@ -137,7 +134,7 @@ const VirtualTherapySection = () => {
                 </h4>
               </div>
               <p className="text-cozy-brown/80 leading-relaxed mb-3 text-sm">
-                I use proven therapeutic approaches backed by research to help you achieve your goals. Every session is tailored to your unique needs and preferences.
+                Proven therapeutic approaches tailored to your unique goals.
               </p>
               <div className="flex items-center gap-2 text-gentle-terracotta font-semibold text-sm">
                 <CheckCircle className="w-4 h-4" />
@@ -159,7 +156,7 @@ const VirtualTherapySection = () => {
                 </h4>
               </div>
               <p className="text-cozy-brown/80 leading-relaxed mb-3 text-sm">
-                HIPAA-compliant platforms protect your privacy while delivering the same professional standards as in-person therapy.
+                HIPAA-compliant online therapy platforms with professional standards.
               </p>
               <div className="flex items-center gap-2 text-cozy-brown font-semibold text-sm">
                 <CheckCircle className="w-4 h-4" />

@@ -45,9 +45,8 @@ const HeroSection = () => {
           {/* More compact description */}
           <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gentle-terracotta/20 shadow-xl mb-4 sm:mb-6">
             <p className="text-base sm:text-lg text-cozy-brown leading-relaxed font-medium">
-              I provide adults and young adults with <span className="font-bold text-gentle-terracotta">honest feedback</span>,
-              <a href="/approach/" className="font-bold text-earth-clay hover:underline"> practical strategies</a>, and
-              <span className="font-bold text-cozy-brown"> committed support</span> to break through mental challenges and build lasting change.
+              <span className="font-bold text-gentle-terracotta">Online therapy</span> with
+              <a href="/approach/" className="font-bold text-earth-clay hover:underline"> practical strategies</a> that breaks through mental challenges and builds lasting change.
             </p>
             <p className="text-sm sm:text-base text-cozy-brown/70 leading-relaxed font-medium mt-2 pt-2 border-t border-gentle-terracotta/20">
               Licensed in <span className="font-bold text-gentle-terracotta">California</span> and <span className="font-bold text-earth-clay">Wisconsin</span>

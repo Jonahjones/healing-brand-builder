@@ -8,40 +8,40 @@ export default function SpecialtiesSection({ withId = true }: { withId?: boolean
       tag: "Anxiety",
       icon: Brain,
       title: "Anxiety",
-      subtitle: "Take control of anxiety with proven skills that calm your mind and restore balance.",
-      expectation: "Identify your anxiety triggers, learn calming techniques, and gain confidence step by step.",
+      subtitle: "Proven skills to calm your mind and restore balance.",
+      expectation: "Learn calming techniques and build confidence.",
       color: "gentle-terracotta"
     },
     {
       tag: "Depression", 
       icon: Heart,
       title: "Depression",
-      subtitle: "Regain motivation and reconnect with what matters most.",
-      expectation: "Work together to overcome symptoms, rebuild connections, and create sustainable wellness habits.",
+      subtitle: "Regain motivation and reconnect with what matters.",
+      expectation: "Overcome symptoms and rebuild connections.",
       color: "earth-clay"
     },
     {
       tag: "Addiction",
       icon: Shield,
       title: "Addiction",
-      subtitle: "Break the cycle of addiction and build a life you are proud of.",
-      expectation: "Address underlying causes, build a strong support system, and create a personalized recovery plan.",
+      subtitle: "Break the cycle and build a life you're proud of.",
+      expectation: "Address causes and build strong support systems.",
       color: "cozy-brown"
     },
     {
       tag: "Relationships",
       icon: Users,
       title: "Relationships", 
-      subtitle: "Enhance communication, set healthy boundaries, and deepen intimacy.",
-      expectation: "Learn healthy communication patterns, address challenges, and build stronger bonds.",
+      subtitle: "Enhance communication and set healthy boundaries.",
+      expectation: "Learn healthy patterns and build stronger bonds.",
       color: "warm-sage"
     },
     {
       tag: "Life Transitions",
       icon: Leaf,
       title: "Life Transitions",
-      subtitle: "Navigate change with confidence and find new purpose.",
-      expectation: "Process change together, explore new opportunities, and move forward with intention.",
+      subtitle: "Navigate change with confidence and purpose.",
+      expectation: "Process change and move forward with intention.",
       color: "forest-green"
     }
   ];
@@ -62,7 +62,7 @@ export default function SpecialtiesSection({ withId = true }: { withId?: boolean
             </span>
           </h1>
           <p className="text-sm sm:text-base text-cozy-brown/80 max-w-3xl mx-auto leading-relaxed px-4">
-            Expert support for life's most challenging moments. Evidence-based approaches tailored to your unique needs and goals.
+            Evidence-based virtual therapy approaches for life's challenging moments.
           </p>
         </div>
 

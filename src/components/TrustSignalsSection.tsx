@@ -98,7 +98,7 @@ const TrustSignalsSection = () => {
               <Shield className="w-6 h-6 text-gentle-terracotta" />
             </div>
             <p className="text-lg text-cozy-brown/80 leading-relaxed">
-              Fully licensed, insured, and committed to your confidentiality. Every session is conducted with the highest professional standards and genuine care for your wellbeing.
+              Fully licensed, insured, and committed to your confidentiality with genuine care.
             </p>
             <div className="mt-6 flex items-center justify-center gap-8 text-sm text-cozy-brown/70">
               <div className="flex items-center gap-2">

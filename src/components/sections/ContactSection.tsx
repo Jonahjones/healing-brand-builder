@@ -60,7 +60,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
           </span>
         </h1>
           <p className="text-base sm:text-lg text-cozy-brown/80 max-w-4xl mx-auto">
-            Book your free 15-minute consultation to discover how Zach's clear, honest therapy can guide you toward meaningful progress.
+            Book your free 15-minute online therapy consultation to discover how virtual counseling guides meaningful progress.
           </p>
         </div>
         
@@ -77,7 +77,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                   <div>
                     <CardTitle className="text-lg sm:text-xl font-heading font-bold text-cozy-brown">Send a Confidential Message</CardTitle>
                     <CardDescription className="text-cozy-brown/70 text-sm sm:text-base">
-                      I'll respond within 24 hours. All communications are confidential.
+                      24-hour response. Confidential communications.
               </CardDescription>
                   </div>
                 </div>
@@ -136,7 +136,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                   aria-required="true"
                   aria-describedby="email-description"
                 />
-                    <p id="email-description" className="text-xs text-cozy-brown/60">We'll use this to send you appointment confirmations and secure messages</p>
+                    <p id="email-description" className="text-xs text-cozy-brown/60">For appointment confirmations and secure messages</p>
               </div>
                   
                   <div className="space-y-1 sm:space-y-2">
@@ -153,18 +153,18 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
               </div>
                   
                   <div className="space-y-1 sm:space-y-2">
-                    <Label htmlFor="message" className="font-semibold text-cozy-brown text-xs uppercase tracking-wider">What brings you to online therapy? *</Label>
+                    <Label htmlFor="message" className="font-semibold text-cozy-brown text-xs uppercase tracking-wider">What brings you to virtual therapy? *</Label>
                 <Textarea 
                   id="message" 
                   name="message"
-                  placeholder="Share what you're comfortable with... anxiety, depression, life transitions, relationships, etc. This helps me understand how I can best support you."
+                  placeholder="Share what brings you to therapy... anxiety, depression, transitions, relationships, etc."
                       rows={2}
                       className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/95 backdrop-blur-sm rounded-lg resize-none text-sm py-1.5"
                   required
                   aria-required="true"
                   aria-describedby="message-description"
                 />
-                    <p id="message-description" className="text-xs text-cozy-brown/60">Your information is completely confidential and HIPAA-protected</p>
+                    <p id="message-description" className="text-xs text-cozy-brown/60">Confidential and HIPAA-protected</p>
                   </div>
                   
                   {/* Error Message */}
@@ -196,7 +196,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                     )}
               </Button>
                   <p id="submit-description" className="text-xs text-center text-cozy-brown/60">
-                    By submitting this form, you agree to receive email communications about your consultation. No spam, ever.
+                    Consultation communications only. No spam.
               </p>
                 </form>
             </CardContent>
@@ -260,7 +260,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
               <CardContent className="p-4 sm:p-6">
                 <h4 className="text-base font-bold text-cozy-brown mb-2">Free Consultation</h4>
                 <p className="text-xs sm:text-sm text-cozy-brown/80 mb-3">
-                  15 minutes to see if we're a good fit. No pressure, just honest conversation about your goals.
+                  15 minutes to see if we're a good fit. No pressure.
                 </p>
                 <div className="bg-white/95 backdrop-blur-sm rounded-lg p-3 border border-gentle-terracotta/20">
                   <p className="text-xs font-semibold text-gentle-terracotta uppercase tracking-wider mb-1">What We'll Cover</p>

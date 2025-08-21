@@ -6,29 +6,29 @@ export default function ApproachSection({ withId = true }: { withId?: boolean })
   const methods = [
     {
       title: "Cognitive Behavioral Therapy (CBT)",
-      description: "Learn to identify and change negative thought patterns that drive anxiety and depression.",
-      whyItMatters: "This gives you practical tools to break the cycle of negative thinking and regain control.",
+      description: "Identify and change negative thought patterns that drive anxiety and depression.",
+      whyItMatters: "Practical tools to break negative thinking cycles.",
       icon: Brain,
       color: "gentle-terracotta"
     },
     {
       title: "Mindfulness-Based Therapy",
-      description: "Practice staying present and observing thoughts without judgment to lower stress and emotional reactions.",
-      whyItMatters: "This helps you respond to challenges clearly instead of reacting from overwhelm.",
+      description: "Stay present and observe thoughts without judgment to lower stress.",
+      whyItMatters: "Respond clearly instead of reacting from overwhelm.",
       icon: Heart,
       color: "energy-coral"
     },
     {
       title: "Motivational Interviewing",
-      description: "Explore your motivations and resolve uncertainty about making positive changes.",
-      whyItMatters: "This empowers you to find your own reasons for change and boosts lasting success.",
+      description: "Explore motivations and resolve uncertainty about making positive changes.",
+      whyItMatters: "Find your own reasons for change and boost lasting success.",
       icon: MessageCircle,
       color: "success-green"
     },
     {
       title: "Dialectical Behavior Therapy (DBT)",
       description: "Master skills to manage intense emotions, improve relationships, and tolerate distress.",
-      whyItMatters: "This provides solid strategies for crisis moments and builds emotional strength.",
+      whyItMatters: "Solid strategies for crisis moments and emotional strength.",
       icon: Target,
       color: "warm-sage"
     }
