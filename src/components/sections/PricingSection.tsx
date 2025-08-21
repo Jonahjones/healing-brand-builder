@@ -38,7 +38,7 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
           {/* Central pricing card */}
           <Card className="bg-white border border-gentle-terracotta/20 shadow-lg mb-6 max-w-3xl mx-auto">
             {/* Compact price header */}
-            <CardHeader className="text-center py-6 bg-gradient-to-br from-gentle-terracotta/3 to-warm-sage/3 border-b border-gentle-terracotta/10">
+            <CardHeader className="text-center py-6 bg-white border-b border-gentle-terracotta/10">
               <div className="flex items-baseline justify-center gap-2 mb-2">
                 <span className="text-4xl font-heading font-bold text-cozy-brown">$100</span>
                 <span className="text-lg text-cozy-brown/70 font-medium">/session</span>
@@ -138,12 +138,7 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
             </CardContent>
           </Card>
 
-          {/* Simple closing message */}
-          <div className="text-center mt-6">
-            <p className="text-cozy-brown/60 text-sm leading-relaxed max-w-2xl mx-auto">
-              Professional care with genuine compassion for your journey.
-            </p>
-          </div>
+
 
         </div>
       </div>
