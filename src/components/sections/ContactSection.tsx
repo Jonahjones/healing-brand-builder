@@ -55,7 +55,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
         <div data-lead="contact" className="text-center mb-4 sm:mb-6">          
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown mb-4">
             Ready to Make Real Progress? 
-            <span className="block text-gentle-terracotta">Let's Connect.</span>
+            <span className="block text-gentle-terracotta">Let's Connect!</span>
           </h1>
           <p className="text-base sm:text-lg text-cozy-brown/80 max-w-4xl mx-auto">
             Book your free 15-minute consultation to discover how Zach's clear, honest therapy can guide you toward meaningful progress.
