@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Award } from "lucide-react";
+import { ProfileImage } from "@/components/ui/responsive-image";
 const zachProfessionalImage = "/lovable-uploads/62dfc03a-96b9-4f6c-821e-c327b9b4a5d6.png";
 
 export default function AboutSection({ withId = true }: { withId?: boolean }) {
@@ -22,7 +23,7 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
               <div className="absolute -inset-2 bg-gradient-to-tr from-cozy-brown/10 to-earth-clay/10 rounded-2xl"></div>
 
               <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-2 shadow-2xl">
-                <img
+                <ProfileImage
                   src={zachProfessionalImage}
                   alt="Zach Rehbein-Jones, Licensed Clinical Social Worker"
                   className="w-full rounded-xl shadow-lg object-cover aspect-[3/4]"
@@ -61,7 +62,7 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
 
             <div className="bg-gradient-to-r from-gentle-terracotta/10 to-earth-clay/10 rounded-2xl p-4 sm:p-6 border border-gentle-terracotta/20">
               <p className="text-base sm:text-lg text-cozy-brown/80 leading-relaxed">
-                Whether facing anxiety, depression, life transitions, or relationship challenges, I combine clinical expertise with genuine care to guide your healing journey. Outside sessions, I am a Bucks fan and runner. Together we will build an authentic connection that supports your growth.
+                Whether facing <a href="/specialties/" className="text-gentle-terracotta hover:underline font-medium">anxiety, depression, life transitions, or relationship challenges</a>, I combine clinical expertise with genuine care to guide your healing journey. Outside sessions, I am a Bucks fan and runner. Together we will build an authentic connection that supports your growth through my <a href="/approach/" className="text-gentle-terracotta hover:underline font-medium">evidence-based therapeutic approach</a>.
               </p>
             </div>
 

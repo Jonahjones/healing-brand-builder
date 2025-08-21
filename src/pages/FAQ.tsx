@@ -1,0 +1,191 @@
+import { Helmet } from "react-helmet-async";
+import { ChevronDown, CheckCircle, Phone, DollarSign, Shield, Calendar, Heart } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { useState } from "react";
+import StructuredData from "@/seo/StructuredData";
+import SocialMeta from "@/seo/SocialMeta";
+
+const FAQ = () => {
+  const [openItems, setOpenItems] = useState<number[]>([]);
+
+  const toggleItem = (index: number) => {
+    setOpenItems(prev => 
+      prev.includes(index) 
+        ? prev.filter(i => i !== index)
+        : [...prev, index]
+    );
+  };
+
+  const faqData = [
+    {
+      icon: Shield,
+      category: "Licensing & Credentials",
+      question: "What states are you licensed to provide therapy in?",
+      answer: "I am a Licensed Clinical Social Worker (LCSW) licensed to provide therapy in both Wisconsin and California through secure, HIPAA-compliant virtual sessions. My licenses are in good standing and I maintain continuing education requirements in both states.",
+      color: "gentle-terracotta"
+    },
+    {
+      icon: DollarSign,
+      category: "Pricing & Insurance",
+      question: "How much do therapy sessions cost?",
+      answer: "My private pay rate is $100 for 45-minute therapy sessions. I offer sliding scale pricing for qualifying clients and accept insurance co-pays which vary based on your specific plan benefits. I'm also in-network with several major insurance providers through Alma and Headway.",
+      color: "earth-clay"
+    },
+    {
+      icon: CheckCircle,
+      category: "Insurance",
+      question: "Do you accept insurance for virtual therapy sessions?",
+      answer: "Yes, I accept several insurance plans through Alma and Headway, including Aetna, Cigna, and Blue Cross Blue Shield. I also provide superbills for out-of-network reimbursement. Contact me to verify your specific coverage and benefits.",
+      color: "soft-sage"
+    },
+    {
+      icon: Heart,
+      category: "Treatment Approach",
+      question: "What therapy approaches do you use?",
+      answer: "I use evidence-based approaches including Cognitive Behavioral Therapy (CBT), Dialectical Behavior Therapy (DBT), Mindfulness-Based Stress Reduction, and Trauma-Informed Care. My approach is tailored to each client's unique needs, goals, and preferences.",
+      color: "forest-green"
+    },
+    {
+      icon: Calendar,
+      category: "Scheduling",
+      question: "How do I schedule my first appointment?",
+      answer: "You can schedule your free 15-minute consultation through my contact form or by calling directly. During this consultation, we'll discuss your needs, answer any questions, and determine if we're a good fit before scheduling your first full session.",
+      color: "cozy-brown"
+    },
+    {
+      icon: Phone,
+      category: "Technology",
+      question: "What platform do you use for virtual therapy sessions?",
+      answer: "I use a HIPAA-compliant, secure video platform that meets all privacy requirements for healthcare. You'll receive simple instructions and a link before your session - no special software downloads required. Sessions work on computers, tablets, and smartphones.",
+      color: "gentle-terracotta"
+    },
+    {
+      icon: Shield,
+      category: "Privacy & Safety",
+      question: "How do you ensure confidentiality in virtual sessions?",
+      answer: "I use only HIPAA-compliant platforms with end-to-end encryption. All sessions and records are kept strictly confidential according to professional ethics and state laws. I'll discuss privacy considerations and help you create a private space for sessions.",
+      color: "earth-clay"
+    },
+    {
+      icon: Heart,
+      category: "Specializations",
+      question: "What conditions do you specialize in treating?",
+      answer: "I specialize in anxiety disorders, depression, trauma and PTSD, relationship issues, life transitions, and sports psychology. I work with adults and young adults who are motivated to create positive change in their lives through evidence-based therapeutic approaches.",
+      color: "soft-sage"
+    }
+  ];
+
+  return (
+    <main className="page">
+      <Helmet>
+        <title>Frequently Asked Questions | Zach Rehbein-Jones, LCSW</title>
+        <meta name="description" content="Common questions about virtual therapy, insurance, pricing, and treatment approaches. Licensed therapist serving Wisconsin and California." />
+        <link rel="canonical" href="https://resilientmindcounseling.info/faq/" />
+      </Helmet>
+      <StructuredData 
+        url="https://resilientmindcounseling.info/faq/" 
+        name="FAQ" 
+        description="Frequently asked questions about virtual therapy services"
+      />
+      <SocialMeta 
+        title="FAQ - Virtual Therapy Questions Answered | Zach Rehbein-Jones, LCSW"
+        description="Common questions about virtual therapy, insurance, pricing, and treatment approaches. Licensed therapist serving Wisconsin and California."
+        url="https://resilientmindcounseling.info/faq/"
+      />
+
+      <section className="pt-24 pb-16 bg-gradient-to-br from-warm-cream via-natural-beige to-soft-sage/20 min-h-screen">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <Badge variant="outline" className="bg-gentle-terracotta/10 border-gentle-terracotta/30 text-gentle-terracotta font-medium px-4 py-2 mb-6">
+              <CheckCircle className="w-4 h-4 mr-2" />
+              Common Questions
+            </Badge>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown mb-6">
+              Frequently Asked
+              <span className="block text-gentle-terracotta">Questions</span>
+            </h1>
+            <p className="text-lg text-cozy-brown/80 max-w-2xl mx-auto leading-relaxed">
+              Find answers to common questions about virtual therapy, insurance, pricing, and my therapeutic approach. 
+              Don't see your question? <a href="/contact/" className="text-gentle-terracotta hover:underline font-medium">Contact me directly</a>.
+            </p>
+          </div>
+
+          {/* FAQ Items */}
+          <div className="space-y-4">
+            {faqData.map((item, index) => {
+              const IconComponent = item.icon;
+              const isOpen = openItems.includes(index);
+              
+              return (
+                <Card key={index} className="border-2 border-transparent hover:border-gentle-terracotta/20 transition-all duration-300">
+                  <CardContent className="p-0">
+                    <button
+                      onClick={() => toggleItem(index)}
+                      className="w-full text-left p-6 focus:outline-none focus:ring-2 focus:ring-gentle-terracotta/20 focus:ring-inset"
+                    >
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-4">
+                          <div className={`w-12 h-12 bg-${item.color}/10 rounded-full flex items-center justify-center`}>
+                            <IconComponent className={`w-6 h-6 text-${item.color}`} />
+                          </div>
+                          <div>
+                            <div className="text-xs font-medium text-cozy-brown/60 uppercase tracking-wider mb-1">
+                              {item.category}
+                            </div>
+                            <h3 className="text-lg font-semibold text-cozy-brown leading-tight">
+                              {item.question}
+                            </h3>
+                          </div>
+                        </div>
+                        <ChevronDown 
+                          className={`w-5 h-5 text-cozy-brown/60 transition-transform duration-300 ${
+                            isOpen ? 'transform rotate-180' : ''
+                          }`} 
+                        />
+                      </div>
+                    </button>
+                    
+                    {isOpen && (
+                      <div className="px-6 pb-6">
+                        <div className="ml-16 pt-4 border-t border-gentle-terracotta/10">
+                          <p className="text-cozy-brown/80 leading-relaxed">
+                            {item.answer}
+                          </p>
+                        </div>
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+
+          {/* Call to Action */}
+          <div className="mt-12 text-center">
+            <Card className="bg-gradient-to-r from-gentle-terracotta/10 to-earth-clay/10 border-gentle-terracotta/20">
+              <CardContent className="p-8">
+                <h2 className="text-2xl font-bold text-cozy-brown mb-4">
+                  Still Have Questions?
+                </h2>
+                <p className="text-cozy-brown/80 mb-6 max-w-lg mx-auto">
+                  I'm here to help! Schedule your free 15-minute consultation to discuss your specific needs and get personalized answers.
+                </p>
+                <a 
+                  href="/contact/"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-gentle-terracotta to-earth-clay text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                >
+                  <Calendar className="w-5 h-5" />
+                  Book Free Consultation
+                </a>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+};
+
+export default FAQ;

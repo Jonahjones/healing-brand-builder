@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { ResponsiveImage } from "@/components/ui/responsive-image";
 import profileBackground from "@/assets/profile-background.jpg";
 
 const AboutSection = () => {
@@ -16,7 +17,7 @@ const AboutSection = () => {
                 backgroundPosition: 'center'
               }}
             >
-              <img 
+              <ResponsiveImage 
                 src="/lovable-uploads/cdf59d60-5cd7-45de-9554-8f08c496eb35.png"
                 alt="Zach Rehbein-Jones licensed clinical social worker smiling in professional portrait"
                 className="relative z-10 w-full h-full object-cover object-top"
@@ -55,30 +56,6 @@ const AboutSection = () => {
                 variant="outline" 
                 className="border-action-primary text-action-primary hover:bg-action-primary/10 px-8 py-3 rounded-lg transition-all duration-300"
                 onClick={() => {
-                  const approachSection = document.getElementById('virtual-therapy');
-                  if (approachSection) {
-                    const headerOffset = 80;
-                    const elementPosition = approachSection.offsetTop;
-                    const offsetPosition = elementPosition - headerOffset;
-                    
-                    window.scrollTo({
-                      top: offsetPosition,
-                      behavior: 'smooth'
-                    });
-                  }
-                }}
-              >
-                📖 Read About My Approach
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default AboutSection;
                   const approachSection = document.getElementById('virtual-therapy');
                   if (approachSection) {
                     const headerOffset = 80;

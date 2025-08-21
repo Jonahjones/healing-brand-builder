@@ -1,19 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Shield, CheckCircle, Lock, Award } from "lucide-react";
+import { HeroBackgroundImage } from "@/components/ui/responsive-image";
 
 const HeroSection = () => {
   return (
     <section 
       id="home"
       className="min-h-screen relative overflow-hidden"
-      style={{
-        backgroundImage: `url('/lovable-uploads/pexels-karolina-grabowska-5237975.jpg')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
+      style={{ backgroundColor: '#E8D9D3' }}
     >
+      {/* Optimized background image with improved loading */}
+      <div className="absolute inset-0" style={{ backgroundColor: '#E8D9D3' }}>
+        <HeroBackgroundImage
+          src="/lovable-uploads/pexels-karolina-grabowska-5237975.jpg"
+          alt="Peaceful therapy environment with natural lighting"
+          className="w-full h-full object-cover"
+        />
+      </div>
       {/* Enhanced overlay for better text readability */}
       <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/70 lg:from-white/90 lg:via-white/70 lg:to-transparent"></div>
       
@@ -43,7 +47,7 @@ const HeroSection = () => {
           <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gentle-terracotta/20 shadow-xl mb-4 sm:mb-6">
             <p className="text-base sm:text-lg text-cozy-brown leading-relaxed font-medium">
               I provide adults and young adults with <span className="font-bold text-gentle-terracotta">honest feedback</span>,
-              <span className="font-bold text-earth-clay"> practical strategies</span>, and
+              <a href="/approach/" className="font-bold text-earth-clay hover:underline"> practical strategies</a>, and
               <span className="font-bold text-cozy-brown"> committed support</span> to break through mental challenges and build lasting change.
             </p>
             <p className="text-sm sm:text-base text-cozy-brown/70 leading-relaxed font-medium mt-2 pt-2 border-t border-gentle-terracotta/20">

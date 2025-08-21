@@ -8,6 +8,7 @@ import Specialties from "./pages/Specialties";
 import Approach from "./pages/Approach";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
+import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
 import Navigation from "./components/Navigation";
 import SetHeaderVar from "./components/SetHeaderVar";
