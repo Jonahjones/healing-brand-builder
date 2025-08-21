@@ -47,7 +47,7 @@ export default function SpecialtiesSection({ withId = true }: { withId?: boolean
   ];
 
   return (
-    <section id={withId ? "specialties" : undefined} className="pt-24 pb-16 bg-gradient-to-br from-warm-cream via-white to-natural-beige relative overflow-hidden min-h-screen">
+    <section id={withId ? "specialties" : undefined} className="pt-24 pb-16 backdrop-blur-sm bg-white/5 relative overflow-hidden min-h-screen transition-all duration-1000 ease-out">
       {/* Background Decorative Elements */}
       <div className="absolute top-10 left-10 w-96 h-96 bg-gradient-to-br from-gentle-terracotta/10 to-soft-sage/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-tl from-earth-clay/10 to-cozy-brown/10 rounded-full blur-3xl"></div>
@@ -55,9 +55,11 @@ export default function SpecialtiesSection({ withId = true }: { withId?: boolean
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Much more compact header */}
         <div className="text-center mb-6 sm:mb-8">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown mb-4">
-            Specialties That
-            <span className="block text-gentle-terracotta">Transform Lives</span>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+            <span className="text-cozy-brown block">Specialties That</span>
+            <span className="text-transparent bg-gradient-to-r from-gentle-terracotta/90 via-earth-clay/85 to-cozy-brown/90 bg-clip-text block">
+              Transform Lives
+            </span>
           </h1>
           <p className="text-sm sm:text-base text-cozy-brown/80 max-w-3xl mx-auto leading-relaxed px-4">
             Expert support for life's most challenging moments. Evidence-based approaches tailored to your unique needs and goals.

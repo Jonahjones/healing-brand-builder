@@ -45,7 +45,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
   };
 
   return (
-    <section id={withId ? "contact" : undefined} data-page-hero className="pt-24 pb-16 bg-gradient-to-br from-warm-cream via-white to-natural-beige relative overflow-hidden min-h-screen">
+    <section id={withId ? "contact" : undefined} data-page-hero className="pt-24 pb-16 backdrop-blur-sm bg-white/5 relative overflow-hidden min-h-screen transition-all duration-1000 ease-out">
       {/* Background Decorative Elements */}
       <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-gentle-terracotta/8 to-earth-clay/8 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-tl from-soft-sage/8 to-cozy-brown/8 rounded-full blur-3xl"></div>
@@ -53,10 +53,12 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* More compact header */}
         <div data-lead="contact" className="text-center mb-4 sm:mb-6">          
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown mb-4">
-            Ready to Make Real Progress? 
-            <span className="block text-gentle-terracotta">Let's Connect!</span>
-          </h1>
+                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          <span className="text-cozy-brown block">Ready to Make Real Progress?</span>
+          <span className="text-transparent bg-gradient-to-r from-gentle-terracotta/90 via-earth-clay/85 to-cozy-brown/90 bg-clip-text block">
+            Let's Connect!
+          </span>
+        </h1>
           <p className="text-base sm:text-lg text-cozy-brown/80 max-w-4xl mx-auto">
             Book your free 15-minute consultation to discover how Zach's clear, honest therapy can guide you toward meaningful progress.
           </p>
@@ -190,7 +192,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                         Sending...
                       </div>
                     ) : (
-                      <>📅 Send Message & Book Your Free Consultation</>
+                      <><Calendar className="w-5 h-5 mr-2" />Send Message & Book Your Free Consultation</>
                     )}
               </Button>
                   <p id="submit-description" className="text-xs text-center text-cozy-brown/60">

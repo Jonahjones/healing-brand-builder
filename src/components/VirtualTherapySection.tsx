@@ -8,7 +8,7 @@ const VirtualTherapySection = () => {
       description: "Break negative thought cycles that drive anxiety and depression.",
       benefit: "Practical tools for lasting control",
       icon: Brain,
-      color: "trust-blue"
+      color: "gentle-terracotta"
     },
     {
       title: "Mindfulness",
@@ -31,7 +31,7 @@ const VirtualTherapySection = () => {
 
 
   return (
-    <section id="virtual-therapy" className="py-6 sm:py-8 lg:py-12 bg-gradient-to-br from-white via-warm-cream/30 to-soft-sage/20 relative overflow-hidden">
+    <section id="virtual-therapy" className="py-6 sm:py-8 lg:py-12 backdrop-blur-sm bg-white/5 relative overflow-hidden transition-all duration-1000 ease-out">
       {/* Enhanced background elements */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-gentle-terracotta/8 to-earth-clay/8 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-cozy-brown/5 to-soft-sage/10 rounded-full blur-3xl"></div>

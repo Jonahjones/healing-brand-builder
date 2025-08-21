@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Calendar } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 const Navigation = () => {
@@ -9,11 +9,11 @@ const Navigation = () => {
   const onHome = pathname === "/";
 
   const navItems = [
-    { name: "About", href: onHome ? "/#about" : "/about" },
+    { name: "About", href: "/about" }, // Always navigate to /about page
     { name: "Specialties", href: "/specialties" },
     { name: "Approach", href: "/approach" },
     { name: "Pricing", href: "/pricing" },
-    { name: "Contact", href: "/contact" }
+    { name: "FAQ", href: "/faq" }
   ];
 
   const handleLogoClick = () => {
@@ -24,11 +24,13 @@ const Navigation = () => {
     setIsMenuOpen(false);
   };
 
+
+
   const handleContactClick = () => {
     if (onHome) {
       const contactSection = document.getElementById('contact');
       if (contactSection) {
-        const headerOffset = 80;
+        const headerOffset = 0; // Exact positioning
         const elementPosition = contactSection.offsetTop;
         const offsetPosition = elementPosition - headerOffset;
         
@@ -37,6 +39,8 @@ const Navigation = () => {
           behavior: 'smooth'
         });
       }
+    } else {
+      window.location.href = '/contact';
     }
     setIsMenuOpen(false);
   };
@@ -81,18 +85,24 @@ const Navigation = () => {
             ))}
             {onHome ? (
               <Button 
-                className="bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold px-6 py-2 rounded-lg transition-all duration-500 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105"
+                className="group relative overflow-hidden bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold px-6 py-2 rounded-lg transition-all duration-500 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 border-2 border-white/30 ring-2 ring-gentle-terracotta/20"
                 onClick={handleContactClick}
               >
-                📅 Book Your Free Consultation
+                <span className="relative z-10 flex items-center">
+                  <Calendar className="w-5 h-5 mr-2" />Book Your Free Consultation
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-cozy-brown/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
             ) : (
               <Link to="/contact">
                 <Button 
-                  className="bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold px-6 py-2 rounded-lg transition-all duration-500 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105"
+                  className="group relative overflow-hidden bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold px-6 py-2 rounded-lg transition-all duration-500 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 border-2 border-white/30 ring-2 ring-gentle-terracotta/20"
                   onClick={handleContactClick}
                 >
-                  📅 Book Your Free Consultation
+                  <span className="relative z-10 flex items-center">
+                    <Calendar className="w-5 h-5 mr-2" />Book Your Free Consultation
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-cozy-brown/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Button>
               </Link>
             )}
@@ -123,7 +133,7 @@ const Navigation = () => {
                     className="w-full bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold py-3 rounded-lg transition-all duration-500 transform hover:scale-105"
                     onClick={handleContactClick}
                   >
-                    📅 Book Your Free Consultation
+    <Calendar className="w-5 h-5 mr-2" />Book Your Free Consultation
                   </Button>
                 ) : (
                   <Link to="/contact" className="block">
@@ -131,7 +141,7 @@ const Navigation = () => {
                       className="w-full bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold py-3 rounded-lg transition-all duration-500 transform hover:scale-105"
                       onClick={handleContactClick}
                     >
-                      📅 Book Your Free Consultation
+      <Calendar className="w-5 h-5 mr-2" />Book Your Free Consultation
                     </Button>
                   </Link>
                 )}
@@ -145,20 +155,20 @@ const Navigation = () => {
       <div className="fixed bottom-4 left-4 right-4 z-50 md:hidden">
         {onHome ? (
           <Button 
-            className="w-full bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold py-4 rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-1"
+            className="w-full group relative overflow-hidden bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold py-4 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 border-2 border-white/30 ring-2 ring-gentle-terracotta/20"
             onClick={handleContactClick}
           >
-            <span className="hidden sm:inline">📅 Book Your Free Consultation</span>
-            <span className="sm:hidden">📅 Book Now</span>
+            <span className="hidden sm:inline"><Calendar className="w-5 h-5 mr-2" />Book Your Free Consultation</span>
+            <span className="sm:hidden"><Calendar className="w-5 h-5 mr-2" />Book Now</span>
           </Button>
         ) : (
           <Link to="/contact" className="block">
             <Button 
-              className="w-full bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold py-4 rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-1"
+              className="w-full group relative overflow-hidden bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold py-4 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 border-2 border-white/30 ring-2 ring-gentle-terracotta/20"
               onClick={handleContactClick}
             >
-              <span className="hidden sm:inline">📅 Book Your Free Consultation</span>
-              <span className="sm:hidden">📅 Book Now</span>
+              <span className="hidden sm:inline"><Calendar className="w-5 h-5 mr-2" />Book Your Free Consultation</span>
+              <span className="sm:hidden"><Calendar className="w-5 h-5 mr-2" />Book Now</span>
             </Button>
           </Link>
         )}

@@ -49,10 +49,10 @@ All colors MUST be HSL.
     --primary: 218 30% 26%; /* #2F4156 - Navy for headings, high contrast */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 206 35% 84%; /* #C8D9E6 - Sky blue */
-    --secondary-foreground: 218 30% 26%; /* #2F4156 - Navy text on sky blue */
+    --secondary: 24 20% 85%; /* #DDD5CE - Warm beige */
+    --secondary-foreground: 218 30% 26%; /* #2F4156 - Navy text on warm beige */
 
-    --muted: 206 35% 84%; /* #C8D9E6 - Sky blue for info boxes */
+    --muted: 24 20% 85%; /* #DDD5CE - Warm beige for info boxes */
     --muted-foreground: 218 30% 26%; /* #2F4156 - Navy text for readability */
 
     --accent: 202 25% 45%; /* #567C8D - Teal accent, good contrast */
@@ -61,17 +61,17 @@ All colors MUST be HSL.
     --destructive: 0 85% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 206 35% 84%;
+    --border: 24 20% 85%;
     --input: 24 33% 94%;
     --ring: 218 30% 26%;
 
     /* Custom color palette matching the reference image */
     --warm-cream: 24 33% 94%; /* #F5EFEB - Beige background */
-    --soft-sage: 206 35% 84%; /* #C8D9E6 - Sky blue for callouts */
+    --soft-sage: 120 15% 75%; /* #B8C5B8 - True soft sage green */
     --gentle-terracotta: 202 25% 45%; /* #567C8D - Teal */
     --cozy-brown: 218 30% 26%; /* #2F4156 - Navy */
     --forest-green: 202 25% 35%; /* Darker teal for success states */
-    --sunset-peach: 206 35% 84%; /* #C8D9E6 - Sky blue */
+    --sunset-peach: 25 40% 80%; /* #D4B5A0 - True sunset peach */
     --earth-clay: 202 25% 50%; /* #567C8D - Medium teal */
     --natural-beige: 24 33% 94%; /* #F5EFEB - Beige */
     
@@ -93,6 +93,9 @@ All colors MUST be HSL.
     --hover-warm: 20 50% 70%;
     --focus-glow: 195 100% 50%;  /* Bright teal for focus */
     --success-earth: 140 40% 45%;
+    
+    /* Legacy color mappings - redirecting to earth tones */
+    --trust-blue: var(--gentle-terracotta); /* Use terracotta instead of blue */
 
     --radius: 0.75rem;
 

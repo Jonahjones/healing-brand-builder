@@ -8,7 +8,7 @@ const ApproachSection = () => {
       description: "Learn to identify and change negative thought patterns that drive anxiety and depression.",
       whyItMatters: "This gives you practical tools to break the cycle of negative thinking and regain control.",
       icon: Brain,
-      color: "trust-blue"
+      color: "gentle-terracotta"
     },
     {
       title: "Mindfulness-Based Therapy",

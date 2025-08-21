@@ -7,14 +7,10 @@ import StructuredData from "@/seo/StructuredData";
 import SocialMeta from "@/seo/SocialMeta";
 
 const FAQ = () => {
-  const [openItems, setOpenItems] = useState<number[]>([]);
+  const [openItem, setOpenItem] = useState<number | null>(null);
 
   const toggleItem = (index: number) => {
-    setOpenItems(prev => 
-      prev.includes(index) 
-        ? prev.filter(i => i !== index)
-        : [...prev, index]
-    );
+    setOpenItem(prev => prev === index ? null : index);
   };
 
   const faqData = [
@@ -30,49 +26,49 @@ const FAQ = () => {
       category: "Pricing & Insurance",
       question: "How much do therapy sessions cost?",
       answer: "My private pay rate is $100 for 45-minute therapy sessions. I offer sliding scale pricing for qualifying clients and accept insurance co-pays which vary based on your specific plan benefits. I'm also in-network with several major insurance providers through Alma and Headway.",
-      color: "earth-clay"
+      color: "emerald-600"
     },
     {
       icon: CheckCircle,
       category: "Insurance",
       question: "Do you accept insurance for virtual therapy sessions?",
       answer: "Yes, I accept several insurance plans through Alma and Headway, including Aetna, Cigna, and Blue Cross Blue Shield. I also provide superbills for out-of-network reimbursement. Contact me to verify your specific coverage and benefits.",
-      color: "soft-sage"
+      color: "violet-600"
     },
     {
       icon: Heart,
       category: "Treatment Approach",
       question: "What therapy approaches do you use?",
       answer: "I use evidence-based approaches including Cognitive Behavioral Therapy (CBT), Dialectical Behavior Therapy (DBT), Mindfulness-Based Stress Reduction, and Trauma-Informed Care. My approach is tailored to each client's unique needs, goals, and preferences.",
-      color: "forest-green"
+      color: "rose-600"
     },
     {
       icon: Calendar,
       category: "Scheduling",
       question: "How do I schedule my first appointment?",
       answer: "You can schedule your free 15-minute consultation through my contact form or by calling directly. During this consultation, we'll discuss your needs, answer any questions, and determine if we're a good fit before scheduling your first full session.",
-      color: "cozy-brown"
+      color: "amber-600"
     },
     {
       icon: Phone,
       category: "Technology",
       question: "What platform do you use for virtual therapy sessions?",
       answer: "I use a HIPAA-compliant, secure video platform that meets all privacy requirements for healthcare. You'll receive simple instructions and a link before your session - no special software downloads required. Sessions work on computers, tablets, and smartphones.",
-      color: "gentle-terracotta"
+      color: "cyan-600"
     },
     {
       icon: Shield,
       category: "Privacy & Safety",
       question: "How do you ensure confidentiality in virtual sessions?",
       answer: "I use only HIPAA-compliant platforms with end-to-end encryption. All sessions and records are kept strictly confidential according to professional ethics and state laws. I'll discuss privacy considerations and help you create a private space for sessions.",
-      color: "earth-clay"
+      color: "indigo-600"
     },
     {
       icon: Heart,
       category: "Specializations",
       question: "What conditions do you specialize in treating?",
       answer: "I specialize in anxiety disorders, depression, trauma and PTSD, relationship issues, life transitions, and sports psychology. I work with adults and young adults who are motivated to create positive change in their lives through evidence-based therapeutic approaches.",
-      color: "soft-sage"
+      color: "pink-600"
     }
   ];
 
@@ -94,17 +90,15 @@ const FAQ = () => {
         url="https://resilientmindcounseling.info/faq/"
       />
 
-      <section className="pt-24 pb-16 bg-gradient-to-br from-warm-cream via-natural-beige to-soft-sage/20 min-h-screen">
+      <section className="pt-24 pb-16 bg-gradient-to-br from-warm-cream/80 via-natural-beige/60 to-soft-sage/30 min-h-screen transition-all duration-1000 ease-out">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           {/* Header */}
           <div className="text-center mb-12">
-            <Badge variant="outline" className="bg-gentle-terracotta/10 border-gentle-terracotta/30 text-gentle-terracotta font-medium px-4 py-2 mb-6">
-              <CheckCircle className="w-4 h-4 mr-2" />
-              Common Questions
-            </Badge>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown mb-6">
-              Frequently Asked
-              <span className="block text-gentle-terracotta">Questions</span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+              <span className="text-cozy-brown block">Frequently Asked</span>
+              <span className="text-transparent bg-gradient-to-r from-gentle-terracotta/90 via-earth-clay/85 to-cozy-brown/90 bg-clip-text block">
+                Questions
+              </span>
             </h1>
             <p className="text-lg text-cozy-brown/80 max-w-2xl mx-auto leading-relaxed">
               Find answers to common questions about virtual therapy, insurance, pricing, and my therapeutic approach. 
@@ -116,7 +110,7 @@ const FAQ = () => {
           <div className="space-y-4">
             {faqData.map((item, index) => {
               const IconComponent = item.icon;
-              const isOpen = openItems.includes(index);
+              const isOpen = openItem === index;
               
               return (
                 <Card key={index} className="border-2 border-transparent hover:border-gentle-terracotta/20 transition-all duration-300">
@@ -127,9 +121,9 @@ const FAQ = () => {
                     >
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-4">
-                          <div className={`w-12 h-12 bg-${item.color}/10 rounded-full flex items-center justify-center`}>
-                            <IconComponent className={`w-6 h-6 text-${item.color}`} />
-                          </div>
+                                                  <div className={`w-12 h-12 bg-${item.color}/10 rounded-full flex items-center justify-center`}>
+                          <IconComponent className={`w-6 h-6 text-${item.color}`} />
+                        </div>
                           <div>
                             <div className="text-xs font-medium text-cozy-brown/60 uppercase tracking-wider mb-1">
                               {item.category}

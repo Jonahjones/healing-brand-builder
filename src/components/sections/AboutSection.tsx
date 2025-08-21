@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Award } from "lucide-react";
+import { Award, Calendar } from "lucide-react";
 import { ProfileImage } from "@/components/ui/responsive-image";
 const zachProfessionalImage = "/lovable-uploads/62dfc03a-96b9-4f6c-821e-c327b9b4a5d6.png";
 
 export default function AboutSection({ withId = true }: { withId?: boolean }) {
   return (
-    <section id={withId ? "about" : undefined} className="pt-24 pb-16 bg-gradient-to-br from-warm-cream via-natural-beige to-soft-sage/20 relative overflow-hidden min-h-screen">
+    <section id={withId ? "about" : undefined} className="pt-24 pb-16 backdrop-blur-sm bg-white/5 relative overflow-hidden min-h-screen transition-all duration-1000 ease-out">
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 bg-gradient-to-tr from-gentle-terracotta/5 to-transparent"></div>
       <div className="absolute top-20 right-20 w-64 h-64 bg-soft-sage/10 rounded-full blur-3xl"></div>
@@ -49,9 +49,11 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
             {/* Spacing for header clearance */}
             <div className="pt-4 sm:pt-6"></div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown leading-tight">
-              You Deserve a Therapist Who
-              <span className="block text-gentle-terracotta">Understands and Supports You</span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+              <span className="text-cozy-brown block">You Deserve a Therapist Who</span>
+              <span className="text-transparent bg-gradient-to-r from-gentle-terracotta/90 via-earth-clay/85 to-cozy-brown/90 bg-clip-text block">
+                Truly Understands and Supports You
+              </span>
             </h1>
 
             <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-soft-sage/20 shadow-lg">
@@ -70,22 +72,27 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
             <div className="space-y-4 sm:space-y-6 pt-2 sm:pt-4">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
-                onClick={() => {
-                  const contactSection = document.getElementById('contact');
-                  if (contactSection) {
-                    const headerOffset = 80;
-                    const elementPosition = contactSection.offsetTop;
-                    const offsetPosition = elementPosition - headerOffset;
-                    
-                    window.scrollTo({
-                      top: offsetPosition,
-                      behavior: 'smooth'
-                    });
-                  }
-                }}
+                className="group relative overflow-hidden bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border-2 border-white/30 ring-2 ring-gentle-terracotta/20"
+                              onClick={() => {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  const headerOffset = 0; // Exact positioning
+                  const elementPosition = contactSection.offsetTop;
+                  const offsetPosition = elementPosition - headerOffset;
+                  
+                  window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                  });
+                } else {
+                  window.location.href = '/contact';
+                }
+              }}
               >
-                📅 Book Your Free Consultation
+                <span className="relative z-10 flex items-center">
+                  <Calendar className="w-5 h-5 mr-2" />Book Your Free Consultation
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-cozy-brown/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
 
             </div>

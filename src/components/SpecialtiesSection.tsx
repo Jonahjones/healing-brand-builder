@@ -56,7 +56,7 @@ const SpecialtiesSection = () => {
   ];
 
   return (
-    <section id="specialties" className="py-6 sm:py-8 lg:py-12 bg-gradient-to-br from-warm-cream via-white to-natural-beige relative overflow-hidden">
+    <section id="specialties" className="py-6 sm:py-8 lg:py-12 bg-gradient-to-br from-natural-beige/80 via-warm-cream/60 to-soft-sage/30 relative overflow-hidden transition-all duration-1000 ease-out">
       {/* Background Decorative Elements */}
       <div className="absolute top-10 left-10 w-96 h-96 bg-gradient-to-br from-gentle-terracotta/10 to-soft-sage/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-tl from-earth-clay/10 to-cozy-brown/10 rounded-full blur-3xl"></div>

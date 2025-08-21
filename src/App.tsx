@@ -9,9 +9,12 @@ import Approach from "./pages/Approach";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
+import OnlineTherapyWisconsin from "./pages/OnlineTherapyWisconsin";
+import OnlineTherapyCalifornia from "./pages/OnlineTherapyCalifornia";
 import NotFound from "./pages/NotFound";
 import Navigation from "./components/Navigation";
 import SetHeaderVar from "./components/SetHeaderVar";
+import ScrollToTop from "./components/ScrollToTop";
 import { ToastProvider } from "./components/ToastProvider";
 import SkipLink from "./components/SkipLink";
 
@@ -21,6 +24,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <div className="min-h-screen">
           <SkipLink />
           <Navigation />
@@ -34,6 +38,9 @@ const App = () => (
               <Route path="/approach" element={<Approach />} />
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/online-therapy-wisconsin" element={<OnlineTherapyWisconsin />} />
+              <Route path="/online-therapy-california" element={<OnlineTherapyCalifornia />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

@@ -1,11 +1,11 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check, DollarSign, Shield, CreditCard, Users, Phone } from "lucide-react";
+import { Check, DollarSign, Shield, CreditCard, Users, Calendar } from "lucide-react";
 import s from "./PricingSection.module.css";
 
 export default function PricingSection({ withId = true }: { withId?: boolean }) {
   return (
-    <section id={withId ? "rates" : undefined} data-page-hero data-pricing-root className={`bg-gradient-to-br from-warm-cream via-white to-natural-beige relative overflow-hidden min-h-screen ${s.pricing}`}>
+    <section id={withId ? "rates" : undefined} data-page-hero data-pricing-root className={`backdrop-blur-sm bg-white/5 relative overflow-hidden min-h-screen transition-all duration-1000 ease-out ${s.pricing}`}>
       {/* Background Decorative Elements */}
       <div className="absolute top-10 left-10 w-96 h-96 bg-gradient-to-br from-gentle-terracotta/10 to-soft-sage/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-br from-cozy-brown/8 to-warm-sage/8 rounded-full blur-3xl"></div>
@@ -14,12 +14,18 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
         {/* Hero section */}
         <header data-pricing-lead data-lead="pricing" data-role="pricing-hero" className="text-center mb-4">
           {withId ? (
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown mb-4">
-              Investment in Your <span className="text-gentle-terracotta">Wellbeing</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+              <span className="text-cozy-brown block">Investment in Your</span>
+              <span className="text-transparent bg-gradient-to-r from-gentle-terracotta/90 via-earth-clay/85 to-cozy-brown/90 bg-clip-text block">
+                Mental Health Journey
+              </span>
             </h2>
           ) : (
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown mb-4">
-              Investment in Your <span className="text-gentle-terracotta">Wellbeing</span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+              <span className="text-cozy-brown block">Investment in Your</span>
+              <span className="text-transparent bg-gradient-to-r from-gentle-terracotta/90 via-earth-clay/85 to-cozy-brown/90 bg-clip-text block">
+                Mental Health Journey
+              </span>
             </h1>
           )}
           <p className="text-sm sm:text-base text-cozy-brown/70 max-w-xl mx-auto leading-relaxed">
@@ -104,18 +110,27 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
               <div className="text-center">
                 <Button 
                   size="lg"
-                  className="bg-gradient-to-r from-gentle-terracotta to-earth-clay text-white font-bold px-8 py-4 rounded-xl shadow-lg transition-all duration-300 transform hover:shadow-xl hover:-translate-y-1 mb-3"
+                  className="group relative overflow-hidden bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border-2 border-white/20 mb-3"
                   onClick={() => {
                     const contactSection = document.getElementById('contact');
                     if (contactSection) {
-                      contactSection.scrollIntoView({ behavior: 'smooth' });
+                      const headerOffset = 0; // Exact positioning
+                      const elementPosition = contactSection.offsetTop;
+                      const offsetPosition = elementPosition - headerOffset;
+                      
+                      window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                      });
                     } else {
                       window.location.href = '/contact';
                     }
                   }}
                 >
-                  <Phone className="w-5 h-5 mr-2" />
-                  Book Your Free 15-Minute Consultation
+                  <span className="relative z-10 flex items-center">
+                    <Calendar className="w-5 h-5 mr-2" />Book Your Free Consultation
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-cozy-brown/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Button>
                 <p className="text-sm text-cozy-brown/60">
                   Let's discuss your needs and see if we're a good fit • No pressure, just clarity

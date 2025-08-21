@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Award } from "lucide-react";
+import { Award, Calendar } from "lucide-react";
 const zachProfessionalImage = "/lovable-uploads/62dfc03a-96b9-4f6c-821e-c327b9b4a5d6.png";
 
 const TherapistStorySection = () => {
 
   return (
-    <section id="about" className="pt-6 pb-12 sm:pt-8 sm:pb-16 lg:pt-12 lg:pb-24 bg-gradient-to-br from-warm-cream via-natural-beige to-soft-sage/20 relative overflow-hidden">
+    <section id="about" className="pt-6 pb-12 sm:pt-8 sm:pb-16 lg:pt-12 lg:pb-24 bg-gradient-to-br from-warm-cream/80 via-natural-beige/60 to-soft-sage/30 relative overflow-hidden transition-all duration-1000 ease-out">
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 bg-gradient-to-tr from-gentle-terracotta/5 to-transparent"></div>
       <div className="absolute top-20 right-20 w-64 h-64 bg-soft-sage/10 rounded-full blur-3xl"></div>
@@ -73,11 +73,11 @@ const TherapistStorySection = () => {
             <div className="space-y-4 sm:space-y-6 pt-2 sm:pt-4">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+                className="group relative overflow-hidden bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border-2 border-white/30 ring-2 ring-gentle-terracotta/20"
                 onClick={() => {
                   const contactSection = document.getElementById('contact');
                   if (contactSection) {
-                    const headerOffset = 80;
+                    const headerOffset = 120; // Increased for better positioning
                     const elementPosition = contactSection.offsetTop;
                     const offsetPosition = elementPosition - headerOffset;
                     
@@ -85,10 +85,15 @@ const TherapistStorySection = () => {
                       top: offsetPosition,
                       behavior: 'smooth'
                     });
+                  } else {
+                    window.location.href = '/contact';
                   }
                 }}
               >
-                📅 Book Your Free Consultation
+                <span className="relative z-10 flex items-center">
+                  <Calendar className="w-5 h-5 mr-2" />Book Your Free Consultation
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-cozy-brown/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
 
             </div>

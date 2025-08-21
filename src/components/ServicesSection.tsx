@@ -14,8 +14,8 @@ const ServicesSection = () => {
       ],
       whatToExpect: "We'll identify your anxiety triggers, practice calming techniques, and build your confidence step by step.",
       icon: Brain,
-      color: "trust-blue",
-      bgColor: "trust-blue/5"
+      color: "gentle-terracotta",
+      bgColor: "gentle-terracotta/5"
     },
     {
       title: "Depression", 

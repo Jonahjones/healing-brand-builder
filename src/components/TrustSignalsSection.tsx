@@ -6,7 +6,7 @@ const TrustSignalsSection = () => {
     { 
       text: "Licensed Clinical Social Worker (LCSW)", 
       icon: Shield,
-      color: "trust-blue",
+      color: "gentle-terracotta",
       stat: "LCSW"
     },
     { 
@@ -18,7 +18,7 @@ const TrustSignalsSection = () => {
     { 
       text: "500+ successful sessions", 
       icon: Users,
-      color: "success-green",
+      color: "forest-green",
       stat: "500+"
     },
     { 
@@ -32,7 +32,7 @@ const TrustSignalsSection = () => {
 
 
   return (
-    <section id="credentials" className="py-20 bg-gradient-to-br from-cozy-brown/5 via-warm-cream to-soft-sage/10 relative overflow-hidden">
+    <section id="credentials" className="py-20 backdrop-blur-sm bg-white/5 relative overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-10 right-10 w-72 h-72 bg-gradient-to-br from-gentle-terracotta/8 to-earth-clay/8 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 left-10 w-80 h-80 bg-gradient-to-tl from-soft-sage/10 to-cozy-brown/8 rounded-full blur-3xl"></div>

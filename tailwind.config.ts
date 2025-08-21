@@ -76,6 +76,8 @@ export default {
 				'action-secondary': 'hsl(var(--action-secondary))',
 				'action-secondary-hover': 'hsl(var(--action-secondary-hover))',
 				'action-secondary-foreground': 'hsl(var(--action-secondary-foreground))',
+				// Legacy support
+				'trust-blue': 'hsl(var(--trust-blue))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

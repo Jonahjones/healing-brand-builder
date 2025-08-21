@@ -9,7 +9,7 @@ interface CTASectionProps {
 const CTASection = ({ variant = "primary", className = "" }: CTASectionProps) => {
 const ctaConfig = {
     primary: {
-      title: "📅 Book Your Free Consultation",
+      title: "Book Your Free Consultation",
       subtitle: "15 minutes to see if Zach's approach clicks with you. Zero pressure, total clarity.",
       buttonText: "Secure Your Free 15-Min Call",
       buttonIcon: Calendar,
@@ -40,14 +40,9 @@ const ctaConfig = {
   const handleClick = () => {
     const contactElement = document.getElementById('contact');
     if (contactElement) {
-      const headerOffset = 80;
-      const elementPosition = contactElement.offsetTop;
-      const offsetPosition = elementPosition - headerOffset;
-      
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+      contactElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      window.location.href = '/contact';
     }
   };
 
@@ -70,15 +65,6 @@ const ctaConfig = {
             className="font-bold text-xl px-12 py-6 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-1 min-w-[280px]"
           >
             <ButtonIcon className="w-6 h-6 mr-3" />
-            {config.buttonText}
-          </Button>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default CTASection;
             {config.buttonText}
           </Button>
         </div>

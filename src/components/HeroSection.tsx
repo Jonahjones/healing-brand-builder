@@ -1,17 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Shield, CheckCircle, Lock, Award } from "lucide-react";
+import { Shield, CheckCircle, Lock, Award, Calendar } from "lucide-react";
 import { HeroBackgroundImage } from "@/components/ui/responsive-image";
 
 const HeroSection = () => {
   return (
     <section 
       id="home"
-      className="min-h-screen relative overflow-hidden"
-      style={{ backgroundColor: '#E8D9D3' }}
+      className="min-h-screen relative overflow-hidden backdrop-blur-sm"
     >
       {/* Optimized background image with improved loading */}
-      <div className="absolute inset-0" style={{ backgroundColor: '#E8D9D3' }}>
+      <div className="absolute inset-0 opacity-60">
         <HeroBackgroundImage
           src="/lovable-uploads/pexels-karolina-grabowska-5237975.jpg"
           alt="Peaceful therapy environment with natural lighting"
@@ -55,20 +54,20 @@ const HeroSection = () => {
             </p>
           </div>
           
-          {/* More compact trust badges */}
+          {/* Trust badges - visible but not button-like */}
           <div className="flex flex-wrap gap-2 sm:gap-3 mb-4 sm:mb-6">
-            <Badge variant="outline" className="bg-white/95 backdrop-blur-sm border-2 border-gentle-terracotta/30 text-cozy-brown font-bold px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
-              <Award className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 text-gentle-terracotta" />
-              LCSW Licensed
-            </Badge>
-            <Badge variant="outline" className="bg-white/95 backdrop-blur-sm border-2 border-earth-clay/30 text-cozy-brown font-bold px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
-              <Lock className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 text-earth-clay" />
-              HIPAA Compliant
-            </Badge>
-            <Badge variant="outline" className="bg-white/95 backdrop-blur-sm border-2 border-success-green/30 text-cozy-brown font-bold px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
-              <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 text-success-green" />
-              Insurance Accepted
-            </Badge>
+            <div className="flex items-center gap-2 bg-white/80 px-3 py-2 rounded-full border border-gentle-terracotta/20">
+              <Award className="w-4 h-4 text-gentle-terracotta" />
+              <span className="text-xs sm:text-sm font-semibold text-cozy-brown">LCSW Licensed</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white/80 px-3 py-2 rounded-full border border-earth-clay/20">
+              <Lock className="w-4 h-4 text-earth-clay" />
+              <span className="text-xs sm:text-sm font-semibold text-cozy-brown">HIPAA Compliant</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white/80 px-3 py-2 rounded-full border border-forest-green/20">
+              <CheckCircle className="w-4 h-4 text-forest-green" />
+              <span className="text-xs sm:text-sm font-semibold text-cozy-brown">Insurance Accepted</span>
+            </div>
           </div>
           
           {/* More reasonably sized CTA section */}
@@ -76,11 +75,11 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-3">
               <Button
                 size="lg"
-                className="group relative overflow-hidden bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white border-0 font-bold text-sm sm:text-base px-8 sm:px-10 py-3 sm:py-4 rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-1 hover:scale-105"
+                className="group relative overflow-hidden bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold text-sm sm:text-base px-8 sm:px-10 py-3 sm:py-4 rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-1 hover:scale-105 border-2 border-white/30 ring-2 ring-gentle-terracotta/20"
                 onClick={() => {
                   const contactSection = document.getElementById('contact');
                   if (contactSection) {
-                    const headerOffset = 80;
+                    const headerOffset = 0; // Exact positioning
                     const elementPosition = contactSection.offsetTop;
                     const offsetPosition = elementPosition - headerOffset;
                     
@@ -88,34 +87,17 @@ const HeroSection = () => {
                       top: offsetPosition,
                       behavior: 'smooth'
                     });
+                  } else {
+                    window.location.href = '/contact';
                   }
                 }}
               >
                 <span className="relative z-10 flex items-center">
-                  📅 Book Your Free Consultation
+                  <Calendar className="w-5 h-5 mr-2" />Book Your Free Consultation
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-cozy-brown/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-cozy-brown/30 bg-white/90 backdrop-blur-sm text-cozy-brown hover:bg-cozy-brown hover:text-white font-bold text-sm sm:text-base px-6 py-3 sm:py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-                onClick={() => {
-                  const contactSection = document.getElementById('contact');
-                  if (contactSection) {
-                    const headerOffset = 80;
-                    const elementPosition = contactSection.offsetTop;
-                    const offsetPosition = elementPosition - headerOffset;
-                    
-                    window.scrollTo({
-                      top: offsetPosition,
-                      behavior: 'smooth'
-                    });
-                  }
-                }}
-              >
-                🤝 See If We're a Good Fit
-              </Button>
+
             </div>
           </div>
         </div>
