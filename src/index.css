@@ -42,6 +42,11 @@ All colors MUST be HSL.
 
     --card: 0 0% 100%; /* #FFFFFF - Pure white for cards */
     --card-foreground: 220 25% 32%; /* Softer navy text */
+    
+    /* Enhanced card depth system */
+    --card-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    --card-shadow-hover: 0 12px 40px -8px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.08);
+    --card-shadow-strong: 0 16px 48px -8px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.1);
 
     --popover: 0 0% 100%;
     --popover-foreground: 220 25% 32%;
@@ -350,6 +355,31 @@ All colors MUST be HSL.
   .button-hover:hover {
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Enhanced card and CTA styles for better visibility */
+  .card-enhanced {
+    background: white;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-enhanced:hover {
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-2px);
+  }
+
+  .cta-enhanced {
+    background: linear-gradient(135deg, hsl(var(--gentle-terracotta)) 0%, hsl(var(--earth-clay)) 100%);
+    box-shadow: 0 8px 24px -4px hsla(var(--gentle-terracotta), 0.4), 0 0 0 1px hsla(var(--gentle-terracotta), 0.2);
+    border: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .cta-enhanced:hover {
+    box-shadow: 0 12px 32px -4px hsla(var(--gentle-terracotta), 0.5), 0 0 0 1px hsla(var(--gentle-terracotta), 0.3);
+    transform: translateY(-3px) scale(1.02);
   }
 }
 

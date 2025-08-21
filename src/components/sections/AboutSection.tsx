@@ -56,7 +56,7 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
               </span>
             </h1>
 
-            <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-soft-sage/20 shadow-lg">
+            <div className="card-enhanced rounded-2xl p-4 sm:p-6">
               <p className="text-base sm:text-lg lg:text-xl text-cozy-brown/90 leading-relaxed">
                 Licensed Clinical Social Worker providing online counseling in California and Wisconsin. I create a compassionate, judgment-free space where your unique experiences are truly understood.
               </p>
@@ -74,7 +74,7 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
             <div className="space-y-4 sm:space-y-6 pt-2 sm:pt-4">
               <Button 
                 size="lg" 
-                className="group relative overflow-hidden bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border-2 border-white/30 ring-2 ring-gentle-terracotta/20"
+                className="cta-enhanced group relative overflow-hidden text-white font-bold px-8 py-4 rounded-xl"
                               onClick={() => {
                 const contactSection = document.getElementById('contact');
                 if (contactSection) {

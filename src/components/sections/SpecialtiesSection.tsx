@@ -90,7 +90,7 @@ export default function SpecialtiesSection({ withId = true }: { withId?: boolean
             const colorClasses = getColorClasses(specialty.color);
             
             return (
-              <Card key={index} className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <Card key={index} className="card-enhanced">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-4 mb-4">
                     <div className={`w-12 h-12 ${colorClasses.bg} rounded-full flex items-center justify-center`}>

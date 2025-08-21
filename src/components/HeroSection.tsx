@@ -43,7 +43,7 @@ const HeroSection = () => {
           </h1>
           
           {/* More compact description */}
-          <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gentle-terracotta/20 shadow-xl mb-4 sm:mb-6">
+          <div className="card-enhanced rounded-xl p-4 sm:p-6 mb-4 sm:mb-6">
             <p className="text-base sm:text-lg text-cozy-brown leading-relaxed font-medium">
               <span className="font-bold text-gentle-terracotta">Online therapy</span> with
               <a href="/approach/" className="font-bold text-earth-clay hover:underline"> practical strategies</a> that breaks through mental challenges and builds lasting change.
@@ -53,17 +53,17 @@ const HeroSection = () => {
             </p>
           </div>
           
-          {/* Trust badges - visible but not button-like */}
+          {/* Trust badges - enhanced visibility */}
           <div className="flex flex-wrap gap-2 sm:gap-3 mb-4 sm:mb-6">
-            <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-3 py-2 rounded-full border border-gentle-terracotta/20">
+            <div className="flex items-center gap-2 bg-white px-3 py-2 rounded-full shadow-md border border-gentle-terracotta/30">
               <Award className="w-4 h-4 text-gentle-terracotta" />
               <span className="text-xs sm:text-sm font-semibold text-cozy-brown">LCSW Licensed</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-3 py-2 rounded-full border border-earth-clay/20">
+            <div className="flex items-center gap-2 bg-white px-3 py-2 rounded-full shadow-md border border-earth-clay/30">
               <Lock className="w-4 h-4 text-earth-clay" />
               <span className="text-xs sm:text-sm font-semibold text-cozy-brown">HIPAA Compliant</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-3 py-2 rounded-full border border-forest-green/20">
+            <div className="flex items-center gap-2 bg-white px-3 py-2 rounded-full shadow-md border border-forest-green/30">
               <CheckCircle className="w-4 h-4 text-forest-green" />
               <span className="text-xs sm:text-sm font-semibold text-cozy-brown">Insurance Accepted</span>
             </div>
@@ -74,7 +74,7 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-3">
               <Button
                 size="lg"
-                className="group relative overflow-hidden bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold text-sm sm:text-base px-8 sm:px-10 py-3 sm:py-4 rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-1 hover:scale-105 border-2 border-white/30 ring-2 ring-gentle-terracotta/20"
+                className="cta-enhanced group relative overflow-hidden text-white font-bold text-sm sm:text-base px-8 sm:px-10 py-3 sm:py-4 rounded-xl"
                 onClick={() => {
                   const contactSection = document.getElementById('contact');
                   if (contactSection) {

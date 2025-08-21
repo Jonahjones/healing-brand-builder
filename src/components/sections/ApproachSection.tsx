@@ -71,7 +71,7 @@ export default function ApproachSection({ withId = true }: { withId?: boolean })
             const colorClasses = getColorClasses(method.color);
             
             return (
-              <Card key={index} className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <Card key={index} className="card-enhanced">
                 <CardContent className="p-4">
                   <div className="flex items-center gap-4 mb-2">
                     <div className={`w-12 h-12 ${colorClasses.bg} rounded-full flex items-center justify-center`}>
@@ -109,7 +109,7 @@ export default function ApproachSection({ withId = true }: { withId?: boolean })
             {/* Enhanced CTA Button */}
             <Button 
               size="lg"
-              className="group relative overflow-hidden bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border-2 border-white/20"
+              className="cta-enhanced group relative overflow-hidden text-white font-bold px-8 py-4 rounded-xl"
               onClick={() => {
                 const contactSection = document.getElementById('contact');
                 if (contactSection) {

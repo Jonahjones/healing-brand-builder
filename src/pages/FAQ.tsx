@@ -113,7 +113,7 @@ const FAQ = () => {
               const isOpen = openItem === index;
               
               return (
-                <Card key={index} className="bg-white/95 backdrop-blur-sm border-2 border-gentle-terracotta/20 hover:border-gentle-terracotta/40 hover:shadow-xl transition-all duration-300 shadow-lg overflow-hidden group">
+                <Card key={index} className="card-enhanced border-gentle-terracotta/30 hover:border-gentle-terracotta/50 overflow-hidden group">
                   <CardContent className="p-0">
                     {/* Decorative gradient overlay */}
                     <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-gentle-terracotta/5 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -173,7 +173,7 @@ const FAQ = () => {
 
           {/* Call to Action */}
           <div className="mt-12 text-center">
-            <Card className="bg-white/95 backdrop-blur-sm border-2 border-gentle-terracotta/20 shadow-xl">
+            <Card className="card-enhanced border-gentle-terracotta/30">
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold text-cozy-brown mb-4">
                   Still Have Questions?
