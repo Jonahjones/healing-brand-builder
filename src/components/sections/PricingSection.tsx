@@ -14,11 +14,11 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
         {/* Hero section */}
         <header data-pricing-lead data-lead="pricing" data-role="pricing-hero" className="text-center mb-4">
           {withId ? (
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-cozy-brown mb-2">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown mb-4">
               Investment in Your <span className="text-gentle-terracotta">Wellbeing</span>
             </h2>
           ) : (
-            <h1 className="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-cozy-brown mb-2">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown mb-4">
               Investment in Your <span className="text-gentle-terracotta">Wellbeing</span>
             </h1>
           )}
@@ -32,9 +32,7 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
           {/* Central pricing card */}
           <Card className="bg-soft-cream/40 border-2 border-gentle-terracotta/20 shadow-xl mb-6 hover:transform-none hover:shadow-xl transition-none">
             <CardHeader className="text-center pt-6 pb-4 bg-gradient-to-br from-gentle-terracotta/5 to-warm-sage/5">
-              <div className="w-16 h-16 bg-gradient-to-br from-gentle-terracotta/20 to-warm-sage/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <DollarSign className="w-8 h-8 text-gentle-terracotta" />
-              </div>
+
               <div className="mb-4">
                 <div className="flex items-baseline justify-center gap-2 mb-2">
                   <span className="text-5xl font-heading font-bold text-cozy-brown">$100</span>

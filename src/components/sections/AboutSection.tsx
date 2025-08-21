@@ -5,7 +5,7 @@ const zachProfessionalImage = "/lovable-uploads/62dfc03a-96b9-4f6c-821e-c327b9b4
 
 export default function AboutSection({ withId = true }: { withId?: boolean }) {
   return (
-    <section id={withId ? "about" : undefined} className="pt-6 pb-12 sm:pt-8 sm:pb-16 lg:pt-12 lg:pb-24 bg-gradient-to-br from-warm-cream via-natural-beige to-soft-sage/20 relative overflow-hidden min-h-screen">
+    <section id={withId ? "about" : undefined} className="pt-24 pb-16 bg-gradient-to-br from-warm-cream via-natural-beige to-soft-sage/20 relative overflow-hidden min-h-screen">
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 bg-gradient-to-tr from-gentle-terracotta/5 to-transparent"></div>
       <div className="absolute top-20 right-20 w-64 h-64 bg-soft-sage/10 rounded-full blur-3xl"></div>
@@ -13,7 +13,7 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-24 items-center mb-12 sm:mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center mb-8 sm:mb-12">
           {/* Professional Photo with Enhanced Design */}
           <div className="order-2 lg:order-1">
             <div className="relative max-w-sm sm:max-w-md lg:max-w-lg mx-auto lg:mx-0">
@@ -44,11 +44,11 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
           </div>
 
           {/* Content with Better Visual Hierarchy */}
-          <div className="order-1 lg:order-2 space-y-6 sm:space-y-8">
+          <div className="order-1 lg:order-2 space-y-4 sm:space-y-6">
             {/* Spacing for header clearance */}
-            <div className="pt-8 sm:pt-10"></div>
+            <div className="pt-4 sm:pt-6"></div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold text-cozy-brown leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown leading-tight">
               You Deserve a Therapist Who
               <span className="block text-gentle-terracotta">Understands and Supports You</span>
             </h1>

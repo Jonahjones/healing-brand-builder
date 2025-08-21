@@ -45,7 +45,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
   };
 
   return (
-    <section id={withId ? "contact" : undefined} data-page-hero className="pt-32 pb-20 bg-gradient-to-br from-warm-cream via-white to-natural-beige relative overflow-hidden min-h-screen">
+    <section id={withId ? "contact" : undefined} data-page-hero className="pt-24 pb-16 bg-gradient-to-br from-warm-cream via-white to-natural-beige relative overflow-hidden min-h-screen">
       {/* Background Decorative Elements */}
       <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-gentle-terracotta/8 to-earth-clay/8 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-tl from-soft-sage/8 to-cozy-brown/8 rounded-full blur-3xl"></div>
@@ -53,7 +53,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* More compact header */}
         <div data-lead="contact" className="text-center mb-4 sm:mb-6">          
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-cozy-brown mb-2 sm:mb-3">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown mb-4">
             Ready to Make Real Progress? 
             <span className="block text-gentle-terracotta">Let's Connect.</span>
           </h1>
@@ -147,7 +147,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                       className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/80 backdrop-blur-sm rounded-lg py-2 text-sm"
                   aria-describedby="phone-description"
                 />
-                    <p id="phone-description" className="text-xs text-cozy-brown/60">Optional - for appointment reminders only</p>
+
               </div>
                   
                   <div className="space-y-1 sm:space-y-2">

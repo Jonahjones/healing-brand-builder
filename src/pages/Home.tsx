@@ -34,15 +34,38 @@ const Home = () => {
       <PricingSection />
       
       {/* Crawlable links for SEO */}
-      <nav aria-label="Explore" className="explore-links py-8 bg-warm-cream/20">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h3 className="text-lg font-heading font-semibold text-cozy-brown mb-4">Explore Our Services</h3>
-          <ul className="flex flex-wrap justify-center gap-4 text-sm">
-            <li><a href="/about/" className="text-gentle-terracotta hover:text-cozy-brown transition-colors underline">About</a></li>
-            <li><a href="/specialties/" className="text-gentle-terracotta hover:text-cozy-brown transition-colors underline">Specialties</a></li>
-            <li><a href="/approach/" className="text-gentle-terracotta hover:text-cozy-brown transition-colors underline">Approach</a></li>
-            <li><a href="/pricing/" className="text-gentle-terracotta hover:text-cozy-brown transition-colors underline">Pricing</a></li>
-            <li><a href="/contact/" className="text-gentle-terracotta hover:text-cozy-brown transition-colors underline">Contact</a></li>
+      <nav aria-label="Explore" className="explore-links py-12 bg-gradient-to-br from-warm-cream/30 via-natural-beige/20 to-soft-sage/10 border-t border-gentle-terracotta/10">
+        <div className="max-w-5xl mx-auto px-4 text-center">
+          <div className="inline-flex items-center gap-2 bg-gentle-terracotta/10 px-4 py-2 rounded-full mb-6">
+            <div className="w-2 h-2 bg-gentle-terracotta rounded-full"></div>
+            <h3 className="text-sm font-bold text-cozy-brown uppercase tracking-wider">Explore Our Services</h3>
+          </div>
+          <ul className="flex flex-wrap justify-center gap-3">
+            <li>
+              <a href="/about/" className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-3 rounded-xl border border-gentle-terracotta/20 text-cozy-brown font-semibold text-sm hover:bg-gentle-terracotta hover:text-white hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg">
+                <span>About</span>
+              </a>
+            </li>
+            <li>
+              <a href="/specialties/" className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-3 rounded-xl border border-gentle-terracotta/20 text-cozy-brown font-semibold text-sm hover:bg-gentle-terracotta hover:text-white hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg">
+                <span>Specialties</span>
+              </a>
+            </li>
+            <li>
+              <a href="/approach/" className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-3 rounded-xl border border-gentle-terracotta/20 text-cozy-brown font-semibold text-sm hover:bg-gentle-terracotta hover:text-white hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg">
+                <span>Approach</span>
+              </a>
+            </li>
+            <li>
+              <a href="/pricing/" className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-3 rounded-xl border border-gentle-terracotta/20 text-cozy-brown font-semibold text-sm hover:bg-gentle-terracotta hover:text-white hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg">
+                <span>Pricing</span>
+              </a>
+            </li>
+            <li>
+              <a href="/contact/" className="inline-flex items-center gap-2 bg-gentle-terracotta/90 backdrop-blur-sm px-4 py-3 rounded-xl border border-gentle-terracotta/20 text-white font-semibold text-sm hover:bg-gentle-terracotta hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg">
+                <span>Contact</span>
+              </a>
+            </li>
           </ul>
         </div>
       </nav>
