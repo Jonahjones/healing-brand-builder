@@ -96,6 +96,7 @@ All colors MUST be HSL.
     
     /* Legacy color mappings - redirecting to earth tones */
     --trust-blue: var(--gentle-terracotta); /* Use terracotta instead of blue */
+    --crisis-blue: 217 91% 60%; /* #3B82F6 - True blue for crisis/emotional strength */
 
     --radius: 0.75rem;
 

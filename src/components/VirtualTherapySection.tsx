@@ -1,4 +1,5 @@
 import { Brain, Heart, Target, CheckCircle, Lock, Shield } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
 const VirtualTherapySection = () => {
   const therapeuticMethods = [
@@ -16,7 +17,7 @@ const VirtualTherapySection = () => {
       description: "Stay present and observe thoughts without judgment.",
       benefit: "Respond clearly, not react emotionally",
       icon: Heart,
-      color: "energy-coral"
+      color: "gentle-terracotta"
     },
     {
       title: "DBT",
@@ -24,7 +25,7 @@ const VirtualTherapySection = () => {
       description: "Manage intense emotions and improve relationships.",
       benefit: "Crisis strategies + emotional strength",
       icon: Target,
-      color: "optimism-yellow"
+      color: "gentle-terracotta"
     }
   ];
 
@@ -74,20 +75,11 @@ const VirtualTherapySection = () => {
             {therapeuticMethods.map((method, index) => {
               const Icon = method.icon;
             return (
-                <div
-                key={index} 
-                  className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-5 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:scale-102 border border-white/50 overflow-hidden"
-                >
-                  {/* Simplified decorative elements */}
-                  <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-white/40 to-transparent rounded-full blur-lg"></div>
+              <Card key={index} className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <CardContent className="p-5">
+                  {/* Icon */}
                   <div
-                    className="absolute -top-2 -right-2 w-8 h-8 rounded-full opacity-20"
-                    style={{ backgroundColor: `hsl(var(--${method.color}))` }}
-                  ></div>
-
-                  {/* More compact icon */}
-                  <div
-                    className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg group-hover:scale-105 transition-transform duration-300"
+                    className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg"
                     style={{
                       background: `linear-gradient(135deg, hsl(var(--${method.color}) / 0.15), hsl(var(--${method.color}) / 0.25))`
                     }}
@@ -121,7 +113,8 @@ const VirtualTherapySection = () => {
                       ✓ {method.benefit}
                     </div>
                   </div>
-                </div>
+                </CardContent>
+              </Card>
               );
             })}
           </div>
@@ -131,7 +124,7 @@ const VirtualTherapySection = () => {
         
         {/* More compact bottom call-to-action cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="relative bg-gradient-to-br from-gentle-terracotta/10 via-white/80 to-earth-clay/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gentle-terracotta/20 shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-300">
+          <div className="relative bg-white backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gentle-terracotta/20 shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-300">
             <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-gentle-terracotta/20 to-transparent rounded-full blur-xl"></div>
 
             <div className="relative z-10">
@@ -153,7 +146,7 @@ const VirtualTherapySection = () => {
             </div>
           </div>
 
-          <div className="relative bg-gradient-to-br from-cozy-brown/10 via-white/80 to-earth-clay/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-cozy-brown/20 shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-300">
+          <div className="relative bg-white backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-cozy-brown/20 shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-300">
             <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-cozy-brown/20 to-transparent rounded-full blur-xl"></div>
 
             <div className="relative z-10">

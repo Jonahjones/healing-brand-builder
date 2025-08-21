@@ -22,7 +22,7 @@ const TherapistStorySection = () => {
               <div className="absolute -inset-4 bg-gradient-to-br from-gentle-terracotta/20 to-soft-sage/20 rounded-3xl blur-xl"></div>
               <div className="absolute -inset-2 bg-gradient-to-tr from-cozy-brown/10 to-earth-clay/10 rounded-2xl"></div>
 
-              <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-2 shadow-2xl">
+              <div className="relative bg-white/95 backdrop-blur-sm rounded-2xl p-2 shadow-2xl">
                 <img
                   src={zachProfessionalImage}
                   alt="Zach Rehbein-Jones, Licensed Clinical Social Worker"
@@ -57,7 +57,7 @@ const TherapistStorySection = () => {
               <span className="block text-gentle-terracotta">Understands and Supports You</span>
             </h1>
 
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-soft-sage/20 shadow-lg">
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-soft-sage/20 shadow-lg">
               <p className="text-base sm:text-lg lg:text-xl text-cozy-brown/90 leading-relaxed">
                 I am a Licensed Clinical Social Worker licensed in California and Wisconsin who knows seeking therapy takes courage. You want more than credentials. You want a compassionate, judgment-free space where your unique experiences are understood.
               </p>

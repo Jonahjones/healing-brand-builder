@@ -6,7 +6,7 @@ const zachProfessionalImage = "/lovable-uploads/62dfc03a-96b9-4f6c-821e-c327b9b4
 
 export default function AboutSection({ withId = true }: { withId?: boolean }) {
   return (
-    <section id={withId ? "about" : undefined} className="pt-24 pb-16 backdrop-blur-sm bg-white/5 relative overflow-hidden min-h-screen transition-all duration-1000 ease-out">
+    <section id={withId ? "about" : undefined} className={`pt-24 pb-16 ${withId ? 'backdrop-blur-sm bg-white/5' : 'bg-gradient-to-br from-warm-cream via-natural-beige to-soft-sage/30'} relative overflow-hidden min-h-screen transition-all duration-1000 ease-out`}>
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 bg-gradient-to-tr from-gentle-terracotta/5 to-transparent"></div>
       <div className="absolute top-20 right-20 w-64 h-64 bg-soft-sage/10 rounded-full blur-3xl"></div>
@@ -22,7 +22,7 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
               <div className="absolute -inset-4 bg-gradient-to-br from-gentle-terracotta/20 to-soft-sage/20 rounded-3xl blur-xl"></div>
               <div className="absolute -inset-2 bg-gradient-to-tr from-cozy-brown/10 to-earth-clay/10 rounded-2xl"></div>
 
-              <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-2 shadow-2xl">
+              <div className="relative bg-white/95 backdrop-blur-sm rounded-2xl p-2 shadow-2xl">
                 <ProfileImage
                   src={zachProfessionalImage}
                   alt="Zach Rehbein-Jones, Licensed Clinical Social Worker"
@@ -56,7 +56,7 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
               </span>
             </h1>
 
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-soft-sage/20 shadow-lg">
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-soft-sage/20 shadow-lg">
               <p className="text-base sm:text-lg lg:text-xl text-cozy-brown/90 leading-relaxed">
                 I am a Licensed Clinical Social Worker licensed in California and Wisconsin who knows seeking therapy takes courage. You want more than credentials. You want a compassionate, judgment-free space where your unique experiences are understood.
               </p>

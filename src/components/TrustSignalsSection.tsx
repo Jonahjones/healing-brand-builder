@@ -69,7 +69,7 @@ const TrustSignalsSection = () => {
                   
                   {/* Main icon container */}
                   <div 
-                    className="relative w-20 h-20 rounded-3xl flex items-center justify-center mx-auto shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110 bg-white/80 backdrop-blur-sm border-2"
+                    className="relative w-20 h-20 rounded-3xl flex items-center justify-center mx-auto shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110 bg-white/95 backdrop-blur-sm border-2"
                     style={{ borderColor: `hsl(var(--${credential.color}) / 0.3)` }}
                   >
                     <Icon 
@@ -91,7 +91,7 @@ const TrustSignalsSection = () => {
         
         {/* Enhanced Bottom Trust Statement */}
         <div className="text-center">
-          <div className="bg-gradient-to-r from-gentle-terracotta/10 to-earth-clay/10 rounded-2xl p-8 border border-gentle-terracotta/20 max-w-3xl mx-auto">
+          <div className="bg-white rounded-2xl p-8 border border-gentle-terracotta/20 max-w-3xl mx-auto shadow-lg">
             <div className="flex items-center justify-center gap-3 mb-4">
               <Shield className="w-6 h-6 text-gentle-terracotta" />
               <h4 className="text-xl font-bold text-cozy-brown">Your Trust Matters</h4>

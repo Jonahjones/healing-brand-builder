@@ -43,7 +43,7 @@ const HeroSection = () => {
           </h1>
           
           {/* More compact description */}
-          <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gentle-terracotta/20 shadow-xl mb-4 sm:mb-6">
+          <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gentle-terracotta/20 shadow-xl mb-4 sm:mb-6">
             <p className="text-base sm:text-lg text-cozy-brown leading-relaxed font-medium">
               I provide adults and young adults with <span className="font-bold text-gentle-terracotta">honest feedback</span>,
               <a href="/approach/" className="font-bold text-earth-clay hover:underline"> practical strategies</a>, and
@@ -56,15 +56,15 @@ const HeroSection = () => {
           
           {/* Trust badges - visible but not button-like */}
           <div className="flex flex-wrap gap-2 sm:gap-3 mb-4 sm:mb-6">
-            <div className="flex items-center gap-2 bg-white/80 px-3 py-2 rounded-full border border-gentle-terracotta/20">
+            <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-3 py-2 rounded-full border border-gentle-terracotta/20">
               <Award className="w-4 h-4 text-gentle-terracotta" />
               <span className="text-xs sm:text-sm font-semibold text-cozy-brown">LCSW Licensed</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/80 px-3 py-2 rounded-full border border-earth-clay/20">
+            <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-3 py-2 rounded-full border border-earth-clay/20">
               <Lock className="w-4 h-4 text-earth-clay" />
               <span className="text-xs sm:text-sm font-semibold text-cozy-brown">HIPAA Compliant</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/80 px-3 py-2 rounded-full border border-forest-green/20">
+            <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-3 py-2 rounded-full border border-forest-green/20">
               <CheckCircle className="w-4 h-4 text-forest-green" />
               <span className="text-xs sm:text-sm font-semibold text-cozy-brown">Insurance Accepted</span>
             </div>

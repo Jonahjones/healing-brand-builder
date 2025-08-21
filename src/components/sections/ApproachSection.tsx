@@ -35,7 +35,7 @@ export default function ApproachSection({ withId = true }: { withId?: boolean })
   ];
 
   return (
-    <section id={withId ? "approach" : undefined} data-page-hero className="pt-24 pb-16 backdrop-blur-sm bg-white/5 relative overflow-hidden min-h-screen transition-all duration-1000 ease-out">
+    <section id={withId ? "approach" : undefined} data-page-hero className={`pt-24 pb-16 ${withId ? 'backdrop-blur-sm bg-white/5' : 'bg-gradient-to-br from-warm-cream via-natural-beige to-soft-sage/30'} relative overflow-hidden min-h-screen transition-all duration-1000 ease-out`}>
       {/* Background Decorative Elements */}
       <div className="absolute top-10 left-10 w-96 h-96 bg-gradient-to-br from-gentle-terracotta/10 to-soft-sage/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-br from-cozy-brown/8 to-warm-sage/8 rounded-full blur-3xl"></div>
@@ -72,19 +72,19 @@ export default function ApproachSection({ withId = true }: { withId?: boolean })
             
             return (
               <Card key={index} className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <CardContent className="p-5">
-                  <div className="flex items-center gap-4 mb-3">
+                <CardContent className="p-4">
+                  <div className="flex items-center gap-4 mb-2">
                     <div className={`w-12 h-12 ${colorClasses.bg} rounded-full flex items-center justify-center`}>
                       <IconComponent className={`w-6 h-6 ${colorClasses.text}`} />
                     </div>
                     <h3 className="text-xl font-bold text-foreground">{method.title}</h3>
                   </div>
                   
-                  <p className="text-muted-foreground mb-3 leading-relaxed">
+                  <p className="text-muted-foreground mb-2 leading-relaxed">
                     {method.description}
                   </p>
                   
-                  <div className="border-l-4 border-success-green/30 pl-4 bg-success-green/5 py-2 rounded-r">
+                  <div className="border-l-4 border-success-green/30 pl-4 bg-success-green/5 py-1.5 rounded-r">
                     <p className="text-sm font-medium text-foreground">
                       <span className="text-success-green font-bold">Why this matters:</span> {method.whyItMatters}
                     </p>

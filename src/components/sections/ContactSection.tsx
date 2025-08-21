@@ -45,7 +45,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
   };
 
   return (
-    <section id={withId ? "contact" : undefined} data-page-hero className="pt-24 pb-16 backdrop-blur-sm bg-white/5 relative overflow-hidden min-h-screen transition-all duration-1000 ease-out">
+    <section id={withId ? "contact" : undefined} data-page-hero className={`pt-24 pb-16 ${withId ? 'backdrop-blur-sm bg-white/5' : 'bg-gradient-to-br from-warm-cream via-natural-beige to-soft-sage/30'} relative overflow-hidden min-h-screen transition-all duration-1000 ease-out`}>
       {/* Background Decorative Elements */}
       <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-gentle-terracotta/8 to-earth-clay/8 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-tl from-soft-sage/8 to-cozy-brown/8 rounded-full blur-3xl"></div>
@@ -67,7 +67,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
           {/* More compact contact form */}
           <div className="lg:col-span-2" data-role="contact-form">
-            <Card className="bg-soft-cream/40 border-2 border-cozy-brown/10 shadow-xl overflow-hidden">
+            <Card className="bg-white/95 backdrop-blur-sm border-2 border-cozy-brown/10 shadow-xl overflow-hidden">
               <div className="h-1 bg-gradient-to-r from-gentle-terracotta to-earth-clay"></div>
               <CardHeader className="bg-gradient-to-br from-gentle-terracotta/5 to-earth-clay/5 pb-2 sm:pb-3">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-3">
@@ -106,7 +106,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                     id="firstName" 
                     name="firstName"
                     placeholder="Your first name" 
-                        className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/80 backdrop-blur-sm rounded-lg py-1.5 text-sm h-9"
+                        className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/95 backdrop-blur-sm rounded-lg py-1.5 text-sm h-9"
                     required
                     aria-required="true"
                   />
@@ -117,7 +117,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                     id="lastName" 
                     name="lastName"
                     placeholder="Your last name" 
-                        className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/80 backdrop-blur-sm rounded-lg py-1.5 text-sm h-9"
+                        className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/95 backdrop-blur-sm rounded-lg py-1.5 text-sm h-9"
                     required
                     aria-required="true"
                   />
@@ -131,7 +131,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                   name="email"
                   type="email" 
                   placeholder="your.email@example.com" 
-                      className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/80 backdrop-blur-sm rounded-lg py-2 text-sm"
+                      className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/95 backdrop-blur-sm rounded-lg py-2 text-sm"
                   required
                   aria-required="true"
                   aria-describedby="email-description"
@@ -146,7 +146,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                   name="phone"
                   type="tel" 
                   placeholder="(555) 123-4567" 
-                      className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/80 backdrop-blur-sm rounded-lg py-2 text-sm"
+                      className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/95 backdrop-blur-sm rounded-lg py-2 text-sm"
                   aria-describedby="phone-description"
                 />
 
@@ -159,7 +159,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                   name="message"
                   placeholder="Share what you're comfortable with... anxiety, depression, life transitions, relationships, etc. This helps me understand how I can best support you."
                       rows={2}
-                      className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/80 backdrop-blur-sm rounded-lg resize-none text-sm py-1.5"
+                      className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/95 backdrop-blur-sm rounded-lg resize-none text-sm py-1.5"
                   required
                   aria-required="true"
                   aria-describedby="message-description"
@@ -205,7 +205,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
 
           {/* More compact contact info */}
           <div className="space-y-4 sm:space-y-6" data-role="contact-aside">
-            <Card className="bg-soft-cream/40 border border-cozy-brown/10 shadow-lg">
+            <Card className="bg-white/95 backdrop-blur-sm border border-cozy-brown/10 shadow-lg">
               <CardHeader className="pb-3 sm:pb-4">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-8 h-8 bg-cozy-brown/20 rounded-lg flex items-center justify-center">
@@ -256,13 +256,13 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
               </CardContent>
             </Card>
             
-            <Card className="bg-soft-cream/40 border border-cozy-brown/10 shadow-lg">
+            <Card className="bg-white/95 backdrop-blur-sm border border-cozy-brown/10 shadow-lg">
               <CardContent className="p-4 sm:p-6">
                 <h4 className="text-base font-bold text-cozy-brown mb-2">Free Consultation</h4>
                 <p className="text-xs sm:text-sm text-cozy-brown/80 mb-3">
                   15 minutes to see if we're a good fit. No pressure, just honest conversation about your goals.
                 </p>
-                <div className="bg-white/70 rounded-lg p-3 border border-gentle-terracotta/20">
+                <div className="bg-white/95 backdrop-blur-sm rounded-lg p-3 border border-gentle-terracotta/20">
                   <p className="text-xs font-semibold text-gentle-terracotta uppercase tracking-wider mb-1">What We'll Cover</p>
                   <ul className="text-xs text-cozy-brown/80 space-y-1">
                     <li>• Your current challenges</li>

@@ -5,7 +5,7 @@ import s from "./PricingSection.module.css";
 
 export default function PricingSection({ withId = true }: { withId?: boolean }) {
   return (
-    <section id={withId ? "rates" : undefined} data-page-hero data-pricing-root className={`backdrop-blur-sm bg-white/5 relative overflow-hidden min-h-screen transition-all duration-1000 ease-out ${s.pricing}`}>
+    <section id={withId ? "rates" : undefined} data-page-hero data-pricing-root className={`${withId ? 'backdrop-blur-sm bg-white/5' : 'bg-gradient-to-br from-warm-cream via-natural-beige to-soft-sage/30'} relative overflow-hidden min-h-screen transition-all duration-1000 ease-out ${s.pricing}`}>
       {/* Background Decorative Elements */}
       <div className="absolute top-10 left-10 w-96 h-96 bg-gradient-to-br from-gentle-terracotta/10 to-soft-sage/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-br from-cozy-brown/8 to-warm-sage/8 rounded-full blur-3xl"></div>
@@ -36,7 +36,7 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
         {/* Main pricing display */}
         <div className="max-w-4xl mx-auto">
           {/* Central pricing card */}
-          <Card className="bg-soft-cream/40 border-2 border-gentle-terracotta/20 shadow-xl mb-6 hover:transform-none hover:shadow-xl transition-none">
+          <Card className="bg-white border-2 border-gentle-terracotta/20 shadow-xl mb-6 hover:transform-none hover:shadow-xl transition-none">
             <CardHeader className="text-center pt-6 pb-4 bg-gradient-to-br from-gentle-terracotta/5 to-warm-sage/5">
 
               <div className="mb-4">
