@@ -34,22 +34,19 @@ export default function ApproachSection({ withId = true }: { withId?: boolean })
   ];
 
   return (
-    <section id={withId ? "approach" : undefined} data-page-hero className="pt-32 pb-20 bg-gradient-to-br from-warm-cream via-white to-natural-beige relative overflow-hidden min-h-screen">
+    <section id={withId ? "approach" : undefined} data-page-hero className="pt-24 pb-12 bg-gradient-to-br from-warm-cream via-white to-natural-beige relative overflow-hidden min-h-screen">
       {/* Background Decorative Elements */}
       <div className="absolute top-10 left-10 w-96 h-96 bg-gradient-to-br from-gentle-terracotta/10 to-soft-sage/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-br from-cozy-brown/8 to-warm-sage/8 rounded-full blur-3xl"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <header data-lead="approach" className="text-center mb-16">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown mb-6">
+        <header data-lead="approach" className="text-center mb-8">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cozy-brown mb-4">
             My <span className="text-gentle-terracotta">Approach</span>
           </h1>
-          <p className="text-lg text-cozy-brown/70 max-w-3xl mx-auto">
-            I use evidence-based methods that are proven to work. Here's what to expect from our therapeutic approach.
-          </p>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
           {methods.map((method, index) => {
             const IconComponent = method.icon;
             // Get explicit classes for each color to avoid dynamic class issues
@@ -71,15 +68,15 @@ export default function ApproachSection({ withId = true }: { withId?: boolean })
             
             return (
               <Card key={index} className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <CardContent className="p-8">
-                  <div className="flex items-center gap-4 mb-6">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-4 mb-4">
                     <div className={`w-12 h-12 ${colorClasses.bg} rounded-full flex items-center justify-center`}>
                       <IconComponent className={`w-6 h-6 ${colorClasses.text}`} />
                     </div>
                     <h3 className="text-xl font-bold text-foreground">{method.title}</h3>
                   </div>
                   
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                  <p className="text-muted-foreground mb-3 leading-relaxed">
                     {method.description}
                   </p>
                   
@@ -95,8 +92,8 @@ export default function ApproachSection({ withId = true }: { withId?: boolean })
         </div>
 
         <div className="text-center">
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-success-green/20 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
+                      <div className="bg-white rounded-2xl p-6 shadow-lg border border-success-green/20 max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-foreground mb-3">
               Your Therapy Journey
             </h3>
             <p className="text-muted-foreground leading-relaxed">
