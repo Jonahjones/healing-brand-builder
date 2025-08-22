@@ -93,7 +93,9 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
               }}
               >
                 <span className="relative z-10 flex items-center">
-                  <Calendar className="w-5 h-5 mr-2" />Book Your Free Consultation
+                  <Calendar className="w-5 h-5 mr-2" />
+                  <span className="hidden sm:inline">Book Your Free Consultation</span>
+                  <span className="sm:hidden">Book Now</span>
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-cozy-brown/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Button>

@@ -126,7 +126,8 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
                   }}
                 >
                   <Calendar className="w-4 h-4 mr-2" />
-                  Book Your Free Consultation
+                  <span className="hidden sm:inline">Book Your Free Consultation</span>
+                  <span className="sm:hidden">Book Now</span>
                 </Button>
                 <p className="text-xs text-cozy-brown/60 mt-3">
                   No pressure, just clarity • Let's see if we're a good fit
