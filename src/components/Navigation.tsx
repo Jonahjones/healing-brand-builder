@@ -87,24 +87,22 @@ const Navigation = () => {
             ))}
             {onHome ? (
               <Button 
-                className="group relative overflow-hidden bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold px-6 py-2 rounded-lg transition-all duration-500 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 border-2 border-white/30 ring-2 ring-gentle-terracotta/20"
+                className="cta-enhanced text-white font-bold px-6 py-2 rounded-lg"
                 onClick={handleContactClick}
               >
-                <span className="relative z-10 flex items-center">
+                <span className="flex items-center">
                   <Calendar className="w-5 h-5 mr-2" />Book Your Free Consultation
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-cozy-brown/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
             ) : (
               <Link to="/contact">
                 <Button 
-                  className="group relative overflow-hidden bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold px-6 py-2 rounded-lg transition-all duration-500 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 border-2 border-white/30 ring-2 ring-gentle-terracotta/20"
+                  className="cta-enhanced text-white font-bold px-6 py-2 rounded-lg"
                   onClick={handleContactClick}
                 >
-                  <span className="relative z-10 flex items-center">
+                  <span className="flex items-center">
                     <Calendar className="w-5 h-5 mr-2" />Book Your Free Consultation
                   </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-cozy-brown/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Button>
               </Link>
             )}

@@ -49,7 +49,7 @@ const VirtualTherapySection = () => {
           </div>
           
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-cozy-brown mb-3">
-            How I Help You <span className="text-transparent bg-gradient-to-r from-gentle-terracotta via-earth-clay to-cozy-brown bg-clip-text block lg:inline">Heal & Thrive</span>
+            How I Help You <span className="text-gentle-terracotta block lg:inline">Heal & Thrive</span>
           </h2>
           
           <div className="max-w-4xl mx-auto">

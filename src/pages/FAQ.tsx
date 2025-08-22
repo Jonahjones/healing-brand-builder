@@ -54,14 +54,14 @@ const FAQ = () => {
       category: "Technology",
       question: "What platform do you use for virtual therapy sessions?",
       answer: "I use a HIPAA-compliant, secure video platform that meets all privacy requirements for healthcare. You'll receive simple instructions and a link before your session - no special software downloads required. Sessions work on computers, tablets, and smartphones.",
-      color: "cyan-600"
+      color: "gentle-terracotta"
     },
     {
       icon: Shield,
       category: "Privacy & Safety",
       question: "How do you ensure confidentiality in virtual sessions?",
       answer: "I use only HIPAA-compliant platforms with end-to-end encryption. All sessions and records are kept strictly confidential according to professional ethics and state laws. I'll discuss privacy considerations and help you create a private space for sessions.",
-      color: "indigo-600"
+      color: "earth-clay"
     },
     {
       icon: Heart,
