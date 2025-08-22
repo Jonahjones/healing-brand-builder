@@ -41,8 +41,8 @@ const VirtualTherapySection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* More compact main header */}
         <div className="text-center mb-8 sm:mb-10">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-gentle-terracotta/10 to-earth-clay/10 px-3 py-1.5 rounded-full mb-4 border border-gentle-terracotta/20 shadow-lg backdrop-blur-sm">
-            <div className="w-5 h-5 bg-gradient-to-r from-gentle-terracotta to-earth-clay rounded-full flex items-center justify-center">
+          <div className="inline-flex items-center gap-2 bg-forest-green/10 px-3 py-1.5 rounded-full mb-4 border border-forest-green/20 shadow-lg backdrop-blur-sm">
+            <div className="w-5 h-5 bg-forest-green rounded-full flex items-center justify-center">
               <CheckCircle className="w-3 h-3 text-white" />
             </div>
             <span className="text-xs font-bold text-cozy-brown uppercase tracking-wider">Evidence-Based Care</span>

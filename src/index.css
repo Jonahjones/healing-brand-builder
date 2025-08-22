@@ -70,12 +70,12 @@ All colors MUST be HSL.
     --input: 0 0% 100%; /* White input backgrounds */
     --ring: 218 30% 26%;
 
-    /* Ultra-clean minimalist palette - maximum sophistication */
+    /* Sophisticated 4-color palette - professional with warmth */
     --warm-cream: 0 0% 99%; /* #FCFCFC - Pure white */
     --soft-sage: 210 10% 96%; /* #F5F6F7 - Subtle neutral */
     --gentle-terracotta: 210 50% 55%; /* #4A90C2 - Professional blue */
     --cozy-brown: 215 30% 25%; /* #2D3E50 - Deep navy */
-    --forest-green: 210 50% 55%; /* #4A90C2 - Same as primary blue */
+    --forest-green: 155 25% 55%; /* #7BA098 - Sophisticated sage for growth/healing */
     --sunset-peach: 0 0% 97%; /* #F7F7F7 - Light neutral */
     --earth-clay: 215 30% 25%; /* #2D3E50 - Same as navy */
     --natural-beige: 0 0% 99%; /* #FCFCFC - Pure white */
@@ -99,10 +99,10 @@ All colors MUST be HSL.
     --focus-glow: 195 100% 50%;  /* Bright teal for focus */
     --success-earth: 140 40% 45%;
     
-    /* Simplified accent colors - minimal palette */
-    --warm-sage: 210 50% 55%; /* #4A90C2 - Same as primary blue */
-    --energy-coral: 210 50% 55%; /* #4A90C2 - Same as primary blue */
-    --success-green: 210 50% 55%; /* #4A90C2 - Same as primary blue */
+    /* Refined accent colors - professional with strategic warmth */
+    --warm-sage: 155 25% 55%; /* #7BA098 - Sophisticated sage for warmth */
+    --energy-coral: 210 50% 55%; /* #4A90C2 - Keep primary blue */
+    --success-green: 155 25% 55%; /* #7BA098 - Sage for growth/success */
     
     /* Legacy color mappings - now cleaner */
     --trust-blue: var(--gentle-terracotta);

@@ -54,15 +54,19 @@ const TrustSignalsSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {credentials.map((credential, index) => {
             const Icon = credential.icon;
+            // Use sage green for success/growth indicator
+            const isSuccessIndicator = credential.text.includes("successful sessions");
+            const iconColor = isSuccessIndicator ? "forest-green" : "gentle-terracotta";
+            
             return (
               <div key={index} className="group text-center">
                 <div className="relative mb-6">
                   {/* Background decoration */}
-                  <div className="absolute inset-0 rounded-3xl opacity-20 blur-lg bg-gentle-terracotta"></div>
+                  <div className={`absolute inset-0 rounded-3xl opacity-20 blur-lg ${isSuccessIndicator ? 'bg-forest-green' : 'bg-gentle-terracotta'}`}></div>
                   
                   {/* Main icon container */}
-                  <div className="relative w-20 h-20 rounded-3xl flex items-center justify-center mx-auto shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110 bg-white/95 backdrop-blur-sm border-2 border-gentle-terracotta/30">
-                    <Icon className="w-10 h-10 text-gentle-terracotta" />
+                  <div className={`relative w-20 h-20 rounded-3xl flex items-center justify-center mx-auto shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110 bg-white/95 backdrop-blur-sm border-2 ${isSuccessIndicator ? 'border-forest-green/30' : 'border-gentle-terracotta/30'}`}>
+                    <Icon className={`w-10 h-10 ${isSuccessIndicator ? 'text-forest-green' : 'text-gentle-terracotta'}`} />
                   </div>
                 </div>
                 
