@@ -93,15 +93,15 @@ const TrustSignalsSection = () => {
             </p>
             <div className="mt-6 flex items-center justify-center gap-8 text-sm text-cozy-brown/70">
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-success-green" />
+                <CheckCircle className="w-4 h-4 text-success-green hidden sm:block" />
                 <span>Licensed Professional</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-success-green" />
+                <CheckCircle className="w-4 h-4 text-success-green hidden sm:block" />
                 <span>Fully Insured</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-success-green" />
+                <CheckCircle className="w-4 h-4 text-success-green hidden sm:block" />
                 <span>HIPAA Compliant</span>
               </div>
             </div>
