@@ -55,14 +55,16 @@ const Navigation = () => {
   return (
     <>
       <nav className="fixed top-0 w-full z-50 px-4 sm:px-6 py-3 sm:py-4 bg-white/95 backdrop-blur-md border-b border-border/50 transition-all duration-300">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           <Link 
             to="/"
             onClick={handleLogoClick}
-            className="text-lg sm:text-xl lg:text-2xl font-heading font-bold text-primary truncate hover:text-primary/80 transition-colors duration-300"
+            className="font-heading font-bold text-primary hover:text-primary/80 transition-colors duration-300 flex-shrink-0"
+            style={{ fontSize: 'clamp(1rem, 2vw, 1.5rem)' }}
           >
-            <span className="hidden sm:inline">Zach Rehbein-Jones, LCSW</span>
-            <span className="sm:hidden">Zach Rehbein-Jones, LCSW</span>
+            <span className="hidden lg:inline">Zach Rehbein-Jones, LCSW</span>
+            <span className="hidden sm:inline lg:hidden">Zach Rehbein-Jones</span>
+            <span className="sm:hidden">Z. Rehbein-Jones</span>
           </Link>
           
           {/* Mobile menu button */}
@@ -83,11 +85,12 @@ const Navigation = () => {
                 key={item.name}
                 to={item.href}
                 onClick={handleNavClick}
-                className={`font-medium px-3 py-2 rounded-md transition-all duration-500 nav-link text-sm lg:text-base transform hover:scale-105 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-gentle-terracotta focus:ring-offset-2 ${
+                className={`font-medium px-3 py-2 rounded-md transition-all duration-500 nav-link transform hover:scale-105 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-gentle-terracotta focus:ring-offset-2 ${
                   (pathname === item.href || (item.name === "About" && pathname === "/about")) 
                     ? 'text-primary bg-primary/10 shadow-lg' 
                     : 'text-foreground hover:text-primary hover:bg-primary/5'
                 }`}
+                style={{ fontSize: 'clamp(0.875rem, 1.2vw, 1rem)' }}
               >
                 {item.name}
               </Link>
@@ -96,9 +99,12 @@ const Navigation = () => {
               <Button 
                 className="cta-enhanced text-white font-bold px-6 py-2 rounded-lg"
                 onClick={handleContactClick}
+                style={{ fontSize: 'clamp(0.875rem, 1.1vw, 1rem)' }}
               >
                 <span className="flex items-center">
-                  <Calendar className="w-5 h-5 mr-2" />Book Your Free Consultation
+                  <Calendar className="w-5 h-5 mr-2" />
+                  <span className="hidden xl:inline">Book Your Free Consultation</span>
+                  <span className="xl:hidden">Book Consultation</span>
                 </span>
               </Button>
             ) : (
@@ -106,9 +112,12 @@ const Navigation = () => {
                 <Button 
                   className="cta-enhanced text-white font-bold px-6 py-2 rounded-lg"
                   onClick={handleContactClick}
+                  style={{ fontSize: 'clamp(0.875rem, 1.1vw, 1rem)' }}
                 >
                   <span className="flex items-center">
-                    <Calendar className="w-5 h-5 mr-2" />Book Your Free Consultation
+                    <Calendar className="w-5 h-5 mr-2" />
+                    <span className="hidden xl:inline">Book Your Free Consultation</span>
+                    <span className="xl:hidden">Book Consultation</span>
                   </span>
                 </Button>
               </Link>
