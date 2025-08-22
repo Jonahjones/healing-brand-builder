@@ -70,14 +70,14 @@ All colors MUST be HSL.
     --input: 0 0% 100%; /* White input backgrounds */
     --ring: 218 30% 26%;
 
-    /* Refined color palette - lighter, cleaner, more modern */
+    /* Refined color palette - harmonious and professional */
     --warm-cream: 40 30% 97%; /* #FEFCFA - Very light warm white */
     --soft-sage: 140 20% 92%; /* #EDF5ED - Very light sage */
-    --gentle-terracotta: 15 60% 55%; /* #C7745C - True terracotta */
+    --gentle-terracotta: 15 70% 50%; /* #C96B47 - Warmer, more vibrant terracotta */
     --cozy-brown: 220 25% 32%; /* #3E4F5E - Softer navy */
-    --forest-green: 160 30% 60%; /* #7FB3A3 - Lighter sage green */
+    --forest-green: 160 40% 55%; /* #5FB299 - More vibrant sage green */
     --sunset-peach: 30 25% 92%; /* #F5F2EC - Very light peach */
-    --earth-clay: 20 50% 45%; /* #A65A3A - Deeper clay/brown */
+    --earth-clay: 200 25% 45%; /* #5A7C8D - Sophisticated blue-gray instead of brown */
     --natural-beige: 40 20% 96%; /* #FCFAF8 - Clean off-white */
     
     /* HIGH-CONTRAST ACTION COLORS - WCAG AA Compliant */
