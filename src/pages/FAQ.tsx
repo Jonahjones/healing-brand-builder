@@ -186,7 +186,8 @@ const FAQ = () => {
                   className="inline-flex items-center gap-2 cta-enhanced text-white font-bold px-8 py-4 rounded-xl"
                 >
                   <Calendar className="w-5 h-5" />
-                  Book Free Consultation
+                  <span className="hidden sm:inline">Book Free Consultation</span>
+                  <span className="sm:hidden">Book Now</span>
                 </a>
               </CardContent>
             </Card>
