@@ -12,10 +12,34 @@ export default {
 	theme: {
 		container: {
 			center: true,
-			padding: '2rem',
+			padding: {
+				DEFAULT: '1rem',
+				sm: '2rem',
+				lg: '2rem',
+				xl: '2rem',
+				'2xl': '2rem',
+				'3xl': '3rem',
+				'4xl': '4rem'
+			},
 			screens: {
-				'2xl': '1400px'
+				sm: '640px',
+				md: '768px',
+				lg: '1024px',
+				xl: '1280px',
+				'2xl': '1400px',
+				'3xl': '1600px',
+				'4xl': '1920px'
 			}
+		},
+		screens: {
+			xs: '475px',
+			sm: '640px',
+			md: '768px',
+			lg: '1024px',
+			xl: '1280px',
+			'2xl': '1440px',
+			'3xl': '1920px',
+			'4xl': '2560px',
 		},
 		extend: {
 			fontFamily: {
