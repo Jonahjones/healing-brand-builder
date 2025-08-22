@@ -512,9 +512,9 @@ body {
     padding-right: 2rem;
   }
   
-  /* Fluid typography */
+  /* Fluid typography - less aggressive scaling */
   body {
-    font-size: clamp(1.125rem, 1.2vw, 1.375rem); /* 18px to 22px */
+    font-size: clamp(1rem, 1vw, 1.25rem); /* 16px to 20px - more reasonable */
   }
   
   /* Heading scaling */
@@ -587,9 +587,9 @@ body {
     padding-right: 2.5rem;
   }
   
-  /* Enhanced fluid typography for 4K */
+  /* Enhanced fluid typography for 4K - more reasonable */
   body {
-    font-size: clamp(1.25rem, 1.5vw, 1.5rem); /* 20px to 24px */
+    font-size: clamp(1.125rem, 1.2vw, 1.375rem); /* 18px to 22px - less aggressive */
   }
   
   /* Larger heading scaling for 4K */
