@@ -92,13 +92,7 @@ const VirtualTherapySection = () => {
                       {method.description}
                     </p>
 
-                    <div
-                      className="text-xs font-bold px-2.5 py-1.5 rounded-full shadow-md"
-                style={{
-                        backgroundColor: `hsl(var(--${method.color}))`,
-                        color: 'white'
-                      }}
-                    >
+                                        <div className="text-xs font-semibold px-2.5 py-1.5 rounded-full border-2 border-forest-green bg-forest-green/10 text-forest-green">
                       ✓ {method.benefit}
                     </div>
                   </div>
