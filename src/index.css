@@ -60,7 +60,7 @@ All colors MUST be HSL.
     --muted: 220 10% 95%; /* Light neutral for info boxes */
     --muted-foreground: 220 15% 40%; /* Medium gray text */
 
-    --accent: 15 60% 55%; /* True terracotta accent */
+    --accent: 210 45% 58%; /* Sophisticated blue accent */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 70% 55%;
@@ -70,15 +70,15 @@ All colors MUST be HSL.
     --input: 0 0% 100%; /* White input backgrounds */
     --ring: 218 30% 26%;
 
-    /* Refined color palette - harmonious and professional */
-    --warm-cream: 40 30% 97%; /* #FEFCFA - Very light warm white */
-    --soft-sage: 140 20% 92%; /* #EDF5ED - Very light sage */
-    --gentle-terracotta: 15 70% 50%; /* #C96B47 - Warmer, more vibrant terracotta */
-    --cozy-brown: 220 25% 32%; /* #3E4F5E - Softer navy */
-    --forest-green: 160 40% 55%; /* #5FB299 - More vibrant sage green */
-    --sunset-peach: 30 25% 92%; /* #F5F2EC - Very light peach */
-    --earth-clay: 200 25% 45%; /* #5A7C8D - Sophisticated blue-gray instead of brown */
-    --natural-beige: 40 20% 96%; /* #FCFAF8 - Clean off-white */
+    /* Exceptional color palette - sophisticated and harmonious */
+    --warm-cream: 45 15% 98%; /* #FEFEFE - Pure, barely warm white */
+    --soft-sage: 155 25% 88%; /* #DCE7E1 - Elegant sage */
+    --gentle-terracotta: 210 45% 58%; /* #5B9BD5 - Sophisticated blue */
+    --cozy-brown: 215 25% 28%; /* #354A5F - Rich navy */
+    --forest-green: 155 35% 55%; /* #6DB28A - Balanced green */
+    --sunset-peach: 25 35% 90%; /* #F0E6D7 - Warm neutral */
+    --earth-clay: 25 40% 65%; /* #B8956A - Sophisticated gold-bronze */
+    --natural-beige: 40 8% 97%; /* #F9F9F8 - Clean neutral */
     
     /* HIGH-CONTRAST ACTION COLORS - WCAG AA Compliant */
     --action-primary: 218 30% 26%; /* #2F4156 - Navy, high contrast */
@@ -100,9 +100,9 @@ All colors MUST be HSL.
     --success-earth: 140 40% 45%;
     
     /* Enhanced sophisticated colors */
-    --warm-sage: 160 20% 85%; /* #D1E7DD - Light sage for accents */
-    --energy-coral: 15 65% 70%; /* #E8A286 - Warm coral for highlights */
-    --success-green: 160 40% 60%; /* #70B5A0 - Modern sage green */
+    --warm-sage: 155 30% 75%; /* #B8CFC0 - Sophisticated sage */
+    --energy-coral: 25 50% 70%; /* #D4A574 - Elegant bronze */
+    --success-green: 155 40% 65%; /* #7BC09B - Premium green */
     
     /* Legacy color mappings - now cleaner */
     --trust-blue: var(--gentle-terracotta);
