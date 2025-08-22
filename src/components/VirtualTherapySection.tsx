@@ -72,7 +72,7 @@ const VirtualTherapySection = () => {
             {therapeuticMethods.map((method, index) => {
               const Icon = method.icon;
             return (
-              <Card key={index} className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <Card key={index} className="card-prominent">
                 <CardContent className="p-5">
                   {/* Icon */}
                   <div
@@ -121,7 +121,7 @@ const VirtualTherapySection = () => {
         
         {/* More compact bottom call-to-action cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="relative bg-white backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gentle-terracotta/20 shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-300">
+          <div className="card-prominent relative rounded-xl p-4 sm:p-6 overflow-hidden group">
             <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-gentle-terracotta/20 to-transparent rounded-full blur-xl"></div>
 
             <div className="relative z-10">
@@ -143,7 +143,7 @@ const VirtualTherapySection = () => {
             </div>
           </div>
 
-          <div className="relative bg-white backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-cozy-brown/20 shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-300">
+          <div className="card-prominent relative rounded-xl p-4 sm:p-6 overflow-hidden group">
             <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-cozy-brown/20 to-transparent rounded-full blur-xl"></div>
 
             <div className="relative z-10">

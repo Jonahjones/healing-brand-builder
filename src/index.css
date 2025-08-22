@@ -357,17 +357,17 @@ All colors MUST be HSL.
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
-  /* Enhanced card and CTA styles for better visibility */
+  /* Enhanced card and CTA styles for maximum visibility */
   .card-enhanced {
     background: white;
-    box-shadow: var(--card-shadow);
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 16px 48px -8px rgba(0, 0, 0, 0.2), 0 8px 24px -4px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba(0, 0, 0, 0.06);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .card-enhanced:hover {
-    box-shadow: var(--card-shadow-hover);
-    transform: translateY(-2px);
+    box-shadow: 0 20px 64px -8px rgba(0, 0, 0, 0.25), 0 12px 32px -4px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
   }
 
   .cta-enhanced {
@@ -381,6 +381,19 @@ All colors MUST be HSL.
     background: hsl(var(--earth-clay));
     box-shadow: 0 6px 16px -2px hsla(var(--gentle-terracotta), 0.4);
     transform: translateY(-2px);
+  }
+
+  /* Extra prominent cards for landing page sections */
+  .card-prominent {
+    background: white;
+    box-shadow: 0 24px 64px -12px rgba(0, 0, 0, 0.25), 0 16px 40px -8px rgba(0, 0, 0, 0.15), 0 0 0 2px rgba(0, 0, 0, 0.08);
+    border: 3px solid rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-prominent:hover {
+    box-shadow: 0 32px 80px -12px rgba(0, 0, 0, 0.3), 0 20px 48px -8px rgba(0, 0, 0, 0.2), 0 0 0 2px rgba(0, 0, 0, 0.12);
+    transform: translateY(-6px);
   }
 }
 

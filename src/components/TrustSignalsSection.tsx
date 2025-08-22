@@ -91,7 +91,7 @@ const TrustSignalsSection = () => {
         
         {/* Enhanced Bottom Trust Statement */}
         <div className="text-center">
-          <div className="bg-white rounded-2xl p-8 border border-gentle-terracotta/20 max-w-3xl mx-auto shadow-lg">
+          <div className="card-prominent rounded-2xl p-8 max-w-3xl mx-auto">
             <div className="flex items-center justify-center gap-3 mb-4">
               <Shield className="w-6 h-6 text-gentle-terracotta" />
               <h4 className="text-xl font-bold text-cozy-brown">Your Trust Matters</h4>
