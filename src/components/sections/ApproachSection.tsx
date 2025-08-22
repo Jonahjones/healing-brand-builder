@@ -53,22 +53,8 @@ export default function ApproachSection({ withId = true }: { withId?: boolean })
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
           {methods.map((method, index) => {
             const IconComponent = method.icon;
-            // Get explicit classes for each color to avoid dynamic class issues
-            const getColorClasses = (color: string) => {
-              switch (color) {
-                case "gentle-terracotta":
-                  return { bg: "bg-gentle-terracotta/10", text: "text-gentle-terracotta" };
-                case "energy-coral":
-                  return { bg: "bg-orange-500/10", text: "text-orange-500" };
-                case "success-green":
-                  return { bg: "bg-green-500/10", text: "text-green-500" };
-                case "warm-sage":
-                  return { bg: "bg-green-400/10", text: "text-green-400" };
-                default:
-                  return { bg: "bg-gray-500/10", text: "text-gray-500" };
-              }
-            };
-            const colorClasses = getColorClasses(method.color);
+            // Unified clean color scheme - no more color chaos
+            const colorClasses = { bg: "bg-gentle-terracotta/10", text: "text-gentle-terracotta" };
             
             return (
               <Card key={index} className="card-enhanced">

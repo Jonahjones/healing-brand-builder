@@ -6,25 +6,21 @@ const TrustSignalsSection = () => {
     { 
       text: "Licensed Clinical Social Worker (LCSW)", 
       icon: Shield,
-      color: "gentle-terracotta",
       stat: "LCSW"
     },
     { 
       text: "Over 5 years of experience", 
       icon: Award,
-      color: "gentle-terracotta",
       stat: "5+"
     },
     { 
       text: "500+ successful sessions", 
       icon: Users,
-      color: "forest-green",
       stat: "500+"
     },
     { 
       text: "Serving Wisconsin and California", 
       icon: Clock,
-      color: "earth-clay",
       stat: "2"
     }
   ];
@@ -33,9 +29,9 @@ const TrustSignalsSection = () => {
 
   return (
     <section id="credentials" className="py-20 backdrop-blur-sm bg-white/5 relative overflow-hidden">
-      {/* Background Decorative Elements */}
-      <div className="absolute top-10 right-10 w-72 h-72 bg-gradient-to-br from-gentle-terracotta/8 to-earth-clay/8 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-10 left-10 w-80 h-80 bg-gradient-to-tl from-soft-sage/10 to-cozy-brown/8 rounded-full blur-3xl"></div>
+      {/* Simplified Background Elements */}
+      <div className="absolute top-10 right-10 w-72 h-72 bg-gentle-terracotta/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-10 left-10 w-80 h-80 bg-gentle-terracotta/3 rounded-full blur-3xl"></div>
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Enhanced Header */}
@@ -62,20 +58,11 @@ const TrustSignalsSection = () => {
               <div key={index} className="group text-center">
                 <div className="relative mb-6">
                   {/* Background decoration */}
-                  <div 
-                    className="absolute inset-0 rounded-3xl opacity-20 blur-lg"
-                    style={{ backgroundColor: `hsl(var(--${credential.color}))` }}
-                  ></div>
+                  <div className="absolute inset-0 rounded-3xl opacity-20 blur-lg bg-gentle-terracotta"></div>
                   
                   {/* Main icon container */}
-                  <div 
-                    className="relative w-20 h-20 rounded-3xl flex items-center justify-center mx-auto shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110 bg-white/95 backdrop-blur-sm border-2"
-                    style={{ borderColor: `hsl(var(--${credential.color}) / 0.3)` }}
-                  >
-                    <Icon 
-                      className="w-10 h-10" 
-                      style={{ color: `hsl(var(--${credential.color}))` }}
-                    />
+                  <div className="relative w-20 h-20 rounded-3xl flex items-center justify-center mx-auto shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110 bg-white/95 backdrop-blur-sm border-2 border-gentle-terracotta/30">
+                    <Icon className="w-10 h-10 text-gentle-terracotta" />
                   </div>
                 </div>
                 

@@ -70,15 +70,15 @@ All colors MUST be HSL.
     --input: 0 0% 100%; /* White input backgrounds */
     --ring: 218 30% 26%;
 
-    /* Exceptional color palette - sophisticated and harmonious */
-    --warm-cream: 45 15% 98%; /* #FEFEFE - Pure, barely warm white */
-    --soft-sage: 155 25% 88%; /* #DCE7E1 - Elegant sage */
-    --gentle-terracotta: 210 45% 58%; /* #5B9BD5 - Sophisticated blue */
-    --cozy-brown: 215 25% 28%; /* #354A5F - Rich navy */
-    --forest-green: 155 35% 55%; /* #6DB28A - Balanced green */
-    --sunset-peach: 25 35% 90%; /* #F0E6D7 - Warm neutral */
-    --earth-clay: 25 40% 65%; /* #B8956A - Sophisticated gold-bronze */
-    --natural-beige: 40 8% 97%; /* #F9F9F8 - Clean neutral */
+    /* Ultra-clean minimalist palette - maximum sophistication */
+    --warm-cream: 0 0% 99%; /* #FCFCFC - Pure white */
+    --soft-sage: 210 10% 96%; /* #F5F6F7 - Subtle neutral */
+    --gentle-terracotta: 210 50% 55%; /* #4A90C2 - Professional blue */
+    --cozy-brown: 215 30% 25%; /* #2D3E50 - Deep navy */
+    --forest-green: 210 50% 55%; /* #4A90C2 - Same as primary blue */
+    --sunset-peach: 0 0% 97%; /* #F7F7F7 - Light neutral */
+    --earth-clay: 215 30% 25%; /* #2D3E50 - Same as navy */
+    --natural-beige: 0 0% 99%; /* #FCFCFC - Pure white */
     
     /* HIGH-CONTRAST ACTION COLORS - WCAG AA Compliant */
     --action-primary: 218 30% 26%; /* #2F4156 - Navy, high contrast */
@@ -99,10 +99,10 @@ All colors MUST be HSL.
     --focus-glow: 195 100% 50%;  /* Bright teal for focus */
     --success-earth: 140 40% 45%;
     
-    /* Enhanced sophisticated colors */
-    --warm-sage: 155 30% 75%; /* #B8CFC0 - Sophisticated sage */
-    --energy-coral: 25 50% 70%; /* #D4A574 - Elegant bronze */
-    --success-green: 155 40% 65%; /* #7BC09B - Premium green */
+    /* Simplified accent colors - minimal palette */
+    --warm-sage: 210 50% 55%; /* #4A90C2 - Same as primary blue */
+    --energy-coral: 210 50% 55%; /* #4A90C2 - Same as primary blue */
+    --success-green: 210 50% 55%; /* #4A90C2 - Same as primary blue */
     
     /* Legacy color mappings - now cleaner */
     --trust-blue: var(--gentle-terracotta);

@@ -75,16 +75,8 @@ const VirtualTherapySection = () => {
               <Card key={index} className="card-prominent">
                 <CardContent className="p-5">
                   {/* Icon */}
-                  <div
-                    className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg"
-                    style={{
-                      background: `linear-gradient(135deg, hsl(var(--${method.color}) / 0.15), hsl(var(--${method.color}) / 0.25))`
-                    }}
-                  >
-                    <Icon
-                      className="w-6 h-6 sm:w-7 sm:h-7"
-                      style={{ color: `hsl(var(--${method.color}))` }}
-                    />
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center mx-auto mb-3 bg-gentle-terracotta/10 shadow-lg">
+                    <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-gentle-terracotta" />
                   </div>
 
                   {/* More compact content */}
