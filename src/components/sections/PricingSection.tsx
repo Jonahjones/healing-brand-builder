@@ -14,16 +14,16 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
         {/* Hero section */}
         <header data-pricing-lead data-lead="pricing" data-role="pricing-hero" className="text-center mb-4">
           {withId ? (
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              <span className="text-cozy-brown block">Investment in Your</span>
-              <span className="text-transparent bg-gradient-to-r from-gentle-terracotta/90 via-earth-clay/85 to-cozy-brown/90 bg-clip-text block">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-cozy-brown">
+              <span className="block">Investment in Your</span>
+              <span className="text-gentle-terracotta block">
                 Mental Health Journey
               </span>
             </h2>
           ) : (
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              <span className="text-cozy-brown block">Investment in Your</span>
-              <span className="text-transparent bg-gradient-to-r from-gentle-terracotta/90 via-earth-clay/85 to-cozy-brown/90 bg-clip-text block">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-cozy-brown">
+              <span className="block">Investment in Your</span>
+              <span className="text-gentle-terracotta block">
                 Mental Health Journey
               </span>
             </h1>

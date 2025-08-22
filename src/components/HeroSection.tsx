@@ -25,7 +25,7 @@ const HeroSection = () => {
         <div className="text-left lg:max-w-2xl">
           {/* Premium brand indicator */}
           <div className="flex items-center gap-2 mb-3 sm:mb-4">
-            <div className="w-8 h-8 bg-gradient-to-r from-gentle-terracotta to-earth-clay rounded-lg flex items-center justify-center shadow-lg">
+            <div className="w-8 h-8 bg-gentle-terracotta rounded-lg flex items-center justify-center">
               <Shield className="w-4 h-4 text-white" />
             </div>
             <div className="bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full border border-cozy-brown/20 shadow-sm">
@@ -33,12 +33,10 @@ const HeroSection = () => {
             </div>
           </div>
           
-          {/* More reasonably sized headline */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-3 sm:mb-4 leading-tight">
-            <span className="text-cozy-brown block mb-1">Mental Health</span>
-            <span className="text-transparent bg-gradient-to-r from-gentle-terracotta via-earth-clay to-cozy-brown bg-clip-text block">
-              Therapy That Gets
-            </span>
+          {/* Clean, readable headline */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-3 sm:mb-4 leading-tight text-cozy-brown">
+            <span className="block mb-1">Mental Health</span>
+            <span className="block">Therapy That Gets</span>
             <span className="text-gentle-terracotta block">Results</span>
           </h1>
           

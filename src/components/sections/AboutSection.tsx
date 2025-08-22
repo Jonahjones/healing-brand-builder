@@ -49,9 +49,9 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
             {/* Spacing for header clearance */}
             <div className="pt-4 sm:pt-6"></div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-              <span className="text-cozy-brown block">You Deserve a Therapist Who</span>
-              <span className="text-transparent bg-gradient-to-r from-gentle-terracotta/90 via-earth-clay/85 to-cozy-brown/90 bg-clip-text block">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-cozy-brown">
+              <span className="block">You Deserve a Therapist Who</span>
+              <span className="text-gentle-terracotta block">
                 Truly Understands and Supports You
               </span>
             </h1>

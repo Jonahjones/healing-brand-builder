@@ -94,9 +94,9 @@ const FAQ = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-              <span className="text-cozy-brown block">Frequently Asked</span>
-              <span className="text-transparent bg-gradient-to-r from-gentle-terracotta/90 via-earth-clay/85 to-cozy-brown/90 bg-clip-text block">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-cozy-brown">
+              <span className="block">Frequently Asked</span>
+              <span className="text-gentle-terracotta block">
                 Questions
               </span>
             </h1>

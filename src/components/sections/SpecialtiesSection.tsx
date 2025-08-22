@@ -55,9 +55,9 @@ export default function SpecialtiesSection({ withId = true }: { withId?: boolean
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Much more compact header */}
         <div className="text-center mb-6 sm:mb-8">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            <span className="text-cozy-brown block">Specialties That</span>
-            <span className="text-transparent bg-gradient-to-r from-gentle-terracotta/90 via-earth-clay/85 to-cozy-brown/90 bg-clip-text block">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-cozy-brown">
+            <span className="block">Specialties That</span>
+            <span className="text-gentle-terracotta block">
               Transform Lives
             </span>
           </h1>
