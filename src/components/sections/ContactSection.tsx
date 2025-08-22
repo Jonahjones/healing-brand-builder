@@ -106,7 +106,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                     id="firstName" 
                     name="firstName"
                     placeholder="Your first name" 
-                    className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white text-cozy-brown placeholder:text-cozy-brown/60 rounded-lg py-1.5 text-sm h-9"
+                    className="form-field-enhanced rounded-lg py-1.5 text-sm h-9"
                     required
                     aria-required="true"
                   />
@@ -117,7 +117,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                     id="lastName" 
                     name="lastName"
                     placeholder="Your last name" 
-                    className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white text-cozy-brown placeholder:text-cozy-brown/60 rounded-lg py-1.5 text-sm h-9"
+                    className="form-field-enhanced rounded-lg py-1.5 text-sm h-9"
                     required
                     aria-required="true"
                   />
@@ -131,7 +131,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                   name="email"
                   type="email" 
                   placeholder="your.email@example.com" 
-                  className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white text-cozy-brown placeholder:text-cozy-brown/60 rounded-lg py-2 text-sm"
+                  className="form-field-enhanced rounded-lg py-2 text-sm"
                   required
                   aria-required="true"
                   aria-describedby="email-description"
@@ -146,7 +146,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                   name="phone"
                   type="tel" 
                   placeholder="(555) 123-4567" 
-                  className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white text-cozy-brown placeholder:text-cozy-brown/60 rounded-lg py-2 text-sm"
+                  className="form-field-enhanced rounded-lg py-2 text-sm"
                   aria-describedby="phone-description"
                 />
 
@@ -159,7 +159,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                   name="message"
                   placeholder="Share what brings you to therapy... anxiety, depression, transitions, relationships, etc."
                   rows={2}
-                  className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white text-cozy-brown placeholder:text-cozy-brown/60 rounded-lg resize-none text-sm py-1.5"
+                  className="form-field-enhanced rounded-lg resize-none text-sm py-1.5"
                   required
                   aria-required="true"
                   aria-describedby="message-description"

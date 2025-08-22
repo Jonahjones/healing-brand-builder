@@ -357,17 +357,17 @@ All colors MUST be HSL.
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
-  /* Ultra-prominent card system for maximum visibility */
+  /* Subtle card system for clean visibility */
   .card-enhanced {
     background: white;
-    box-shadow: 0 24px 64px -12px rgba(0, 0, 0, 0.25), 0 16px 40px -8px rgba(0, 0, 0, 0.15), 0 0 0 3px rgba(0, 0, 0, 0.08);
-    border: 3px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .card-enhanced:hover {
-    box-shadow: 0 32px 80px -12px rgba(0, 0, 0, 0.3), 0 20px 48px -8px rgba(0, 0, 0, 0.2), 0 0 0 3px rgba(0, 0, 0, 0.12);
-    transform: translateY(-6px);
+    box-shadow: 0 6px 16px -2px rgba(0, 0, 0, 0.12), 0 4px 8px -1px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
   }
 
   .cta-enhanced {
@@ -383,30 +383,30 @@ All colors MUST be HSL.
     transform: translateY(-2px);
   }
 
-  /* Maximum prominence cards for landing page sections */
+  /* Slightly more prominent cards for landing sections */
   .card-prominent {
     background: white;
-    box-shadow: 0 32px 80px -12px rgba(0, 0, 0, 0.3), 0 20px 48px -8px rgba(0, 0, 0, 0.2), 0 0 0 4px rgba(0, 0, 0, 0.1);
-    border: 4px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0 6px 16px -2px rgba(0, 0, 0, 0.10), 0 4px 8px -1px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .card-prominent:hover {
-    box-shadow: 0 40px 100px -12px rgba(0, 0, 0, 0.35), 0 24px 56px -8px rgba(0, 0, 0, 0.25), 0 0 0 4px rgba(0, 0, 0, 0.15);
-    transform: translateY(-8px);
+    box-shadow: 0 8px 20px -2px rgba(0, 0, 0, 0.14), 0 6px 12px -1px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
   }
 
-  /* Ultra-visible cards for maximum distinction */
-  .card-ultra {
-    background: white;
-    box-shadow: 0 40px 100px -12px rgba(0, 0, 0, 0.35), 0 24px 56px -8px rgba(0, 0, 0, 0.25), 0 0 0 5px rgba(0, 0, 0, 0.12);
-    border: 5px solid rgba(0, 0, 0, 0.15);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Clean form field visibility */
+  .form-field-enhanced {
+    background: white !important;
+    border: 1px solid hsl(var(--cozy-brown) / 0.3) !important;
+    color: hsl(var(--cozy-brown)) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) !important;
   }
 
-  .card-ultra:hover {
-    box-shadow: 0 48px 120px -12px rgba(0, 0, 0, 0.4), 0 28px 64px -8px rgba(0, 0, 0, 0.3), 0 0 0 5px rgba(0, 0, 0, 0.18);
-    transform: translateY(-10px);
+  .form-field-enhanced:focus {
+    border-color: hsl(var(--gentle-terracotta)) !important;
+    box-shadow: 0 0 0 2px hsl(var(--gentle-terracotta) / 0.2) !important;
   }
 }
 
