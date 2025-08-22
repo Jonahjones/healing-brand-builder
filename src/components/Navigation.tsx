@@ -60,7 +60,7 @@ const Navigation = () => {
             to="/"
             onClick={handleLogoClick}
             className="font-heading font-bold text-primary hover:text-primary/80 transition-colors duration-300 flex-shrink-0"
-            style={{ fontSize: 'clamp(1rem, 2vw, 1.5rem)' }}
+            style={{ fontSize: 'clamp(1rem, 0.9rem + 0.6vw, 1.5rem)' }}
           >
             <span className="hidden lg:inline">Zach Rehbein-Jones, LCSW</span>
             <span className="hidden sm:inline lg:hidden">Zach Rehbein-Jones</span>
@@ -90,7 +90,7 @@ const Navigation = () => {
                     ? 'text-primary bg-primary/10 shadow-lg' 
                     : 'text-foreground hover:text-primary hover:bg-primary/5'
                 }`}
-                style={{ fontSize: 'clamp(0.875rem, 1.2vw, 1rem)' }}
+                style={{ fontSize: 'clamp(0.875rem, 0.8rem + 0.3vw, 1rem)' }}
               >
                 {item.name}
               </Link>
@@ -99,7 +99,7 @@ const Navigation = () => {
               <Button 
                 className="cta-enhanced text-white font-bold px-6 py-2 rounded-lg"
                 onClick={handleContactClick}
-                style={{ fontSize: 'clamp(0.875rem, 1.1vw, 1rem)' }}
+                style={{ fontSize: 'clamp(0.875rem, 0.8rem + 0.25vw, 1rem)' }}
               >
                 <span className="flex items-center">
                   <Calendar className="w-5 h-5 mr-2" />
@@ -112,7 +112,7 @@ const Navigation = () => {
                 <Button 
                   className="cta-enhanced text-white font-bold px-6 py-2 rounded-lg"
                   onClick={handleContactClick}
-                  style={{ fontSize: 'clamp(0.875rem, 1.1vw, 1rem)' }}
+                  style={{ fontSize: 'clamp(0.875rem, 0.8rem + 0.25vw, 1rem)' }}
                 >
                   <span className="flex items-center">
                     <Calendar className="w-5 h-5 mr-2" />
