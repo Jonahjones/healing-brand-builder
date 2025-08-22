@@ -565,9 +565,8 @@ body {
     border-radius: clamp(0.375rem, 0.5vw, 0.5rem);
   }
   
-  /* Card scaling */
-  .card-enhanced,
-  .card-prominent {
+  /* Card scaling - only for specific components that opt-in */
+  .card-scale {
     padding: clamp(1.5rem, 2vw, 2.5rem);
     border-radius: clamp(1rem, 1.2vw, 1.5rem);
   }
@@ -633,9 +632,8 @@ body {
     min-height: clamp(3rem, 3.2vw, 3.5rem);
   }
   
-  /* Enhanced card scaling for 4K */
-  .card-enhanced,
-  .card-prominent {
+  /* Enhanced card scaling for 4K - only for specific components that opt-in */
+  .card-scale {
     padding: clamp(2.5rem, 3vw, 3.5rem);
     border-radius: clamp(1.5rem, 1.8vw, 2rem);
   }
