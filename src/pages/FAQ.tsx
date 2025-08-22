@@ -26,28 +26,28 @@ const FAQ = () => {
       category: "Pricing & Insurance",
       question: "How much do therapy sessions cost?",
       answer: "My private pay rate is $100 for 45-minute therapy sessions. I offer sliding scale pricing for qualifying clients and accept insurance co-pays which vary based on your specific plan benefits. I'm also in-network with several major insurance providers through Alma and Headway.",
-      color: "emerald-600"
+      color: "forest-green"
     },
     {
       icon: CheckCircle,
       category: "Insurance",
       question: "Do you accept insurance for virtual therapy sessions?",
       answer: "Yes, I accept several insurance plans through Alma and Headway, including Aetna, Cigna, and Blue Cross Blue Shield. I also provide superbills for out-of-network reimbursement. Contact me to verify your specific coverage and benefits.",
-      color: "violet-600"
+      color: "gentle-terracotta"
     },
     {
       icon: Heart,
       category: "Treatment Approach",
       question: "What therapy approaches do you use?",
       answer: "I use evidence-based approaches including Cognitive Behavioral Therapy (CBT), Dialectical Behavior Therapy (DBT), Mindfulness-Based Stress Reduction, and Trauma-Informed Care. My approach is tailored to each client's unique needs, goals, and preferences.",
-      color: "rose-600"
+      color: "gentle-terracotta"
     },
     {
       icon: Calendar,
       category: "Scheduling",
       question: "How do I schedule my first appointment?",
       answer: "You can schedule your free 15-minute consultation through my contact form or by calling directly. During this consultation, we'll discuss your needs, answer any questions, and determine if we're a good fit before scheduling your first full session.",
-      color: "amber-600"
+      color: "gentle-terracotta"
     },
     {
       icon: Phone,
@@ -61,14 +61,14 @@ const FAQ = () => {
       category: "Privacy & Safety",
       question: "How do you ensure confidentiality in virtual sessions?",
       answer: "I use only HIPAA-compliant platforms with end-to-end encryption. All sessions and records are kept strictly confidential according to professional ethics and state laws. I'll discuss privacy considerations and help you create a private space for sessions.",
-      color: "earth-clay"
+      color: "gentle-terracotta"
     },
     {
       icon: Heart,
       category: "Specializations",
       question: "What conditions do you specialize in treating?",
       answer: "I specialize in anxiety disorders, depression, trauma and PTSD, relationship issues, life transitions, and sports psychology. I work with adults and young adults who are motivated to create positive change in their lives through evidence-based therapeutic approaches.",
-      color: "pink-600"
+      color: "gentle-terracotta"
     }
   ];
 
