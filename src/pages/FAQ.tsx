@@ -183,7 +183,7 @@ const FAQ = () => {
                 </p>
                 <a 
                   href="/contact/"
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-gentle-terracotta to-earth-clay text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                  className="inline-flex items-center gap-2 cta-enhanced text-white font-bold px-8 py-4 rounded-xl"
                 >
                   <Calendar className="w-5 h-5" />
                   Book Free Consultation

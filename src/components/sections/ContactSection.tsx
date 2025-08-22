@@ -106,7 +106,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                     id="firstName" 
                     name="firstName"
                     placeholder="Your first name" 
-                        className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/95 backdrop-blur-sm rounded-lg py-1.5 text-sm h-9"
+                    className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white text-cozy-brown placeholder:text-cozy-brown/60 rounded-lg py-1.5 text-sm h-9"
                     required
                     aria-required="true"
                   />
@@ -117,7 +117,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                     id="lastName" 
                     name="lastName"
                     placeholder="Your last name" 
-                        className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/95 backdrop-blur-sm rounded-lg py-1.5 text-sm h-9"
+                    className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white text-cozy-brown placeholder:text-cozy-brown/60 rounded-lg py-1.5 text-sm h-9"
                     required
                     aria-required="true"
                   />
@@ -131,7 +131,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                   name="email"
                   type="email" 
                   placeholder="your.email@example.com" 
-                      className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/95 backdrop-blur-sm rounded-lg py-2 text-sm"
+                  className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white text-cozy-brown placeholder:text-cozy-brown/60 rounded-lg py-2 text-sm"
                   required
                   aria-required="true"
                   aria-describedby="email-description"
@@ -146,7 +146,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                   name="phone"
                   type="tel" 
                   placeholder="(555) 123-4567" 
-                      className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/95 backdrop-blur-sm rounded-lg py-2 text-sm"
+                  className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white text-cozy-brown placeholder:text-cozy-brown/60 rounded-lg py-2 text-sm"
                   aria-describedby="phone-description"
                 />
 
@@ -158,8 +158,8 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                   id="message" 
                   name="message"
                   placeholder="Share what brings you to therapy... anxiety, depression, transitions, relationships, etc."
-                      rows={2}
-                      className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white/95 backdrop-blur-sm rounded-lg resize-none text-sm py-1.5"
+                  rows={2}
+                  className="border-2 border-soft-sage/30 focus:border-gentle-terracotta focus:ring-gentle-terracotta/20 bg-white text-cozy-brown placeholder:text-cozy-brown/60 rounded-lg resize-none text-sm py-1.5"
                   required
                   aria-required="true"
                   aria-describedby="message-description"
@@ -188,7 +188,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
               <Button 
                 type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold py-2.5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full cta-enhanced text-white font-bold py-2.5 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
                       <div className="flex items-center justify-center">

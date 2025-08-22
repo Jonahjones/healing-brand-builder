@@ -108,7 +108,7 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
               {/* Compact CTA */}
               <div className="text-center pt-4">
                 <Button 
-                  className="bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
+                  className="cta-enhanced text-white font-semibold px-6 py-3 rounded-lg"
                   onClick={() => {
                     const contactSection = document.getElementById('contact');
                     if (contactSection) {
