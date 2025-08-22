@@ -5,6 +5,7 @@ interface ResponsiveImageProps {
   webpSrc?: string;
   alt: string;
   className?: string;
+  style?: React.CSSProperties;
   loading?: 'lazy' | 'eager';
   priority?: boolean;
   sizes?: string;
@@ -19,6 +20,7 @@ export function ResponsiveImage({
   webpSrc,
   alt,
   className = '',
+  style,
   loading = 'lazy',
   priority = false,
   sizes,
@@ -36,6 +38,7 @@ export function ResponsiveImage({
           src={src}
           alt={alt}
           className={className}
+          style={style}
           loading={priority ? 'eager' : loading}
           width={width}
           height={height}
@@ -53,6 +56,7 @@ export function ResponsiveImage({
       src={src}
       alt={alt}
       className={className}
+      style={style}
       loading={priority ? 'eager' : loading}
       width={width}
       height={height}
@@ -70,15 +74,33 @@ export function ProfileImage({
   webpSrc,
   alt,
   className = '',
+  style,
   loading = 'lazy',
-}: Omit<ResponsiveImageProps, 'sizes' | 'width' | 'height'>) {
+  priority,
+  onLoad,
+  onError,
+}: {
+  src: string;
+  webpSrc?: string;
+  alt: string;
+  className?: string;
+  style?: React.CSSProperties;
+  loading?: 'lazy' | 'eager';
+  priority?: boolean;
+  onLoad?: () => void;
+  onError?: () => void;
+}) {
   return (
     <ResponsiveImage
       src={src}
       webpSrc={webpSrc}
       alt={alt}
       className={className}
+      style={style}
       loading={loading}
+      priority={priority}
+      onLoad={onLoad}
+      onError={onError}
       sizes="(max-width: 640px) 280px, (max-width: 1024px) 400px, 500px"
       width={500}
       height={667}

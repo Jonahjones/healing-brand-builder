@@ -22,22 +22,23 @@ const TherapistStorySection = () => {
               <div className="absolute -inset-4 bg-gradient-to-br from-gentle-terracotta/20 to-soft-sage/20 rounded-3xl blur-xl"></div>
               <div className="absolute -inset-2 bg-gradient-to-tr from-cozy-brown/10 to-earth-clay/10 rounded-2xl"></div>
 
-              <div className="relative bg-white/95 backdrop-blur-sm rounded-2xl p-2 shadow-md">
+              <div className="relative bg-white/95 backdrop-blur-sm rounded-2xl p-2" style={{boxShadow: '0 1px 3px rgba(0, 0, 0, 0.04)'}}>
                 <img
                   src={zachProfessionalImage}
                   alt="Zach Rehbein-Jones, Licensed Clinical Social Worker"
-                  className="w-full rounded-xl shadow-sm object-cover aspect-[3/4]"
+                  className="w-full rounded-xl object-cover aspect-[3/4]"
+                  style={{boxShadow: '0 1px 2px rgba(0, 0, 0, 0.03)'}}
                   loading="lazy"
                 />
 
                 {/* Enhanced License Badge */}
-                <div className="absolute -top-2 sm:-top-3 -right-2 sm:-right-3 bg-gradient-to-r from-gentle-terracotta to-earth-clay text-white px-2 sm:px-4 py-1 sm:py-2 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold shadow-sm">
+                <div className="absolute -top-2 sm:-top-3 -right-2 sm:-right-3 bg-gradient-to-r from-gentle-terracotta to-earth-clay text-white px-2 sm:px-4 py-1 sm:py-2 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold" style={{boxShadow: '0 1px 2px rgba(0, 0, 0, 0.06)'}}>
                   <Award className="w-3 h-3 sm:w-4 sm:h-4 inline mr-1 sm:mr-2" />
                   Licensed LCSW
                 </div>
 
                 {/* Trust indicator */}
-                <div className="absolute -bottom-2 sm:-bottom-3 -left-2 sm:-left-3 bg-white/95 backdrop-blur-sm px-2 sm:px-4 py-1 sm:py-2 rounded-lg sm:rounded-xl shadow-sm border border-soft-sage/20">
+                <div className="absolute -bottom-2 sm:-bottom-3 -left-2 sm:-left-3 bg-white/95 backdrop-blur-sm px-2 sm:px-4 py-1 sm:py-2 rounded-lg sm:rounded-xl border border-soft-sage/20" style={{boxShadow: '0 1px 2px rgba(0, 0, 0, 0.06)'}}>
                   <span className="text-xs font-medium text-cozy-brown">WI & CA Licensed</span>
                 </div>
               </div>
@@ -57,7 +58,7 @@ const TherapistStorySection = () => {
               <span className="block text-gentle-terracotta">Understands and Supports You</span>
             </h1>
 
-            <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-soft-sage/20 shadow-lg">
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-soft-sage/20" style={{boxShadow: '0 1px 3px rgba(0, 0, 0, 0.04)'}}>
               <p className="text-base sm:text-lg lg:text-xl text-cozy-brown/90 leading-relaxed">
                 I am a Licensed Clinical Social Worker licensed in California and Wisconsin who knows seeking therapy takes courage. You want more than credentials. You want a compassionate, judgment-free space where your unique experiences are understood.
               </p>
@@ -73,7 +74,8 @@ const TherapistStorySection = () => {
             <div className="space-y-4 sm:space-y-6 pt-2 sm:pt-4">
               <Button 
                 size="lg" 
-                className="group relative overflow-hidden bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border-2 border-white/30 ring-2 ring-gentle-terracotta/20"
+                className="group relative overflow-hidden bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold px-8 py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1 border-2 border-white/30 ring-2 ring-gentle-terracotta/20"
+                style={{boxShadow: '0 1px 3px rgba(0, 0, 0, 0.06)'}}
                 onClick={() => {
                   const contactSection = document.getElementById('contact');
                   if (contactSection) {
@@ -96,15 +98,6 @@ const TherapistStorySection = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-cozy-brown/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
 
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default TherapistStorySection;
             </div>
           </div>
         </div>

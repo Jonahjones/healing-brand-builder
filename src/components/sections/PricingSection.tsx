@@ -36,9 +36,9 @@ export default function PricingSection({ withId = true }: { withId?: boolean }) 
         {/* Main pricing display */}
         <div className="max-w-4xl mx-auto">
           {/* Central pricing card */}
-          <Card className="bg-white border border-gentle-terracotta/20 shadow-lg mb-6 max-w-3xl mx-auto">
+          <Card className="bg-white/95 backdrop-blur-sm border border-gentle-terracotta/30 shadow-xl hover:shadow-2xl transition-all duration-300 mb-6 max-w-3xl mx-auto">
             {/* Compact price header */}
-            <CardHeader className="text-center py-6 bg-white border-b border-gentle-terracotta/10">
+            <CardHeader className="text-center py-6 bg-white/98 backdrop-blur-sm border-b border-gentle-terracotta/20">
               <div className="flex items-baseline justify-center gap-2 mb-2">
                 <span className="text-4xl font-heading font-bold text-cozy-brown">$100</span>
                 <span className="text-lg text-cozy-brown/70 font-medium">/session</span>

@@ -47,7 +47,7 @@ export default function SpecialtiesSection({ withId = true }: { withId?: boolean
   ];
 
   return (
-    <section id={withId ? "specialties" : undefined} className={`pt-24 pb-16 ${withId ? 'backdrop-blur-sm bg-white/5' : 'bg-gradient-to-br from-warm-cream via-natural-beige to-soft-sage/30'} relative overflow-hidden min-h-screen transition-all duration-1000 ease-out`}>
+    <section id={withId ? "specialties" : undefined} className={`pt-24 pb-16 ${withId ? 'backdrop-blur-sm bg-gradient-to-br from-warm-cream/50 via-natural-beige/30 to-soft-sage/20' : 'bg-gradient-to-br from-warm-cream via-natural-beige to-soft-sage/30'} relative overflow-hidden min-h-screen transition-all duration-1000 ease-out`}>
       {/* Background Decorative Elements */}
       <div className="absolute top-10 left-10 w-96 h-96 bg-gradient-to-br from-gentle-terracotta/10 to-soft-sage/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-tl from-earth-clay/10 to-cozy-brown/10 rounded-full blur-3xl"></div>
@@ -74,7 +74,7 @@ export default function SpecialtiesSection({ withId = true }: { withId?: boolean
             const colorClasses = { bg: "bg-gentle-terracotta/10", text: "text-gentle-terracotta" };
             
             return (
-              <Card key={index} className="card-enhanced">
+              <Card key={index} className="bg-white/95 backdrop-blur-sm border border-gentle-terracotta/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-4 mb-4">
                     <div className={`w-12 h-12 ${colorClasses.bg} rounded-full flex items-center justify-center`}>

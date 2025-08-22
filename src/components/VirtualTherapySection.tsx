@@ -72,10 +72,10 @@ const VirtualTherapySection = () => {
             {therapeuticMethods.map((method, index) => {
               const Icon = method.icon;
             return (
-              <Card key={index} className="card-prominent">
+              <Card key={index} className="bg-white/95 backdrop-blur-sm border border-gentle-terracotta/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardContent className="p-5">
                   {/* Icon */}
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center mx-auto mb-3 bg-gentle-terracotta/10 shadow-lg">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center mx-auto mb-3 bg-gentle-terracotta/10">
                     <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-gentle-terracotta" />
                   </div>
 
@@ -107,12 +107,12 @@ const VirtualTherapySection = () => {
         
         {/* More compact bottom call-to-action cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="card-prominent relative rounded-xl p-4 sm:p-6 overflow-hidden group">
+          <div className="bg-white/95 backdrop-blur-sm border border-gentle-terracotta/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative rounded-xl p-4 sm:p-6 overflow-hidden group">
             <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-gentle-terracotta/20 to-transparent rounded-full blur-xl"></div>
 
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 bg-gradient-to-r from-gentle-terracotta to-earth-clay rounded-lg flex items-center justify-center shadow-md">
+                <div className="w-10 h-10 bg-gradient-to-r from-gentle-terracotta to-earth-clay rounded-lg flex items-center justify-center">
                   <Shield className="w-5 h-5 text-white" />
                 </div>
                 <h4 className="text-lg sm:text-xl font-heading font-bold text-cozy-brown">
@@ -129,12 +129,12 @@ const VirtualTherapySection = () => {
             </div>
           </div>
 
-          <div className="card-prominent relative rounded-xl p-4 sm:p-6 overflow-hidden group">
+          <div className="bg-white/95 backdrop-blur-sm border border-gentle-terracotta/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative rounded-xl p-4 sm:p-6 overflow-hidden group">
             <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-cozy-brown/20 to-transparent rounded-full blur-xl"></div>
 
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 bg-gradient-to-r from-cozy-brown to-earth-clay rounded-lg flex items-center justify-center shadow-md">
+                <div className="w-10 h-10 bg-gradient-to-r from-cozy-brown to-earth-clay rounded-lg flex items-center justify-center">
                   <Lock className="w-5 h-5 text-white" />
                 </div>
                 <h4 className="text-lg sm:text-xl font-heading font-bold text-cozy-brown">

@@ -22,12 +22,11 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
               <div className="absolute -inset-4 bg-gradient-to-br from-gentle-terracotta/20 to-soft-sage/20 rounded-3xl blur-xl"></div>
               <div className="absolute -inset-2 bg-gradient-to-tr from-cozy-brown/10 to-earth-clay/10 rounded-2xl"></div>
 
-              <div className="relative bg-white/95 backdrop-blur-sm rounded-2xl p-2" style={{boxShadow: '0 1px 3px rgba(0, 0, 0, 0.04)'}}>
+              <div className="relative bg-white/95 backdrop-blur-sm rounded-2xl p-0.5" style={{boxShadow: '0 1px 3px rgba(0, 0, 0, 0.04)'}}>
                 <ProfileImage
                   src={zachProfessionalImage}
                   alt="Zach Rehbein-Jones, Licensed Clinical Social Worker"
                   className="w-full rounded-xl object-cover aspect-[3/4]"
-                  style={{boxShadow: '0 1px 2px rgba(0, 0, 0, 0.03)'}}
                   loading="lazy"
                 />
 
@@ -63,9 +62,7 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
               </p>
             </div>
 
-            <div className="relative bg-gradient-to-r from-gentle-terracotta/10 to-earth-clay/10 rounded-2xl p-4 sm:p-6 border border-gentle-terracotta/20 overflow-hidden shadow-lg">
-              {/* Overlay for better text readability */}
-              <div className="absolute inset-0 bg-white/60 backdrop-blur-sm rounded-2xl"></div>
+            <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-gentle-terracotta/30 overflow-hidden shadow-lg">
               <p className="relative text-base sm:text-lg text-cozy-brown leading-relaxed">
                 I combine clinical expertise with genuine care for <a href="/specialties/" className="text-gentle-terracotta hover:underline font-medium">anxiety, depression, life transitions, and relationships</a>. Together we'll build an authentic connection using my <a href="/approach/" className="text-gentle-terracotta hover:underline font-medium">evidence-based approach</a>.
               </p>

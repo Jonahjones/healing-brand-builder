@@ -18,6 +18,13 @@ const Navigation = () => {
 
   const handleLogoClick = () => {
     setIsMenuOpen(false);
+    // If on home page, scroll to top
+    if (onHome) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
   };
 
   const handleNavClick = () => {
