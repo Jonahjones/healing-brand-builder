@@ -21,7 +21,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/70 lg:from-white/90 lg:via-white/70 lg:to-transparent"></div>
       
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center min-h-screen">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pt-4 sm:pt-8 pb-8 sm:pb-12 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center min-h-screen">
         <div className="text-left lg:max-w-2xl">
           {/* Premium brand indicator */}
           <div className="flex items-center gap-2 mb-3 sm:mb-4">

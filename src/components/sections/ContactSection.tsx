@@ -106,7 +106,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                     id="firstName" 
                     name="firstName"
                     placeholder="Your first name" 
-                    className="form-field-enhanced rounded-lg py-1.5 text-sm h-9"
+                    className="form-field-enhanced rounded-lg py-1.5 text-sm h-9 placeholder:text-xs"
                     required
                     aria-required="true"
                   />
@@ -117,7 +117,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                     id="lastName" 
                     name="lastName"
                     placeholder="Your last name" 
-                    className="form-field-enhanced rounded-lg py-1.5 text-sm h-9"
+                    className="form-field-enhanced rounded-lg py-1.5 text-sm h-9 placeholder:text-xs"
                     required
                     aria-required="true"
                   />
@@ -131,7 +131,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                   name="email"
                   type="email" 
                   placeholder="your.email@example.com" 
-                  className="form-field-enhanced rounded-lg py-2 text-sm"
+                  className="form-field-enhanced rounded-lg py-2 text-sm placeholder:text-xs"
                   required
                   aria-required="true"
                   aria-describedby="email-description"
@@ -146,7 +146,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                   name="phone"
                   type="tel" 
                   placeholder="(555) 123-4567" 
-                  className="form-field-enhanced rounded-lg py-2 text-sm"
+                  className="form-field-enhanced rounded-lg py-2 text-sm placeholder:text-xs"
                   aria-describedby="phone-description"
                 />
 
@@ -159,7 +159,7 @@ export default function ContactSection({ withId = true }: { withId?: boolean }) 
                   name="message"
                   placeholder="Share what brings you to therapy... anxiety, depression, transitions, relationships, etc."
                   rows={2}
-                  className="form-field-enhanced rounded-lg resize-none text-sm py-1.5"
+                  className="form-field-enhanced rounded-lg resize-none text-sm py-1.5 placeholder:text-xs"
                   required
                   aria-required="true"
                   aria-describedby="message-description"
