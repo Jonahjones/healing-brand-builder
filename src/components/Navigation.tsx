@@ -130,18 +130,18 @@ const Navigation = () => {
               <div className="px-4 pt-2">
                 {onHome ? (
                   <Button 
-                    className="w-full bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold py-3 rounded-lg transition-all duration-500 transform hover:scale-105"
+                    className="w-full cta-enhanced text-white font-bold py-3 rounded-lg"
                     onClick={handleContactClick}
                   >
-    <Calendar className="w-5 h-5 mr-2" />Book Your Free Consultation
+                    <Calendar className="w-5 h-5 mr-2" />Book Your Free Consultation
                   </Button>
                 ) : (
                   <Link to="/contact" className="block">
                     <Button 
-                      className="w-full bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold py-3 rounded-lg transition-all duration-500 transform hover:scale-105"
+                      className="w-full cta-enhanced text-white font-bold py-3 rounded-lg"
                       onClick={handleContactClick}
                     >
-      <Calendar className="w-5 h-5 mr-2" />Book Your Free Consultation
+                      <Calendar className="w-5 h-5 mr-2" />Book Your Free Consultation
                     </Button>
                   </Link>
                 )}
@@ -155,7 +155,7 @@ const Navigation = () => {
       <div className="fixed bottom-4 left-4 right-4 z-50 md:hidden">
         {onHome ? (
           <Button 
-            className="w-full group relative overflow-hidden bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold py-4 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 border-2 border-white/30 ring-2 ring-gentle-terracotta/20"
+            className="w-full cta-enhanced text-white font-bold py-4 rounded-2xl shadow-2xl hover:shadow-3xl border-2 border-white/30"
             onClick={handleContactClick}
           >
             <span className="hidden sm:inline"><Calendar className="w-5 h-5 mr-2" />Book Your Free Consultation</span>
@@ -164,7 +164,7 @@ const Navigation = () => {
         ) : (
           <Link to="/contact" className="block">
             <Button 
-              className="w-full group relative overflow-hidden bg-gradient-to-r from-gentle-terracotta to-earth-clay hover:from-earth-clay hover:to-gentle-terracotta text-white font-bold py-4 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 border-2 border-white/30 ring-2 ring-gentle-terracotta/20"
+              className="w-full cta-enhanced text-white font-bold py-4 rounded-2xl shadow-2xl hover:shadow-3xl border-2 border-white/30"
               onClick={handleContactClick}
             >
               <span className="hidden sm:inline"><Calendar className="w-5 h-5 mr-2" />Book Your Free Consultation</span>
