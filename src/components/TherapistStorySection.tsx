@@ -22,22 +22,22 @@ const TherapistStorySection = () => {
               <div className="absolute -inset-4 bg-gradient-to-br from-gentle-terracotta/20 to-soft-sage/20 rounded-3xl blur-xl"></div>
               <div className="absolute -inset-2 bg-gradient-to-tr from-cozy-brown/10 to-earth-clay/10 rounded-2xl"></div>
 
-              <div className="relative bg-white/95 backdrop-blur-sm rounded-2xl p-2 shadow-2xl">
+              <div className="relative bg-white/95 backdrop-blur-sm rounded-2xl p-2 shadow-md">
                 <img
                   src={zachProfessionalImage}
                   alt="Zach Rehbein-Jones, Licensed Clinical Social Worker"
-                  className="w-full rounded-xl shadow-lg object-cover aspect-[3/4]"
+                  className="w-full rounded-xl shadow-sm object-cover aspect-[3/4]"
                   loading="lazy"
                 />
 
                 {/* Enhanced License Badge */}
-                <div className="absolute -top-2 sm:-top-3 -right-2 sm:-right-3 bg-gradient-to-r from-gentle-terracotta to-earth-clay text-white px-2 sm:px-4 py-1 sm:py-2 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold shadow-xl">
+                <div className="absolute -top-2 sm:-top-3 -right-2 sm:-right-3 bg-gradient-to-r from-gentle-terracotta to-earth-clay text-white px-2 sm:px-4 py-1 sm:py-2 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold shadow-sm">
                   <Award className="w-3 h-3 sm:w-4 sm:h-4 inline mr-1 sm:mr-2" />
                   Licensed LCSW
                 </div>
 
                 {/* Trust indicator */}
-                <div className="absolute -bottom-2 sm:-bottom-3 -left-2 sm:-left-3 bg-white/95 backdrop-blur-sm px-2 sm:px-4 py-1 sm:py-2 rounded-lg sm:rounded-xl shadow-lg border border-soft-sage/20">
+                <div className="absolute -bottom-2 sm:-bottom-3 -left-2 sm:-left-3 bg-white/95 backdrop-blur-sm px-2 sm:px-4 py-1 sm:py-2 rounded-lg sm:rounded-xl shadow-sm border border-soft-sage/20">
                   <span className="text-xs font-medium text-cozy-brown">WI & CA Licensed</span>
                 </div>
               </div>

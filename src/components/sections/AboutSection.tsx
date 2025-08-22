@@ -22,22 +22,23 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
               <div className="absolute -inset-4 bg-gradient-to-br from-gentle-terracotta/20 to-soft-sage/20 rounded-3xl blur-xl"></div>
               <div className="absolute -inset-2 bg-gradient-to-tr from-cozy-brown/10 to-earth-clay/10 rounded-2xl"></div>
 
-              <div className="relative bg-white/95 backdrop-blur-sm rounded-2xl p-2 shadow-2xl">
+              <div className="relative bg-white/95 backdrop-blur-sm rounded-2xl p-2" style={{boxShadow: '0 1px 3px rgba(0, 0, 0, 0.04)'}}>
                 <ProfileImage
                   src={zachProfessionalImage}
                   alt="Zach Rehbein-Jones, Licensed Clinical Social Worker"
-                  className="w-full rounded-xl shadow-lg object-cover aspect-[3/4]"
+                  className="w-full rounded-xl object-cover aspect-[3/4]"
+                  style={{boxShadow: '0 1px 2px rgba(0, 0, 0, 0.03)'}}
                   loading="lazy"
                 />
 
                 {/* Enhanced License Badge */}
-                <div className="absolute -top-2 sm:-top-3 -right-2 sm:-right-3 bg-gradient-to-r from-gentle-terracotta to-earth-clay text-white px-2 sm:px-4 py-1 sm:py-2 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold shadow-xl">
+                <div className="absolute -top-2 sm:-top-3 -right-2 sm:-right-3 bg-gradient-to-r from-gentle-terracotta to-earth-clay text-white px-2 sm:px-4 py-1 sm:py-2 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold" style={{boxShadow: '0 1px 2px rgba(0, 0, 0, 0.06)'}}>
                   <Award className="w-3 h-3 sm:w-4 sm:h-4 inline mr-1 sm:mr-2" />
                   Licensed LCSW
                 </div>
 
                 {/* Trust indicator */}
-                <div className="absolute -bottom-2 sm:-bottom-3 -left-2 sm:-left-3 bg-white/95 backdrop-blur-sm px-2 sm:px-4 py-1 sm:py-2 rounded-lg sm:rounded-xl shadow-lg border border-soft-sage/20">
+                <div className="absolute -bottom-2 sm:-bottom-3 -left-2 sm:-left-3 bg-white/95 backdrop-blur-sm px-2 sm:px-4 py-1 sm:py-2 rounded-lg sm:rounded-xl border border-soft-sage/20" style={{boxShadow: '0 1px 2px rgba(0, 0, 0, 0.06)'}}>
                   <span className="text-xs font-medium text-cozy-brown">WI & CA Licensed</span>
                 </div>
               </div>
