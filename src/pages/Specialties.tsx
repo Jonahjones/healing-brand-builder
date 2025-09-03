@@ -9,13 +9,15 @@ export default function Specialties() {
       <Helmet>
         <title>Therapy Specialties | Anxiety, Trauma & Couples | Virtual Therapy Wisconsin & California</title>
         <meta name="description" content="Expert anxiety therapy, trauma treatment, and couples counseling via telehealth. Evidence-based care for Wisconsin and California residents." />
-        <link rel="canonical" href="https://resilientmindcounseling.info/specialties/" />
+        <meta name="keywords" content="anxiety therapy, depression treatment, trauma therapy, PTSD treatment, couples counseling, relationship therapy, life transitions, virtual therapy specialties" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <link rel="canonical" href="https://resilientmindcounseling.info/specialties" />
       </Helmet>
-      <StructuredData url="https://resilientmindcounseling.info/specialties/" name="Specialties" />
+      <StructuredData url="https://resilientmindcounseling.info/specialties" name="Specialties" />
       <SocialMeta 
         title="Therapy Specialties | Anxiety, Trauma & Couples | Virtual Therapy Wisconsin & California"
         description="Expert anxiety therapy, trauma treatment, and couples counseling via telehealth. Evidence-based care for Wisconsin and California residents."
-        url="https://resilientmindcounseling.info/specialties/"
+        url="https://resilientmindcounseling.info/specialties"
       />
       <div className="page page--specialties">
         <SpecialtiesSection withId={false} />

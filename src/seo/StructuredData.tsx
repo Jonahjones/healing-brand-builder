@@ -4,9 +4,10 @@ type Props = {
   url: string;
   name: string;         // Page label for breadcrumbs
   isHome?: boolean;
+  description?: string; // Page description for better SEO
 };
 
-export default function StructuredData({ url, name, isHome }: Props) {
+export default function StructuredData({ url, name, isHome, description }: Props) {
   const website = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -30,14 +31,54 @@ export default function StructuredData({ url, name, isHome }: Props) {
 
   const localBiz = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "ProfessionalService",
     "name": "Resilient Mind Counseling",
+    "alternateName": "Zach Rehbein-Jones, LCSW",
     "url": "https://resilientmindcounseling.info/",
     "telephone": "+1-414-348-0996",
     "email": "mailto:zach@resilientmindcounseling.info",
-    "areaServed": ["Wisconsin","California"],
+    "description": "Licensed Clinical Social Worker providing virtual therapy services for anxiety, depression, trauma, and relationship issues in Wisconsin and California.",
+    "serviceType": ["Psychotherapy", "Mental Health Counseling", "Virtual Therapy", "Online Counseling"],
+    "areaServed": [
+      { "@type": "State", "name": "Wisconsin" },
+      { "@type": "State", "name": "California" }
+    ],
     "address": { "@type": "PostalAddress", "addressCountry": "US" },
-    "image": "https://resilientmindcounseling.info/icon-512.png"
+    "image": "https://resilientmindcounseling.info/og-image.svg",
+    "priceRange": "$100",
+    "paymentAccepted": ["Insurance", "Credit Card", "Cash"],
+    "currenciesAccepted": "USD",
+    "openingHours": "Mo-Fr 09:00-17:00",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Therapy Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Individual Therapy",
+            "description": "One-on-one therapy sessions for anxiety, depression, and life transitions"
+          }
+        },
+        {
+          "@type": "Offer", 
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Couples Therapy",
+            "description": "Relationship counseling for couples seeking to improve communication and connection"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service", 
+            "name": "Trauma Therapy",
+            "description": "Specialized treatment for trauma and PTSD using evidence-based approaches"
+          }
+        }
+      ]
+    }
   };
 
   const breadcrumbs = {

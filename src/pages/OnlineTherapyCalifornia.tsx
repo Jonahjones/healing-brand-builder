@@ -171,7 +171,7 @@ const OnlineTherapyCalifornia = () => {
                   Free 15-minute consultation to discuss your needs and ensure we're a good fit for online therapy.
                 </p>
                 <a 
-                  href="/contact/"
+                  href="/contact"
                   className="inline-flex items-center gap-2 cta-enhanced text-white font-bold px-8 py-4 rounded-xl"
                 >
                   <Phone className="w-5 h-5" />

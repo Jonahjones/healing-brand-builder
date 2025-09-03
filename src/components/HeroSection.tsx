@@ -44,7 +44,7 @@ const HeroSection = () => {
           <div className="card-enhanced rounded-xl p-4 sm:p-6 mb-4 sm:mb-6">
             <p className="text-base sm:text-lg text-cozy-brown leading-relaxed font-medium">
               <span className="font-bold text-gentle-terracotta">Online therapy</span> with
-              <a href="/approach/" className="font-bold text-earth-clay hover:underline"> practical strategies</a> that breaks through mental challenges and builds lasting change.
+              <a href="/approach" className="font-bold text-earth-clay hover:underline"> practical strategies</a> that breaks through mental challenges and builds lasting change.
             </p>
             <p className="text-sm sm:text-base text-cozy-brown/70 leading-relaxed font-medium mt-2 pt-2 border-t border-gentle-terracotta/20">
               Licensed in <span className="font-bold text-gentle-terracotta">California</span> and <span className="font-bold text-earth-clay">Wisconsin</span>

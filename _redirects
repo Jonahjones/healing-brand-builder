@@ -1,9 +1,20 @@
+# Force HTTPS and remove www
 http://resilientmindcounseling.info/*  https://resilientmindcounseling.info/:splat  301
 https://www.resilientmindcounseling.info/*  https://resilientmindcounseling.info/:splat  301
 
-# SPA fallback - serve index.html for all routes
-/*   /index.html   200
-https://www.resilientmindcounseling.info/*  https://resilientmindcounseling.info/:splat  301
+# Trailing slash normalization - redirect WITH trailing slash TO WITHOUT
+/about/  /about  301
+/specialties/  /specialties  301
+/approach/  /approach  301
+/pricing/  /pricing  301
+/contact/  /contact  301
+/faq/  /faq  301
 
-# SPA fallback - serve index.html for all routes
+# Serve static files directly (important for SEO files)
+/sitemap.xml  /sitemap.xml  200
+/robots.txt   /robots.txt   200
+/favicon.ico  /favicon.ico  200
+/favicon.svg  /favicon.svg  200
+
+# SPA fallback - serve index.html for all routes (must be last)
 /*   /index.html   200

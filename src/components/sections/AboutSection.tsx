@@ -64,7 +64,7 @@ export default function AboutSection({ withId = true }: { withId?: boolean }) {
 
             <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-gentle-terracotta/30 overflow-hidden shadow-lg">
               <p className="relative text-base sm:text-lg text-cozy-brown leading-relaxed">
-                I combine clinical expertise with genuine care for <a href="/specialties/" className="text-gentle-terracotta hover:underline font-medium">anxiety, depression, life transitions, and relationships</a>. Together we'll build an authentic connection using my <a href="/approach/" className="text-gentle-terracotta hover:underline font-medium">evidence-based approach</a>.
+                I combine clinical expertise with genuine care for <a href="/specialties" className="text-gentle-terracotta hover:underline font-medium">anxiety, depression, life transitions, and relationships</a>. Together we'll build an authentic connection using my <a href="/approach" className="text-gentle-terracotta hover:underline font-medium">evidence-based approach</a>.
               </p>
             </div>
 

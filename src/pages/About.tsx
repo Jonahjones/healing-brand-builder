@@ -9,13 +9,15 @@ export default function About() {
       <Helmet>
         <title>About Zach Rehbein-Jones, LCSW | Virtual Therapy in Wisconsin & California</title>
         <meta name="description" content="Meet Zach Rehbein-Jones, LCSW. Licensed therapist offering online therapy for adults in Wisconsin and California. Clear goals and compassionate care." />
-        <link rel="canonical" href="https://resilientmindcounseling.info/about/" />
+        <meta name="keywords" content="Zach Rehbein-Jones, LCSW, therapist bio, licensed clinical social worker, Wisconsin therapist, California therapist, virtual therapy, online counseling" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <link rel="canonical" href="https://resilientmindcounseling.info/about" />
       </Helmet>
-      <StructuredData url="https://resilientmindcounseling.info/about/" name="About" />
+      <StructuredData url="https://resilientmindcounseling.info/about" name="About" />
       <SocialMeta 
         title="About Zach Rehbein-Jones, LCSW | Virtual Therapy in Wisconsin & California"
         description="Meet Zach Rehbein-Jones, LCSW. Licensed therapist offering online therapy for adults in Wisconsin and California. Clear goals and compassionate care."
-        url="https://resilientmindcounseling.info/about/"
+        url="https://resilientmindcounseling.info/about"
       />
       <div className="page page--about">
         <AboutSection withId={false} />

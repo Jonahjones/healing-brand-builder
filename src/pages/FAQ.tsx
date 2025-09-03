@@ -75,19 +75,39 @@ const FAQ = () => {
   return (
     <main className="page">
       <Helmet>
-        <title>Frequently Asked Questions | Zach Rehbein-Jones, LCSW</title>
+        <title>Frequently Asked Questions | Virtual Therapy FAQ | Zach Rehbein-Jones, LCSW</title>
         <meta name="description" content="Common questions about virtual therapy, insurance, pricing, and treatment approaches. Licensed therapist serving Wisconsin and California." />
-        <link rel="canonical" href="https://resilientmindcounseling.info/faq/" />
+        <meta name="keywords" content="therapy FAQ, virtual therapy questions, online therapy FAQ, therapy insurance, therapy pricing questions, telehealth FAQ" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <link rel="canonical" href="https://resilientmindcounseling.info/faq" />
       </Helmet>
       <StructuredData 
-        url="https://resilientmindcounseling.info/faq/" 
+        url="https://resilientmindcounseling.info/faq" 
         name="FAQ" 
         description="Frequently asked questions about virtual therapy services"
       />
+      
+      {/* FAQ Structured Data for Rich Snippets */}
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqData.map(item => ({
+              "@type": "Question",
+              "name": item.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": item.answer
+              }
+            }))
+          })}
+        </script>
+      </Helmet>
       <SocialMeta 
         title="FAQ - Virtual Therapy Questions Answered | Zach Rehbein-Jones, LCSW"
         description="Common questions about virtual therapy, insurance, pricing, and treatment approaches. Licensed therapist serving Wisconsin and California."
-        url="https://resilientmindcounseling.info/faq/"
+        url="https://resilientmindcounseling.info/faq"
       />
 
       <section className="pt-24 pb-16 bg-gradient-to-br from-warm-cream/80 via-natural-beige/60 to-soft-sage/30 min-h-screen transition-all duration-1000 ease-out">
@@ -102,7 +122,7 @@ const FAQ = () => {
             </h1>
             <p className="text-lg text-cozy-brown/80 max-w-2xl mx-auto leading-relaxed">
               Find answers to common questions about virtual therapy, insurance, pricing, and my therapeutic approach. 
-              Don't see your question? <a href="/contact/" className="text-gentle-terracotta hover:underline font-medium">Contact me directly</a>.
+              Don't see your question? <a href="/contact" className="text-gentle-terracotta hover:underline font-medium">Contact me directly</a>.
             </p>
           </div>
 
@@ -182,7 +202,7 @@ const FAQ = () => {
                   I'm here to help! Schedule your free 15-minute consultation to discuss your specific needs and get personalized answers.
                 </p>
                 <a 
-                  href="/contact/"
+                  href="/contact"
                   className="inline-flex items-center gap-2 cta-enhanced text-white font-bold px-8 py-4 rounded-xl"
                 >
                   <Calendar className="w-5 h-5" />

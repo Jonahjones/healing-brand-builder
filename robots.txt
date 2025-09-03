@@ -1,5 +1,23 @@
 User-agent: *
 Allow: /
+
+# Prioritize important pages
+Allow: /about
+Allow: /specialties
+Allow: /approach
+Allow: /pricing
+Allow: /contact
+Allow: /faq
+
+# Sitemap location
 Sitemap: https://resilientmindcounseling.info/sitemap.xml
-Allow: /
-Sitemap: https://resilientmindcounseling.info/sitemap.xml
+
+# Crawl delay to be respectful
+Crawl-delay: 1
+
+# Block common bot paths
+Disallow: /admin
+Disallow: /wp-admin
+Disallow: /*.json$
+Disallow: /*?*utm_*
+Disallow: /*?*fbclid*

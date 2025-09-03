@@ -27,11 +27,70 @@ const Home = () => {
       <div className="relative z-10">
         <h1 className="sr-only">Virtual therapy in Wisconsin and California with Zach Rehbein Jones LCSW</h1>
         <Helmet>
+          <html lang="en" />
           <title>Virtual Therapy in Wisconsin & California | Resilient Mind Counseling</title>
           <meta name="description" content="Online therapy with Zach Rehbein-Jones, LCSW. Anxiety, depression, trauma, and couples counseling. Free 15-minute consultation. Serving Wisconsin and California." />
+          <meta name="keywords" content="online therapy, virtual therapy, Wisconsin therapist, California therapist, anxiety therapy, depression counseling, trauma therapy, couples counseling, LCSW, telehealth" />
+          <meta name="author" content="Zach Rehbein-Jones, LCSW" />
+          <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+          <meta name="geo.region" content="US-WI;US-CA" />
+          <meta name="geo.placename" content="Wisconsin;California" />
           <link rel="canonical" href="https://resilientmindcounseling.info/" />
         </Helmet>
         <StructuredData url="https://resilientmindcounseling.info/" name="Home" isHome={true} />
+        
+        {/* Enhanced Homepage Structured Data */}
+        <Helmet>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "name": "Virtual Therapy in Wisconsin & California | Resilient Mind Counseling",
+              "description": "Online therapy with Zach Rehbein-Jones, LCSW. Anxiety, depression, trauma, and couples counseling. Free 15-minute consultation. Serving Wisconsin and California.",
+              "url": "https://resilientmindcounseling.info/",
+              "mainEntity": {
+                "@type": "MedicalBusiness",
+                "@id": "https://resilientmindcounseling.info/#business",
+                "name": "Resilient Mind Counseling",
+                "alternateName": "Zach Rehbein-Jones, LCSW",
+                "description": "Licensed Clinical Social Worker providing virtual therapy services for anxiety, depression, trauma, and relationship issues in Wisconsin and California.",
+                "url": "https://resilientmindcounseling.info/",
+                "telephone": "+1-414-348-0996",
+                "email": "zach@resilientmindcounseling.info",
+                "medicalSpecialty": ["Mental Health", "Clinical Social Work"],
+                "serviceType": ["Virtual Therapy", "Online Counseling", "Telehealth"],
+                "areaServed": [
+                  { "@type": "State", "name": "Wisconsin" },
+                  { "@type": "State", "name": "California" }
+                ],
+                "hasCredential": "Licensed Clinical Social Worker (LCSW)",
+                "priceRange": "$100",
+                "paymentAccepted": ["Insurance", "Credit Card", "Cash"],
+                "openingHours": ["Mo-Fr 09:00-17:00"],
+                "availableService": [
+                  {
+                    "@type": "MedicalTherapy",
+                    "name": "Individual Therapy",
+                    "description": "One-on-one therapy sessions for anxiety, depression, and life transitions",
+                    "serviceType": "Virtual Therapy"
+                  },
+                  {
+                    "@type": "MedicalTherapy",
+                    "name": "Couples Therapy", 
+                    "description": "Relationship counseling for couples seeking to improve communication and connection",
+                    "serviceType": "Virtual Therapy"
+                  },
+                  {
+                    "@type": "MedicalTherapy",
+                    "name": "Trauma Therapy",
+                    "description": "Specialized treatment for trauma and PTSD using evidence-based approaches",
+                    "serviceType": "Virtual Therapy"
+                  }
+                ]
+              }
+            })}
+          </script>
+        </Helmet>
         <SocialMeta 
           title="Virtual Therapy in Wisconsin & California | Resilient Mind Counseling"
           description="Online therapy with Zach Rehbein-Jones, LCSW. Anxiety, depression, trauma, and couples counseling. Free 15-minute consultation. Serving Wisconsin and California."
@@ -54,32 +113,32 @@ const Home = () => {
             </div>
             <ul className="flex flex-wrap justify-center gap-3">
               <li>
-                <a href="/about/" className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-3 rounded-xl border border-gentle-terracotta/15 text-cozy-brown font-semibold text-sm hover:bg-gentle-terracotta hover:text-white hover:scale-105 transition-all duration-300 shadow-sm hover:shadow-md">
+                <a href="/about" className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-3 rounded-xl border border-gentle-terracotta/15 text-cozy-brown font-semibold text-sm hover:bg-gentle-terracotta hover:text-white hover:scale-105 transition-all duration-300 shadow-sm hover:shadow-md">
                   <span>About</span>
                 </a>
               </li>
               <li>
-                <a href="/specialties/" className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-3 rounded-xl border border-gentle-terracotta/15 text-cozy-brown font-semibold text-sm hover:bg-gentle-terracotta hover:text-white hover:scale-105 transition-all duration-300 shadow-sm hover:shadow-md">
+                <a href="/specialties" className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-3 rounded-xl border border-gentle-terracotta/15 text-cozy-brown font-semibold text-sm hover:bg-gentle-terracotta hover:text-white hover:scale-105 transition-all duration-300 shadow-sm hover:shadow-md">
                   <span>Specialties</span>
                 </a>
               </li>
               <li>
-                <a href="/approach/" className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-3 rounded-xl border border-gentle-terracotta/15 text-cozy-brown font-semibold text-sm hover:bg-gentle-terracotta hover:text-white hover:scale-105 transition-all duration-300 shadow-sm hover:shadow-md">
+                <a href="/approach" className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-3 rounded-xl border border-gentle-terracotta/15 text-cozy-brown font-semibold text-sm hover:bg-gentle-terracotta hover:text-white hover:scale-105 transition-all duration-300 shadow-sm hover:shadow-md">
                   <span>Approach</span>
                 </a>
               </li>
               <li>
-                <a href="/pricing/" className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-3 rounded-xl border border-gentle-terracotta/15 text-cozy-brown font-semibold text-sm hover:bg-gentle-terracotta hover:text-white hover:scale-105 transition-all duration-300 shadow-sm hover:shadow-md">
+                <a href="/pricing" className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-3 rounded-xl border border-gentle-terracotta/15 text-cozy-brown font-semibold text-sm hover:bg-gentle-terracotta hover:text-white hover:scale-105 transition-all duration-300 shadow-sm hover:shadow-md">
                   <span>Pricing</span>
                 </a>
               </li>
               <li>
-                <a href="/faq/" className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-3 rounded-xl border border-gentle-terracotta/15 text-cozy-brown font-semibold text-sm hover:bg-gentle-terracotta hover:text-white hover:scale-105 transition-all duration-300 shadow-sm hover:shadow-md">
+                <a href="/faq" className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-3 rounded-xl border border-gentle-terracotta/15 text-cozy-brown font-semibold text-sm hover:bg-gentle-terracotta hover:text-white hover:scale-105 transition-all duration-300 shadow-sm hover:shadow-md">
                   <span>FAQ</span>
                 </a>
               </li>
               <li>
-                <a href="/contact/" className="inline-flex items-center gap-2 bg-gentle-terracotta/85 backdrop-blur-sm px-4 py-3 rounded-xl border border-gentle-terracotta/15 text-white font-semibold text-sm hover:bg-gentle-terracotta hover:scale-105 transition-all duration-300 shadow-sm hover:shadow-md">
+                <a href="/contact" className="inline-flex items-center gap-2 bg-gentle-terracotta/85 backdrop-blur-sm px-4 py-3 rounded-xl border border-gentle-terracotta/15 text-white font-semibold text-sm hover:bg-gentle-terracotta hover:scale-105 transition-all duration-300 shadow-sm hover:shadow-md">
                   <span>Contact</span>
                 </a>
               </li>

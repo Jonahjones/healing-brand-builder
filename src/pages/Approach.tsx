@@ -13,14 +13,16 @@ export default function Approach() {
           name="description"
           content="Evidence-based therapy approach with CBT, EMDR, and mindfulness. Collaborative goals and compassionate care via telehealth for Wisconsin and California."
         />
-        <link rel="canonical" href="https://resilientmindcounseling.info/approach/" />
+        <meta name="keywords" content="CBT, cognitive behavioral therapy, EMDR, trauma therapy, mindfulness, evidence-based therapy, therapy approach, virtual therapy methods" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <link rel="canonical" href="https://resilientmindcounseling.info/approach" />
       </Helmet>
 
-      <StructuredData url="https://resilientmindcounseling.info/approach/" name="Approach" />
+      <StructuredData url="https://resilientmindcounseling.info/approach" name="Approach" />
       <SocialMeta 
         title="Therapy Approach | CBT & EMDR Informed | Virtual Therapy Wisconsin & California"
         description="Evidence-based therapy approach with CBT, EMDR, and mindfulness. Collaborative goals and compassionate care via telehealth for Wisconsin and California."
-        url="https://resilientmindcounseling.info/approach/"
+        url="https://resilientmindcounseling.info/approach"
       />
       <div className="page page--approach">
         <ApproachSection withId={false} />

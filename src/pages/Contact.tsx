@@ -9,13 +9,15 @@ export default function Contact() {
       <Helmet>
         <title>Contact & Free Consultation | Virtual Therapy Wisconsin & California</title>
         <meta name="description" content="Book your free 15-minute consultation today. Call 414-348-0996 or email zach@resilientmindcounseling.info. Online therapy for Wisconsin and California." />
-        <link rel="canonical" href="https://resilientmindcounseling.info/contact/" />
+        <meta name="keywords" content="contact therapist, free consultation, book therapy, schedule therapy, therapy appointment, virtual therapy contact" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <link rel="canonical" href="https://resilientmindcounseling.info/contact" />
       </Helmet>
-      <StructuredData url="https://resilientmindcounseling.info/contact/" name="Contact" />
+      <StructuredData url="https://resilientmindcounseling.info/contact" name="Contact" />
       <SocialMeta 
         title="Contact & Free Consultation | Virtual Therapy Wisconsin & California"
         description="Book your free 15-minute consultation today. Call 414-348-0996 or email zach@resilientmindcounseling.info. Online therapy for Wisconsin and California."
-        url="https://resilientmindcounseling.info/contact/"
+        url="https://resilientmindcounseling.info/contact"
       />
       <div className="page page--contact">
         <ContactSection withId={false} />
