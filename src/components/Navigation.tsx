@@ -67,16 +67,40 @@ const Navigation = () => {
             <span className="sm:hidden">Z. Rehbein-Jones</span>
           </Link>
           
-          {/* Mobile menu button */}
-          <button 
-            className="md:hidden text-primary p-2 rounded-lg hover:bg-primary/10 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gentle-terracotta focus:ring-offset-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle navigation menu"
-            aria-expanded={isMenuOpen}
-            aria-controls="mobile-navigation"
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile header actions */}
+          <div className="md:hidden flex items-center space-x-2">
+            {/* Mobile Book Now button */}
+            {onHome ? (
+              <Button 
+                size="sm"
+                className="cta-enhanced text-white font-semibold px-3 py-2 rounded-lg text-xs"
+                onClick={handleContactClick}
+              >
+                <Calendar className="w-4 h-4 mr-1" />Book Now
+              </Button>
+            ) : (
+              <Link to="/contact">
+                <Button 
+                  size="sm"
+                  className="cta-enhanced text-white font-semibold px-3 py-2 rounded-lg text-xs"
+                  onClick={handleContactClick}
+                >
+                  <Calendar className="w-4 h-4 mr-1" />Book Now
+                </Button>
+              </Link>
+            )}
+            
+            {/* Mobile menu button */}
+            <button 
+              className="text-primary p-2 rounded-lg hover:bg-primary/10 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gentle-terracotta focus:ring-offset-2"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle navigation menu"
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-navigation"
+            >
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
@@ -143,52 +167,11 @@ const Navigation = () => {
                   {item.name}
                 </Link>
               ))}
-              <div className="px-4 pt-2">
-                {onHome ? (
-                  <Button 
-                    className="w-full cta-enhanced text-white font-bold py-3 rounded-lg"
-                    onClick={handleContactClick}
-                  >
-                    <Calendar className="w-5 h-5 mr-2" />Book Your Free Consultation
-                  </Button>
-                ) : (
-                  <Link to="/contact" className="block">
-                    <Button 
-                      className="w-full cta-enhanced text-white font-bold py-3 rounded-lg"
-                      onClick={handleContactClick}
-                    >
-                      <Calendar className="w-5 h-5 mr-2" />Book Your Free Consultation
-                    </Button>
-                  </Link>
-                )}
-              </div>
             </div>
           </div>
         )}
       </nav>
 
-      {/* Floating CTA Button - Mobile Optimized */}
-      <div className="fixed bottom-4 left-4 right-4 z-50 md:hidden">
-        {onHome ? (
-          <Button 
-            className="w-full cta-enhanced text-white font-bold py-4 rounded-2xl shadow-2xl hover:shadow-3xl border-2 border-white/30"
-            onClick={handleContactClick}
-          >
-            <span className="hidden sm:inline"><Calendar className="w-5 h-5 mr-2" />Book Your Free Consultation</span>
-            <span className="sm:hidden"><Calendar className="w-5 h-5 mr-2" />Book Now</span>
-          </Button>
-        ) : (
-          <Link to="/contact" className="block">
-            <Button 
-              className="w-full cta-enhanced text-white font-bold py-4 rounded-2xl shadow-2xl hover:shadow-3xl border-2 border-white/30"
-              onClick={handleContactClick}
-            >
-              <span className="hidden sm:inline"><Calendar className="w-5 h-5 mr-2" />Book Your Free Consultation</span>
-              <span className="sm:hidden"><Calendar className="w-5 h-5 mr-2" />Book Now</span>
-            </Button>
-          </Link>
-        )}
-      </div>
     </>
   );
 };
